@@ -1,0 +1,6 @@
+# robots.txt for Jason C. Dixon — professional profile
+# Live at https://tabbykt-cell.github.io/JasonResume/
+User-agent: *
+Allow: /
+
+Sitemap: https://tabbykt-cell.github.io/JasonResume/sitemap.xml

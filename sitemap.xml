@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Live at https://tabbykt-cell.github.io/JasonResume/ -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://tabbykt-cell.github.io/JasonResume/</loc>
+    <lastmod>2026-07-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://tabbykt-cell.github.io/JasonResume/uploads/1663043378519.jpeg</image:loc>
+      <image:caption>Portrait of Jason C. Dixon, solutions engineer and operations leader in modular construction</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://tabbykt-cell.github.io/JasonResume/uploads/1782305854754.jpeg</image:loc>
+      <image:caption>Jason Dixon presenting a live factory production dashboard during an executive walkthrough</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://tabbykt-cell.github.io/JasonResume/uploads/1782305851172.jpeg</image:loc>
+      <image:caption>Jason Dixon running an operator training session with a production crew in a prefab factory</image:caption>
+    </image:image>
+  </url>
+</urlset>
