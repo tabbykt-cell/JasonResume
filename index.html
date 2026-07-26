@@ -396,6 +396,14 @@ h1,h2,h3{font-family:var(--disp);margin:0}
 }
 
 
+/* floating pill nav, centred at the bottom, fades in past the hero */
+.dock{position:fixed;left:50%;transform:translateX(-50%);bottom:22px;z-index:108;display:flex;align-items:center;gap:2px;padding:6px;background:rgba(17,19,17,.82);backdrop-filter:blur(14px);border:1px solid rgba(245,242,236,.16);border-radius:var(--r-pill);box-shadow:0 14px 40px rgba(0,0,0,.45);opacity:0;pointer-events:none;transition:opacity .3s ease,transform .3s ease}
+.dock.on{opacity:1;pointer-events:auto}
+.dock a{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--mut);padding:10px 15px;border-radius:var(--r-pill);transition:background .16s,color .16s}
+.dock a:hover{color:var(--paper);background:rgba(245,242,236,.08)}
+.dock a.is-on{background:var(--blue);color:var(--ink)}
+@media(max-width:900px){.dock{display:none}}
+
 /* reading-progress bar */
 .prog{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--blue),#8FC0EA);z-index:400;transition:width .08s linear}
 
