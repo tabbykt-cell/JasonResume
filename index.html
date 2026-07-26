@@ -418,7 +418,7 @@ h1,h2,h3{font-family:var(--disp);margin:0}
 .totop{position:fixed;left:22px;bottom:24px;z-index:105;width:46px;height:46px;border-radius:50%;display:none;align-items:center;justify-content:center;background:rgba(245,242,236,.1);border:1px solid rgba(245,242,236,.3);color:var(--paper);cursor:pointer;font-size:17px;backdrop-filter:blur(6px);transition:background .18s,border-color .18s}
 .totop.on{display:flex}
 .totop:hover{background:var(--blue);border-color:var(--blue);color:var(--ink)}
-@media(max-width:560px){.totop{left:14px;bottom:78px;width:40px;height:40px}}
+@media(max-width:560px){.totop{left:14px;bottom:78px;width:40px;height:40px;background:var(--ink-2);border-color:rgba(245,242,236,.34)}}
 [data-reveal].seen{opacity:1;transform:none}
 @media(prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
@@ -427,6 +427,47 @@ h1,h2,h3{font-family:var(--disp);margin:0}
 }
 a:focus-visible,button:focus-visible{outline:2px solid var(--blue);outline-offset:3px}
 .xp-btn:focus-visible,.jtab:focus-visible{outline:2px solid var(--blue-dk);outline-offset:-2px}
+
+/* ============================================================
+   MOBILE FIXES
+   ============================================================ */
+
+/* 1. Side gutters. Every section container (.journey-in, .about-in, .ftr-in …)
+      sets `padding: 100px 0`, and that shorthand resets .wrap's left/right
+      padding to 0 — so on any screen where the 1240px box reaches the viewport
+      edge, text ran flush to both edges. Longhands here, after those rules,
+      put the gutter back without disturbing the ≥1304px desktop layout. */
+@media(max-width:1304px){.wrap{padding-left:32px;padding-right:32px}}
+@media(max-width:640px){.wrap{padding-left:20px;padding-right:20px}}
+
+/* 2. The decorative outline behind the portrait was inset `18px -18px -18px 18px`,
+      so it hung 18px past the right edge. On a phone that widened the whole
+      document and let the page scroll sideways. Keep the offset look, drop the
+      right-hand overhang. */
+@media(max-width:960px){.hero-fig .frame{inset:12px 0 -12px 12px}}
+
+/* 3. Make it obvious the discipline strip scrolls. The right edge fades out
+      while there is more to reach, and the hint sits under it until you swipe. */
+@media(max-width:960px){
+  .jtabs{-webkit-mask-image:linear-gradient(to right,#000 76%,rgba(0,0,0,.2) 100%);mask-image:linear-gradient(to right,#000 76%,rgba(0,0,0,.2) 100%)}
+  .jtabs.at-end{-webkit-mask-image:none;mask-image:none}
+  .jswipe{display:flex;align-items:center;justify-content:center;gap:8px;font-size:11px;color:var(--blue);margin-top:14px;transition:opacity .3s}
+  .jswipe.hide{opacity:0;pointer-events:none}
+  .jswipe i{font-style:normal;animation:nudge 1.6s ease-in-out infinite}
+}
+@keyframes nudge{0%,100%{transform:translateX(0)}50%{transform:translateX(5px)}}
+
+/* 4. The rotating role line is one long unbreakable mono row inside a grid
+      item, so the longest role ("Trainer & Leadership Developer") stretched
+      the grid track and pushed the whole page sideways — intermittently, as
+      the word cycled. Let it shrink and wrap, and tighten it on small screens. */
+.hero-copy,.hero-in>*{min-width:0}
+.rot-line{flex-wrap:wrap;min-width:0}
+.rot-line #rotRole{min-width:0;overflow-wrap:break-word}
+@media(max-width:560px){
+  .rot-line{font-size:11px;letter-spacing:.1em;gap:10px}
+  .rot-line::before{width:20px}
+}
 </style>
 <script type="application/ld+json">
 {
@@ -561,7 +602,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--blue);outline-offse
       <button class="jtab" role="tab" id="tab-imp" aria-selected="false" aria-controls="panel-imp" tabindex="-1"><span class="pill">04</span><br>Go-live &amp; beyond<em>Implementation Manager</em></button>
       <button class="jtab" role="tab" id="tab-ai" aria-selected="false" aria-controls="panel-ai" tabindex="-1"><span class="pill">05</span><br>Building the tools<em>AI Engineering</em></button>
     </div>
-    <div class="jswipe">← Swipe for all five →</div>
+    <div class="jswipe" id="jswipe">Swipe to see all five <i aria-hidden="true">→</i></div>
 
     <div class="jpanel on" role="tabpanel" id="panel-se" aria-labelledby="tab-se">
       <picture><source srcset="uploads/1782305854754.webp" type="image/webp"><img src="uploads/1782305854754.jpeg" alt="Jason Dixon presenting an Offsight factory production dashboard to executives" loading="lazy" width="2048" height="1230"></picture>
@@ -974,6 +1015,29 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--blue);outline-offse
       rotEl.textContent = roles[ri].slice(0, ch);
       setTimeout(tick, del ? 34 : 62);
     })();
+  } else {
+    /* Reduce Motion is on (common on phones). The typewriter is skipped, but
+       the line still has to cycle — otherwise it sits on "Solutions Engineer"
+       forever and reads as broken. Swap the whole word, no animation. */
+    var caret = document.querySelector('.rot-line .caret');
+    if(caret){ caret.style.display = 'none'; }
+    var rq = 0;
+    setInterval(function(){
+      rq = (rq + 1) % roles.length;
+      rotEl.textContent = roles[rq];
+    }, 2600);
+  }
+
+  /* discipline strip: drop the edge fade and the hint once it has been swiped */
+  var jt = document.querySelector('.jtabs'), jsw = document.getElementById('jswipe');
+  if(jt){
+    var jtSpy = function(){
+      var atEnd = jt.scrollLeft >= jt.scrollWidth - jt.clientWidth - 4;
+      jt.classList.toggle('at-end', atEnd);
+      if(jsw && jt.scrollLeft > 12){ jsw.classList.add('hide'); }
+    };
+    jt.addEventListener('scroll', jtSpy, {passive:true});
+    jtSpy();
   }
 
   /* reveal on scroll */
