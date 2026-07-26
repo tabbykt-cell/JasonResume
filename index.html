@@ -468,6 +468,27 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--blue);outline-offse
   .rot-line{font-size:11px;letter-spacing:.1em;gap:10px}
   .rot-line::before{width:20px}
 }
+
+/* 5. Back-to-top was pinned bottom-LEFT, which put it straight on top of the
+      left edge of the body copy on every screen where the content column
+      reaches the gutter. Stack it above the ask button on the right instead. */
+@media(max-width:1400px){.totop{left:auto;right:22px;bottom:78px}}
+@media(max-width:560px){.totop{left:auto;right:14px;bottom:70px}}
+
+/* 6. Gallery captions and the zoom badge only appeared on :hover, so on a
+      phone the photos were permanently unlabelled and gave no hint they open.
+      Show both wherever there is no hover. */
+@media(hover:none){
+  .gal-cap{opacity:1;transform:none}
+  .gal-zoom{opacity:1;transform:none}
+}
+
+/* 7. Touch targets: the menu button and the header CTA were 35–40px tall,
+      under the 44px minimum for comfortable tapping. */
+@media(max-width:960px){
+  .burger{min-height:44px;padding:12px 16px}
+  .nav .cta{min-height:44px;display:flex;align-items:center;justify-content:center}
+}
 </style>
 <script type="application/ld+json">
 {
