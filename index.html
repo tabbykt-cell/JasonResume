@@ -396,6 +396,13 @@ h1,h2,h3{font-family:var(--disp);margin:0}
 }
 
 
+/* reading-progress bar */
+.prog{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--blue),#8FC0EA);z-index:400;transition:width .08s linear}
+
+/* copy-email confirmation */
+.copied{position:fixed;left:50%;transform:translateX(-50%);bottom:96px;z-index:200;background:var(--ink);color:var(--paper);font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;padding:12px 20px;border-radius:999px;opacity:0;pointer-events:none;transition:opacity .25s,transform .25s;border:1px solid rgba(245,242,236,.18)}
+.copied.on{opacity:1;transform:translateX(-50%) translateY(-6px)}
+
 /* reveal */
 /* CHANGE 4 — staggered reveals so sections resolve in sequence, not all at once */
 [data-reveal]{opacity:0;transform:translateY(20px);transition:opacity .7s ease-out,transform .7s ease-out}
