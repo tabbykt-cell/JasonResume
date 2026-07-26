@@ -14,8 +14,8 @@
      "https://tabbykt-cell.github.io/JasonResume" across
      index.html, sitemap.xml and robots.txt.
      ============================================================ -->
-<title>Jason C. Dixon — Solutions Engineer &amp; Operations Leader | Modular &amp; Prefab Construction</title>
-<meta name="description" content="Jason C. Dixon helps modular and prefab manufacturers improve quality, throughput, and accountability — spanning solutions engineering, operations &amp; quality management, training &amp; leadership development, implementation management, and AI-assisted tooling for manufacturing operations.">
+<title>Jason C. Dixon | Solutions Engineer — Modular Construction</title>
+<meta name="description" content="Solutions engineer and operations leader helping modular and prefab manufacturers improve quality, throughput, and accountability. 20+ years on the factory floor.">
 <meta name="author" content="Jason C. Dixon">
 <meta name="google-site-verification" content="ORemx5--6exDtRLyVKkfxMvrLO2sIyWn6HRLUvR4aUE" />
 <meta name="robots" content="index, follow, max-image-preview:large">
@@ -26,7 +26,9 @@
 <meta property="og:title" content="Jason C. Dixon — Solutions Engineer &amp; Operations Leader in Modular Construction">
 <meta property="og:description" content="Operations, quality, training, and implementation leadership for modular and prefab manufacturing. 20+ years building teams and systems that work on the factory floor.">
 <meta property="og:url" content="https://tabbykt-cell.github.io/JasonResume/">
-<meta property="og:image" content="https://tabbykt-cell.github.io/JasonResume/uploads/1663043378519.jpeg">
+<meta property="og:image" content="https://tabbykt-cell.github.io/JasonResume/uploads/og-banner.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Portrait of Jason C. Dixon">
 <meta property="og:locale" content="en_US">
 <meta property="profile:first_name" content="Jason">
@@ -36,7 +38,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Jason C. Dixon — Solutions Engineer &amp; Operations Leader in Modular Construction">
 <meta name="twitter:description" content="Operations, quality, training, and implementation leadership for modular and prefab manufacturing.">
-<meta name="twitter:image" content="https://tabbykt-cell.github.io/JasonResume/uploads/1663043378519.jpeg">
+<meta name="twitter:image" content="https://tabbykt-cell.github.io/JasonResume/uploads/og-banner.jpg">
 
 <!-- Structured data -->
 <script type="application/ld+json">
@@ -102,6 +104,12 @@
   --mut-dk:#6B6F68;
   --line-l:rgba(245,242,236,.12);
   --line-d:rgba(17,19,17,.14);
+  /* JETON-INSPIRED: a rounding scale, applied with restraint */
+  --r-pill:999px;
+  --r-card:16px;
+  --r-md:12px;
+  --r-sm:8px;
+  --tint:rgba(91,157,217,.10);
   --disp:'Archivo',system-ui,sans-serif;
   --body:'IBM Plex Sans',system-ui,sans-serif;
   --mono:'IBM Plex Mono',ui-monospace,monospace;
@@ -111,7 +119,7 @@ html{scroll-behavior:smooth}
 body{margin:0;background:var(--ink);color:var(--paper);font-family:var(--body);font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 a{color:var(--blue);text-decoration:none}
 a:hover{color:#8FC0EA}
-img{max-width:100%}
+img{max-width:100%;height:auto}  /* required: width/height attrs would otherwise override aspect-ratio */
 ::selection{background:var(--blue);color:var(--ink)}
 .wrap{max-width:1240px;margin:0 auto;padding:0 32px}
 @media(max-width:640px){.wrap{padding:0 20px}}
@@ -134,9 +142,9 @@ h1,h2,h3{font-family:var(--disp);margin:0}
 .nav a{color:var(--mut);padding:4px 0;border-bottom:2px solid transparent;transition:color .18s,border-color .18s}
 .nav a:hover{color:var(--paper)}
 .nav a.is-on{color:var(--paper);border-color:var(--blue)}
-.nav .cta{background:var(--blue);color:var(--ink);padding:10px 16px;font-weight:600;border-bottom:0}
+.nav .cta{background:var(--blue);color:var(--ink);padding:10px 18px;font-weight:600;border-bottom:0;border-radius:var(--r-pill)}
 .nav .cta:hover{background:#8FC0EA;color:var(--ink)}
-.burger{display:none;background:none;border:1px solid var(--line-l);color:var(--paper);font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;padding:10px 14px;cursor:pointer}
+.burger{display:none;background:none;border-radius:var(--r-pill);border:1px solid var(--line-l);color:var(--paper);font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;padding:10px 14px;cursor:pointer}
 @media(max-width:960px){
   .burger{display:block}
   .nav{position:fixed;inset:62px 0 auto 0;background:var(--ink-2);flex-direction:column;align-items:stretch;gap:0;padding:10px 0 18px;border-bottom:1px solid var(--line-l);transform:translateY(-130%);transition:transform .25s ease;z-index:70}
@@ -155,14 +163,15 @@ h1,h2,h3{font-family:var(--disp);margin:0}
 .caret{display:inline-block;width:9px;height:17px;background:var(--blue);margin-left:2px;animation:blink 1s steps(1) infinite;vertical-align:-2px}
 @keyframes blink{50%{opacity:0}}
 .btn-row{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
-.btn{display:inline-block;font-family:var(--disp);font-weight:700;font-size:15px;padding:16px 28px;letter-spacing:.02em}
+.btn{display:inline-flex;align-items:center;gap:10px;font-family:var(--disp);font-weight:700;font-size:15px;padding:16px 30px;letter-spacing:.02em;border-radius:var(--r-pill);transition:transform .18s ease,background .18s}
+.btn:hover{transform:translateY(-2px)}
 .btn.solid{background:var(--blue);color:var(--ink)}
 .btn.solid:hover{background:#8FC0EA;color:var(--ink)}
 .btn.ghost{color:var(--paper);border:1px solid rgba(245,242,236,.3)}
 .btn.ghost:hover{border-color:var(--paper);color:var(--paper)}
 .hero-fig{position:relative;animation:riseIn .7s .12s ease-out both}
 .hero-fig .frame{position:absolute;inset:18px -18px -18px 18px;border:1px solid var(--blue);pointer-events:none}
-.hero-fig img{position:relative;width:100%;aspect-ratio:1/1;object-fit:cover;display:block;filter:saturate(.95)}
+.hero-fig img{position:relative;width:100%;aspect-ratio:1/1;object-fit:cover;display:block;filter:saturate(.95);border-radius:var(--r-card) var(--r-card) 0 0}
 .hero-fig .plate{position:relative;background:var(--ink-2);border-left:3px solid var(--blue);padding:18px 20px;font-family:var(--mono);font-size:12px;line-height:1.7;color:var(--mut);letter-spacing:.04em}
 @keyframes riseIn{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
 .hero-copy{animation:riseIn .7s ease-out both}
@@ -170,27 +179,28 @@ h1,h2,h3{font-family:var(--disp);margin:0}
 
 /* ---------- stat band ---------- */
 .stats{background:var(--paper);color:var(--ink)}
-.stats-in{display:grid;grid-template-columns:repeat(4,1fr)}
-.stat{padding:52px 30px;border-right:1px solid var(--line-d)}
-.stat:first-child{padding-left:0}
-.stat:last-child{border-right:0;padding-right:0}
+/* JETON-INSPIRED: tinted rounded stat cards instead of a hairline grid */
+.stats-in{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;padding-top:56px;padding-bottom:56px}
+.stat{padding:34px 28px 32px;border-radius:var(--r-card);background:rgba(31,92,147,.07);transition:background .2s,transform .2s}
+.stat:hover{background:rgba(31,92,147,.13);transform:translateY(-3px)}
 .stat b{font-family:var(--disp);font-weight:800;font-size:clamp(44px,5vw,62px);letter-spacing:-.03em;line-height:1;color:var(--blue-dk);display:block;white-space:nowrap}
 .stat b .count{font:inherit;color:inherit;letter-spacing:inherit;text-transform:none;display:inline;margin:0}
 .stat>span{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#4A4E48;margin-top:13px;line-height:1.6;display:block}
-@media(max-width:900px){.stats-in{grid-template-columns:1fr 1fr}.stat{padding:34px 22px}.stat:nth-child(odd){padding-left:0}.stat:nth-child(2n){border-right:0}.stat:nth-child(-n+2){border-bottom:1px solid var(--line-d)}}
+@media(max-width:900px){.stats-in{grid-template-columns:1fr 1fr;gap:12px}.stat{padding:26px 20px}}
 
 /* ---------- about ---------- */
 .about{background:var(--paper);color:var(--ink);border-top:1px solid var(--line-d)}
 .about-in{display:grid;grid-template-columns:.9fr 1.1fr;gap:76px;align-items:start;padding:100px 0}
 .about figure{margin:0}
-.about img,.about video{width:100%;aspect-ratio:4/5;object-fit:cover;display:block;background:#111311}
+.about img,.about video{width:100%;aspect-ratio:6/5;object-fit:cover;display:block;background:#111311;border-radius:var(--r-card)}
 .about figure{position:relative}
 .about figcaption{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--mut-dk);padding-top:14px;border-top:1px solid rgba(17,19,17,.16);margin-top:14px}
 .about-body{display:flex;flex-direction:column;gap:22px;font-size:17px;line-height:1.7;color:#33362F;max-width:64ch}
 .about-body p{margin:0;text-wrap:pretty}
 .pull{font-family:var(--disp);font-weight:600;font-size:19px;line-height:1.5;color:var(--ink);border-left:3px solid var(--blue);padding-left:20px}
 .chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
-.chips span{border:1px solid rgba(17,19,17,.22);padding:9px 14px;font-size:13px;font-weight:500}
+.chips span{border:1px solid rgba(17,19,17,.18);padding:10px 16px;font-size:13px;font-weight:500;border-radius:var(--r-pill);background:rgba(17,19,17,.03);transition:background .16s,border-color .16s}
+.chips span:hover{background:var(--tint);border-color:var(--blue-dk)}
 @media(max-width:960px){.about-in{grid-template-columns:1fr;gap:44px;padding:64px 0}}
 
 /* ---------- journey (pillars) ---------- */
@@ -198,32 +208,75 @@ h1,h2,h3{font-family:var(--disp);margin:0}
 .journey-in{padding:100px 0}
 .jr-head{display:flex;justify-content:space-between;align-items:flex-end;gap:48px;margin-bottom:48px;flex-wrap:wrap}
 .jr-head p{font-size:16px;line-height:1.7;color:var(--mut);max-width:44ch;margin:0;text-wrap:pretty}
-.jtabs{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--line-l);border:1px solid var(--line-l);margin-bottom:0}
-.jtab{background:var(--ink);border:0;color:var(--mut);font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;padding:18px 14px;cursor:pointer;text-align:left;line-height:1.5;transition:background .18s,color .18s}
+.jtabs{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--line-l);border:1px solid var(--line-l);border-radius:var(--r-card) var(--r-card) 0 0;overflow:hidden;margin-bottom:0}
+.jtab{background:var(--ink);border:0;color:var(--mut);font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;padding:20px 16px;cursor:pointer;text-align:left;line-height:1.5;transition:background .18s,color .18s}
+/* JETON-INSPIRED: numbered step pills */
+.jtab .pill{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;border:1px solid rgba(245,242,236,.32);font-size:10.5px;margin-bottom:10px;transition:background .18s,border-color .18s,color .18s}
+.jtab[aria-selected="true"] .pill{background:var(--ink);border-color:var(--ink);color:var(--blue)}
 .jtab em{display:block;font-style:normal;font-family:var(--disp);font-weight:700;font-size:15.5px;letter-spacing:0;text-transform:none;color:var(--paper);margin-top:6px}
 @media(min-width:961px) and (max-width:1180px){.jtab{padding:16px 11px;font-size:11px}.jtab em{font-size:14px}}
 .jtab[aria-selected="true"]{background:var(--blue);color:rgba(17,19,17,.7)}
 .jtab[aria-selected="true"] em{color:var(--ink)}
 .jtab:hover:not([aria-selected="true"]){background:var(--ink-2);color:var(--paper)}
-.jpanel{display:none;border:1px solid var(--line-l);border-top:0;padding:0}
+.jswipe{display:none;font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#7E827A;margin-top:10px}
+.jpanel{display:none;border:1px solid var(--line-l);border-top:0;padding:0;border-radius:0 0 var(--r-card) var(--r-card);overflow:hidden}
 .jpanel.on{display:grid;grid-template-columns:1fr 1fr;gap:0;animation:riseIn .45s ease-out both}
-.jpanel img{width:100%;height:100%;min-height:320px;object-fit:cover;display:block}
+.jpanel img{width:100%;height:100%;min-height:320px;object-fit:cover;display:block;border-radius:var(--r-card) 0 0 var(--r-card)}
 .jpanel .jbody{padding:40px 42px 46px}
 .jpanel h3{font-weight:700;font-size:26px;letter-spacing:-.01em;margin:0 0 6px}
 .jpanel .jrole{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);margin-bottom:20px}
 .jpanel p{font-size:15.5px;line-height:1.7;color:var(--mut);margin:0 0 18px;text-wrap:pretty;max-width:56ch}
 .jpanel ul{margin:0;padding-left:19px;display:flex;flex-direction:column;gap:9px;font-size:14.5px;line-height:1.6;color:#DEDAD2}
 @media(max-width:960px){
-  .jtabs{grid-template-columns:1fr 1fr}
+  /* CHANGE 1 — swipeable tab strip instead of an orphaned 5th tile */
+  .jtabs{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;gap:1px;scrollbar-width:none}
+  .jtabs::-webkit-scrollbar{display:none}
+  .jtab{flex:0 0 68%;scroll-snap-align:start}
+  .jswipe{display:block}
   .jpanel.on{grid-template-columns:1fr}
   .jpanel img{min-height:230px;max-height:340px}
   .jpanel .jbody{padding:28px 22px 34px}
 }
 
+/* CHANGE 7 — proof section: one implementation told start to finish */
+.case{background:var(--ink-2);border-top:1px solid var(--line-l)}
+.case-in{padding:100px 0}
+.case-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px}
+.case-step{border:1px solid var(--line-l);border-radius:var(--r-card);background:rgba(245,242,236,.035)!important;transition:background .2s,transform .2s}
+.case-step:hover{background:rgba(91,157,217,.08)!important;transform:translateY(-3px)}
+.case-step{background:var(--ink-2);padding:32px 28px 36px}
+.case-step .n{font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:var(--blue);margin-bottom:14px}
+.case-step h3{font-weight:700;font-size:19px;margin:0 0 10px;line-height:1.25}
+.case-step p{font-size:14.5px;line-height:1.65;color:var(--mut);margin:0}
+.case-out{display:flex;gap:40px;flex-wrap:wrap;margin-top:34px;padding-top:28px;border-top:1px solid var(--line-l)}
+.case-out div b{display:block;font-family:var(--disp);font-weight:800;font-size:34px;color:var(--blue);line-height:1}
+.case-out div span{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#9A9E94;margin-top:8px;display:block}
+@media(max-width:820px){.case-grid{grid-template-columns:1fr}}
+
+/* JETON-INSPIRED: a full-bleed colour block with one oversized statement */
+.stmt{background:var(--blue-dk);color:var(--paper);overflow:hidden}
+.stmt-in{padding:clamp(90px,14vw,170px) 0;text-align:center}
+.stmt p{font-family:var(--disp);font-weight:800;font-size:clamp(34px,7.5vw,104px);line-height:1.02;letter-spacing:-.035em;margin:0 auto;max-width:16ch;text-wrap:balance}
+.stmt .w{color:rgba(245,242,236,.28);transition:color .5s ease}
+.stmt .w.lit{color:var(--paper)}
+.stmt .tail{font-family:var(--body);font-weight:400;font-size:clamp(15px,1.9vw,19px);color:rgba(245,242,236,.72);letter-spacing:0;max-width:46ch;margin:clamp(26px,4vw,40px) auto 0;line-height:1.65;text-wrap:pretty}
+
 /* ---------- experience ---------- */
 .xp{background:var(--paper);color:var(--ink)}
 .xp-in{padding:100px 0}
-.xp-item{border-top:1px solid rgba(17,19,17,.18)}
+/* CHANGE 2 — timeline rail so 25 years reads as a path, not a text wall */
+.xp-list{position:relative;padding-left:34px}
+.xp-list::before{content:"";position:absolute;left:7px;top:14px;bottom:14px;width:2px;background:linear-gradient(var(--blue-dk),rgba(31,92,147,.15))}
+.xp-item{border-top:1px solid rgba(17,19,17,.18);position:relative}
+.xp-item::before{content:"";position:absolute;left:-32px;top:34px;width:10px;height:10px;border-radius:50%;background:var(--paper);border:2px solid var(--blue-dk);transition:transform .2s,background .2s}
+.xp-item.open::before{background:var(--blue-dk);transform:scale(1.3)}
+.xp-item.past::before{border-color:#B9BCB5}
+/* CHANGE 3 — pre-2015 retail roles condensed so the modular decade leads */
+.xp-earlier{margin-top:34px;padding-top:16px;border-top:2px solid rgba(17,19,17,.18)}
+.xp-earlier-lbl{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--mut-dk);margin-bottom:4px}
+.xp-item.past .xp-role{font-size:clamp(16px,2vw,19px);color:#4A4E48}
+.xp-item.past .xp-when{opacity:.8}
+@media(max-width:820px){.xp-list{padding-left:22px}.xp-list::before{left:3px}.xp-item::before{left:-24px;top:26px}}
 .xp-item:last-child{border-bottom:1px solid rgba(17,19,17,.18)}
 .xp-btn{display:grid;grid-template-columns:190px 1fr 34px;gap:36px;align-items:baseline;width:100%;background:none;border:0;cursor:pointer;text-align:left;padding:26px 0;font-family:var(--body)}
 .xp-btn:hover .xp-role{color:var(--blue-dk)}
@@ -246,13 +299,20 @@ h1,h2,h3{font-family:var(--disp);margin:0}
 
 /* ---------- gallery ---------- */
 .gal-in{padding:100px 0}
-.gal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.gal-grid button{padding:0;border:1px solid var(--line-l);background:none;cursor:zoom-in;display:block}
-.gal-grid img{width:100%;aspect-ratio:3/2;object-fit:cover;display:block;transition:opacity .2s}
-.gal-grid button:hover img{opacity:.82}
+/* ITEM 6 — 2-up mosaic: tiles ~2.3x bigger, 16:10 matches the source photos, so far less is cropped away */
+.gal-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.gal-grid button{position:relative}
+.gal-grid button:last-child:nth-child(odd){grid-column:1 / -1}
+.gal-cap{position:absolute;left:0;right:0;bottom:0;padding:34px 20px 16px;background:linear-gradient(transparent,rgba(10,11,10,.88));color:var(--paper);font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;text-align:left;opacity:0;transform:translateY(8px);transition:opacity .25s ease,transform .25s ease;pointer-events:none}
+.gal-grid button:hover .gal-cap,.gal-grid button:focus-visible .gal-cap{opacity:1;transform:none}
+.gal-zoom{position:absolute;top:12px;right:12px;width:32px;height:32px;border-radius:50%;background:rgba(17,19,17,.72);color:var(--paper);display:flex;align-items:center;justify-content:center;font-size:14px;opacity:0;transform:scale(.85);transition:opacity .25s,transform .25s;pointer-events:none}
+.gal-grid button:hover .gal-zoom{opacity:1;transform:none}
+.gal-grid button{padding:0;border:1px solid var(--line-l);background:none;cursor:zoom-in;display:block;border-radius:var(--r-md);overflow:hidden}
+.gal-grid img{width:100%;aspect-ratio:16/10;object-fit:cover;display:block;transition:transform .45s cubic-bezier(.2,.6,.2,1)}
+.gal-grid button:hover img{transform:scale(1.045)}
+.gal-grid button:last-child:nth-child(odd) img{aspect-ratio:24/9}
 .gal-note{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#9A9E94;margin-top:16px}
-@media(max-width:820px){.gal-grid{grid-template-columns:1fr 1fr}}
-@media(max-width:540px){.gal-grid{grid-template-columns:1fr}}
+@media(max-width:640px){.gal-grid{grid-template-columns:1fr}.gal-grid button:last-child:nth-child(odd) img{aspect-ratio:16/10}}
 .lb{position:fixed;inset:0;background:rgba(10,11,10,.93);z-index:120;display:none;align-items:center;justify-content:center;padding:32px}
 .lb.on{display:flex}
 .lb img{max-width:min(1100px,92vw);max-height:82vh;object-fit:contain;display:block}
@@ -286,10 +346,11 @@ h1,h2,h3{font-family:var(--disp);margin:0}
 .contact-in{padding:100px 0;display:grid;grid-template-columns:1.2fr .8fr;gap:72px;align-items:end}
 .contact p{font-size:18px;line-height:1.6;margin:0;max-width:48ch;color:#0E2B47;text-wrap:pretty}
 .c-links{display:flex;flex-direction:column;gap:14px;font-family:var(--mono);font-size:13px;letter-spacing:.06em;text-transform:uppercase}
-.c-links a{display:block;color:var(--paper);background:var(--ink);padding:18px 22px}
-.c-links a:hover{background:#000;color:#fff}
-.c-links a.line{background:none;color:var(--ink);border:1px solid var(--ink);padding:17px 22px}
-.c-links a.line:hover{background:rgba(17,19,17,.08)}
+/* CHANGE 6 — one button system in the contact block (was 3 colliding styles) */
+.c-links a{display:flex;align-items:center;justify-content:space-between;gap:14px;color:var(--ink);background:none;border:1.5px solid var(--ink);padding:17px 24px;border-radius:var(--r-pill);transition:background .16s,color .16s}
+.c-links a:hover{background:var(--ink);color:var(--paper)}
+.c-links a.primary{background:var(--ink);color:var(--paper)}
+.c-links a.primary:hover{background:#000;color:#fff}
 .c-meta{color:#0E2B47;padding-top:8px;line-height:1.8}
 @media(max-width:900px){.contact-in{grid-template-columns:1fr;gap:44px;padding:64px 0}}
 
@@ -298,35 +359,35 @@ h1,h2,h3{font-family:var(--disp);margin:0}
 .ftr-in{padding:38px 0;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#9A9E94}
 
 /* ---------- ask bot ---------- */
-.ask-fab{position:fixed;right:22px;bottom:22px;z-index:110;display:flex;align-items:center;gap:10px;background:var(--blue);color:var(--ink);border:0;cursor:pointer;font-family:var(--disp);font-weight:700;font-size:14.5px;padding:14px 20px;box-shadow:0 10px 30px rgba(0,0,0,.42);transition:background .18s,transform .18s}
+.ask-fab{position:fixed;right:22px;bottom:22px;z-index:110;display:flex;align-items:center;gap:10px;background:var(--blue);color:var(--ink);border:0;cursor:pointer;font-family:var(--disp);font-weight:700;font-size:14.5px;padding:14px 22px;border-radius:var(--r-pill);box-shadow:0 10px 30px rgba(0,0,0,.42);transition:background .18s,transform .18s}
 .ask-fab:hover{background:#8FC0EA;transform:translateY(-2px)}
 .ask-fab svg{flex:0 0 auto}
 .ask-fab.hide{display:none}
-.ask{position:fixed;right:22px;bottom:22px;z-index:115;width:min(408px,calc(100vw - 32px));height:min(620px,calc(100vh - 44px));background:var(--ink-2);border:1px solid rgba(245,242,236,.16);display:none;flex-direction:column;box-shadow:0 24px 60px rgba(0,0,0,.55)}
+.ask{position:fixed;right:22px;bottom:22px;z-index:115;border-radius:var(--r-card);overflow:hidden;width:min(408px,calc(100vw - 32px));height:min(620px,calc(100vh - 44px));background:var(--ink-2);border:1px solid rgba(245,242,236,.16);display:none;flex-direction:column;box-shadow:0 24px 60px rgba(0,0,0,.55)}
 .ask.on{display:flex}
 .ask-hd{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:15px 16px;border-bottom:1px solid var(--line-l);background:var(--ink)}
 .ask-hd h3{font-size:15px;font-weight:700;letter-spacing:.01em}
 .ask-hd .sub{font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#9A9E94;margin-top:3px;display:flex;align-items:center;gap:6px}
 .ask-hd .sub::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--blue)}
-.ask-x{background:none;border:1px solid rgba(245,242,236,.28);color:var(--paper);font-family:var(--mono);font-size:14px;line-height:1;padding:8px 11px;cursor:pointer}
+.ask-x{background:none;border-radius:var(--r-pill);border:1px solid rgba(245,242,236,.28);color:var(--paper);font-family:var(--mono);font-size:14px;line-height:1;padding:8px 11px;cursor:pointer}
 .ask-x:hover{border-color:var(--blue);color:var(--blue)}
 .ask-log{flex:1;overflow-y:auto;padding:18px 16px;display:flex;flex-direction:column;gap:13px;scroll-behavior:smooth}
-.msg{max-width:88%;font-size:14.5px;line-height:1.6;padding:12px 14px;text-wrap:pretty}
-.msg.bot{background:rgba(245,242,236,.07);border-left:2px solid var(--blue);color:#E4E1DA;align-self:flex-start}
-.msg.me{background:var(--blue);color:var(--ink);align-self:flex-end;font-weight:500}
+.msg{max-width:88%;font-size:14.5px;line-height:1.6;padding:12px 15px;text-wrap:pretty;border-radius:var(--r-md)}
+.msg.bot{background:rgba(245,242,236,.07);border-left:2px solid var(--blue);color:#E4E1DA;align-self:flex-start;border-bottom-left-radius:4px}
+.msg.me{background:var(--blue);color:var(--ink);align-self:flex-end;font-weight:500;border-bottom-right-radius:4px}
 .msg b{font-weight:600;color:#fff}
 .msg.me b{color:var(--ink)}
 .msg ul{margin:8px 0 0;padding-left:17px}
 .msg li{margin-bottom:4px}
 .msg a{color:#8FC0EA;text-decoration:underline}
 .chips-row{display:flex;flex-wrap:wrap;gap:7px;padding:0 16px 12px}
-.chip{background:none;border:1px solid rgba(245,242,236,.24);color:var(--mut);font-family:var(--body);font-size:12.5px;padding:8px 12px;cursor:pointer;text-align:left;line-height:1.35;transition:border-color .16s,color .16s}
+.chip{background:none;border-radius:var(--r-pill);border:1px solid rgba(245,242,236,.24);color:var(--mut);font-family:var(--body);font-size:12.5px;padding:8px 12px;cursor:pointer;text-align:left;line-height:1.35;transition:border-color .16s,color .16s}
 .chip:hover{border-color:var(--blue);color:var(--paper)}
 .ask-form{display:flex;gap:8px;padding:12px 14px;border-top:1px solid var(--line-l);background:var(--ink)}
-.ask-form input{flex:1;background:rgba(245,242,236,.06);border:1px solid rgba(245,242,236,.18);color:var(--paper);font-family:var(--body);font-size:14.5px;padding:12px 13px}
+.ask-form input{flex:1;background:rgba(245,242,236,.06);border:1px solid rgba(245,242,236,.18);color:var(--paper);font-family:var(--body);font-size:14.5px;padding:12px 16px;border-radius:var(--r-pill)}
 .ask-form input::placeholder{color:#8B8F87}
 .ask-form input:focus{outline:none;border-color:var(--blue)}
-.ask-form button{background:var(--blue);color:var(--ink);border:0;font-family:var(--disp);font-weight:700;font-size:14px;padding:0 17px;cursor:pointer}
+.ask-form button{background:var(--blue);color:var(--ink);border:0;font-family:var(--disp);font-weight:700;font-size:14px;padding:0 20px;cursor:pointer;border-radius:var(--r-pill)}
 .ask-form button:hover{background:#8FC0EA}
 .ask-note{font-family:var(--mono);font-size:9.5px;letter-spacing:.06em;color:#7E827A;text-align:center;padding:0 14px 11px;background:var(--ink)}
 @media(max-width:560px){
@@ -334,8 +395,15 @@ h1,h2,h3{font-family:var(--disp);margin:0}
   .ask-fab{right:14px;bottom:14px;padding:13px 17px;font-size:13.5px}
 }
 
+
 /* reveal */
+/* CHANGE 4 — staggered reveals so sections resolve in sequence, not all at once */
 [data-reveal]{opacity:0;transform:translateY(20px);transition:opacity .7s ease-out,transform .7s ease-out}
+/* CHANGE 5 — back-to-top on a very long page */
+.totop{position:fixed;left:22px;bottom:24px;z-index:105;width:46px;height:46px;border-radius:50%;display:none;align-items:center;justify-content:center;background:rgba(245,242,236,.1);border:1px solid rgba(245,242,236,.3);color:var(--paper);cursor:pointer;font-size:17px;backdrop-filter:blur(6px);transition:background .18s,border-color .18s}
+.totop.on{display:flex}
+.totop:hover{background:var(--blue);border-color:var(--blue);color:var(--ink)}
+@media(max-width:560px){.totop{left:14px;bottom:78px;width:40px;height:40px}}
 [data-reveal].seen{opacity:1;transform:none}
 @media(prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
@@ -345,9 +413,26 @@ h1,h2,h3{font-family:var(--disp);margin:0}
 a:focus-visible,button:focus-visible{outline:2px solid var(--blue);outline-offset:3px}
 .xp-btn:focus-visible,.jtab:focus-visible{outline:2px solid var(--blue-dk);outline-offset:-2px}
 </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"What does Jason Dixon do for a modular or prefab manufacturer?","acceptedAnswer":{"@type":"Answer","text":"Operational excellence consulting plus hands-on implementation: technical discovery on the factory floor, workflow and integration design connecting engineering, production, and quality control, end-to-end onboarding, and training through post-launch support."}},
+    {"@type":"Question","name":"How long does a software rollout take with him?","acceptedAnswer":{"@type":"Answer","text":"His onboarding process has cut average implementation time by more than 50%, with client teams reaching competency benchmarks within the first month of training."}},
+    {"@type":"Question","name":"What quality results has he delivered inside a factory?","acceptedAnswer":{"@type":"Answer","text":"As Quality Control Manager at a volumetric modular manufacturer he reduced rework by 30% through end-to-end QA systems and cut project completion timelines 15% by streamlining third-party inspections."}},
+    {"@type":"Question","name":"Where is Jason Dixon based, and does he travel?","acceptedAnswer":{"@type":"Answer","text":"Hamlet, North Carolina, available for travel across North America."}},
+    {"@type":"Question","name":"What is the fastest way to contact Jason Dixon?","acceptedAnswer":{"@type":"Answer","text":"Email jason.c.dixon@gmail.com or connect on LinkedIn at linkedin.com/in/jasoncdixon."}}
+  ]
+}
+</script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
+<div class="prog" id="prog" aria-hidden="true"></div>
+<div class="copied" id="copied" role="status">Email copied</div>
+
+
 <header class="hdr">
   <div class="wrap hdr-in">
     <a href="#top" class="brand" aria-label="Jason Dixon — back to top">
@@ -364,7 +449,8 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--blue);outline-offse
     <button class="burger" id="burger" aria-expanded="false" aria-controls="nav">Menu</button>
     <nav class="nav" id="nav" aria-label="Primary">
       <a href="#about">About</a>
-      <a href="#journey">Leadership Journey</a>
+      <a href="#journey">Journey</a>
+      <a href="#approach">Approach</a>
       <a href="#experience">Experience</a>
       <a href="#floor">On the Floor</a>
       <a href="#credentials">Credentials</a>
@@ -381,7 +467,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--blue);outline-offse
     <div class="hero-copy">
       <div class="rot-line" aria-label="Roles: Solutions Engineer, Operations and Quality Leader, Trainer and Leadership Developer, Implementation Manager"><span id="rotRole">Solutions Engineer</span><span class="caret" aria-hidden="true"></span></div>
       <h1 class="h-xl">Better factories aren't pushed harder. They're built on better systems.</h1>
-      <p class="lede">I help modular and prefab manufacturers improve quality, throughput, and accountability — aligning operations, technology, and people around systems that actually work on the factory floor.</p>
+      <p class="lede">I help modular and prefab manufacturers improve quality, throughput, and accountability, aligning operations, technology, and people around systems that actually work on the factory floor.</p>
       <div class="btn-row">
         <a href="#contact" class="btn solid">Start a conversation</a>
         <a href="uploads/Jason-C-Dixon-Resume.pdf" target="_blank" rel="noopener" class="btn ghost">Download resume</a>
@@ -389,7 +475,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--blue);outline-offse
     </div>
     <figure class="hero-fig" style="margin:0">
       <div class="frame" aria-hidden="true"></div>
-      <img src="uploads/1663043378519.jpeg" alt="Portrait of Jason C. Dixon, solutions engineer and operations leader in modular construction" width="800" height="800" fetchpriority="high">
+      <picture><source srcset="uploads/1663043378519.webp" type="image/webp"><img src="uploads/1663043378519.jpeg" alt="Portrait of Jason C. Dixon, solutions engineer and operations leader in modular construction" width="800" height="800" fetchpriority="high"></picture>
       <figcaption class="plate">HAMLET, NORTH CAROLINA<br>OPERATIONS · QUALITY · TRAINING · IMPLEMENTATION<br>20+ YEARS LEADING TEAMS</figcaption>
     </figure>
   </div>
@@ -409,9 +495,9 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--blue);outline-offse
 <section id="about" class="about">
   <div class="wrap about-in">
     <figure data-reveal>
-      <video id="aboutVid" poster="uploads/kpi-training-poster.jpg" muted loop playsinline preload="none" disablepictureinpicture aria-label="Silent looping clip of Jason Dixon leading a KPI training session with a production crew">
+      <video id="aboutVid" poster="uploads/kpi-poster.webp" muted loop playsinline preload="none" disablepictureinpicture aria-label="Silent looping clip of Jason Dixon leading a KPI training session with a production crew">
         <source src="uploads/kpi-training-loop.mp4" type="video/mp4">
-        <img src="uploads/kpi-training-poster.jpg" alt="Jason Dixon leading a key performance indicator training session with a production crew in a conference room">
+        <picture><source srcset="uploads/kpi-poster.webp" type="image/webp"><img src="uploads/kpi-poster.jpg" alt="Jason Dixon leading a key performance indicator training session with a production crew in a conference room" width="720" height="900"></picture>
       </video>
       <figcaption>Leading a KPI session with a production crew</figcaption>
     </figure>
@@ -420,10 +506,10 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--blue);outline-offse
       <h2 class="h-lg" style="margin-bottom:32px">I've built quality systems from the inside and implemented them from the outside.</h2>
       <div class="about-body">
         <p>I chose this industry because it's full of talented people solving hard operational problems with tools that were never designed for how manufacturing actually works. I've focused on closing that gap ever since.</p>
-        <p>My career spans five disciplines that most people treat as separate jobs: solutions engineering, operations &amp; quality management, training &amp; leadership development, implementation management, and AI engineering. As a Quality Control Manager I built QA systems from the factory floor up; as a Solutions Engineer I now implement operational technology from the outside — so I understand both how factories run and how to make tools serve the way they run.</p>
-        <p>More recently that's meant building with AI. I use AI engineering tools to create the internal tools, automations, and reporting my work needs — and to bring AI into manufacturing operations itself, where it speeds up analysis, documentation, and decision support without adding headcount. It's the same instinct as always: if the tool doesn't fit the floor, build one that does.</p>
+        <p>My career spans five disciplines that most people treat as separate jobs: solutions engineering, operations &amp; quality management, training &amp; leadership development, implementation management, and AI engineering. As a Quality Control Manager I built QA systems from the factory floor up; as a Solutions Engineer I now implement operational technology from the outside, so I understand both how factories run and how to make tools serve the way they run.</p>
+        <p>More recently that's meant building with AI. I use AI engineering tools to create the internal tools, automations, and reporting my work needs, and to bring AI into manufacturing operations itself, where it speeds up analysis, documentation, and decision support without adding headcount. It's the same instinct as always: if the tool doesn't fit the floor, build one that does.</p>
         <p>The principle behind all of it: sustainable performance comes from strong systems, not harder pushing. Clear processes, reliable data, disciplined execution, and accountability at every level.</p>
-        <p class="pull">The lessons I've learned from people on factory floors have taught me as much as I've taught them — and that's a big part of why I still love this work.</p>
+        <p class="pull">The lessons I've learned from people on factory floors have taught me as much as I've taught them, and that's a big part of why I still love this work.</p>
       </div>
       <div class="chips" aria-label="Core competencies">
         <span>Operational Excellence &amp; Continuous Improvement</span>
@@ -448,49 +534,50 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--blue);outline-offse
         <div class="k-tag">02 — Leadership journey</div>
         <h2 class="h-lg" style="max-width:22ch">Five disciplines. One operator.</h2>
       </div>
-      <p>Most people pick one lane. Jason has led from all five — which is why the systems he builds survive contact with a real production line. Select a discipline to see the work.</p>
+      <p>Most people pick one lane. Jason has led from all five, which is why the systems he builds survive contact with a real production line. Select a discipline to see the work.</p>
     </div>
 
     <div class="jtabs" role="tablist" aria-label="Leadership disciplines" data-reveal>
-      <button class="jtab" role="tab" id="tab-se" aria-selected="true" aria-controls="panel-se">01 · Pre-sales &amp; discovery<em>Solutions Engineer</em></button>
-      <button class="jtab" role="tab" id="tab-ops" aria-selected="false" aria-controls="panel-ops" tabindex="-1">02 · On the floor<em>Operations &amp; Quality</em></button>
-      <button class="jtab" role="tab" id="tab-train" aria-selected="false" aria-controls="panel-train" tabindex="-1">03 · People &amp; capability<em>Trainer &amp; Leadership</em></button>
-      <button class="jtab" role="tab" id="tab-imp" aria-selected="false" aria-controls="panel-imp" tabindex="-1">04 · Go-live &amp; beyond<em>Implementation Manager</em></button>
-      <button class="jtab" role="tab" id="tab-ai" aria-selected="false" aria-controls="panel-ai" tabindex="-1">05 · Building the tools<em>AI Engineering</em></button>
+      <button class="jtab" role="tab" id="tab-se" aria-selected="true" aria-controls="panel-se"><span class="pill">01</span><br>Pre-sales &amp; discovery<em>Solutions Engineer</em></button>
+      <button class="jtab" role="tab" id="tab-ops" aria-selected="false" aria-controls="panel-ops" tabindex="-1"><span class="pill">02</span><br>On the floor<em>Operations &amp; Quality</em></button>
+      <button class="jtab" role="tab" id="tab-train" aria-selected="false" aria-controls="panel-train" tabindex="-1"><span class="pill">03</span><br>People &amp; capability<em>Trainer &amp; Leadership</em></button>
+      <button class="jtab" role="tab" id="tab-imp" aria-selected="false" aria-controls="panel-imp" tabindex="-1"><span class="pill">04</span><br>Go-live &amp; beyond<em>Implementation Manager</em></button>
+      <button class="jtab" role="tab" id="tab-ai" aria-selected="false" aria-controls="panel-ai" tabindex="-1"><span class="pill">05</span><br>Building the tools<em>AI Engineering</em></button>
     </div>
+    <div class="jswipe">← Swipe for all five →</div>
 
     <div class="jpanel on" role="tabpanel" id="panel-se" aria-labelledby="tab-se">
-      <img src="uploads/1782305854754.jpeg" alt="Jason Dixon presenting an Offsight factory production dashboard to executives" loading="lazy">
+      <picture><source srcset="uploads/1782305854754.webp" type="image/webp"><img src="uploads/1782305854754.jpeg" alt="Jason Dixon presenting an Offsight factory production dashboard to executives" loading="lazy" width="2048" height="1230"></picture>
       <div class="jbody">
         <div class="jrole">Offsight · 2022 — Present</div>
         <h3>Solutions Engineering</h3>
-        <p>Technical discovery, solution demonstrations, and workflow design for modular and prefab manufacturers across North America — translating what the floor needs into what the software does.</p>
+        <p>Technical discovery, solution demonstrations, and workflow design for modular and prefab manufacturers across North America, translating what the floor needs into what the software does.</p>
         <ul>
           <li>Solution-focused demos with sales teams that increased close rates on targeted accounts</li>
           <li>Custom workflow configurations and integrations connecting engineering, production, and QC</li>
-          <li>Client needs translated into product features — driving a 25% lift in user adoption</li>
+          <li>Client needs translated into product features, driving a 25% lift in user adoption</li>
         </ul>
       </div>
     </div>
     <div class="jpanel" role="tabpanel" id="panel-ops" aria-labelledby="tab-ops" hidden>
-      <img src="uploads/1782305863950.jpeg" alt="Jason Dixon with quality and production leads reviewing tablets on a panelized manufacturing line" loading="lazy">
+      <picture><source srcset="uploads/1782305863950.webp" type="image/webp"><img src="uploads/1782305863950.jpeg" alt="Jason Dixon with quality and production leads reviewing tablets on a panelized manufacturing line" loading="lazy" width="2048" height="1318"></picture>
       <div class="jbody">
         <div class="jrole">Volumetric Building Companies · 2019 — 2022</div>
         <h3>Operations &amp; Quality Management</h3>
-        <p>Built end-to-end quality assurance systems inside a volumetric modular plant — compliance with building codes, engineering specs, and customer requirements, written for the people who run them at shift change.</p>
+        <p>Built end-to-end quality assurance systems inside a volumetric modular plant, meeting building codes, engineering specs, and customer requirements, written for the people who run them at shift change.</p>
         <ul>
           <li>Rework reduced 30% through end-to-end QA systems and code compliance</li>
           <li>Layered process audits and corrective action protocols driving continuous improvement</li>
-          <li>Streamlined third-party inspections — project completion timelines cut 15%</li>
+          <li>Streamlined third-party inspections, cutting project completion timelines 15%</li>
         </ul>
       </div>
     </div>
     <div class="jpanel" role="tabpanel" id="panel-train" aria-labelledby="tab-train" hidden>
-      <img src="uploads/1782305851172.jpeg" alt="Jason Dixon training a production crew in a prefab factory classroom" loading="lazy">
+      <picture><source srcset="uploads/1782305851172.webp" type="image/webp"><img src="uploads/1782305851172.jpeg" alt="Jason Dixon training a production crew in a prefab factory classroom" loading="lazy" width="2048" height="1200"></picture>
       <div class="jbody">
         <div class="jrole">Across every role · 2001 — Present</div>
         <h3>Training &amp; Leadership Development</h3>
-        <p>From coaching retail sales teams across a four-county market to training factory crews on new operational technology — building people has been the through-line of a 20+ year career.</p>
+        <p>From coaching retail sales teams across a four-county market to training factory crews on new operational technology, building people has been the through-line of a 20+ year career.</p>
         <ul>
           <li>On-site and virtual workshops with crews hitting competency benchmarks in month one</li>
           <li>Sales training, tracking, and goal-setting programs built from scratch and scaled</li>
@@ -499,30 +586,71 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--blue);outline-offse
       </div>
     </div>
     <div class="jpanel" role="tabpanel" id="panel-imp" aria-labelledby="tab-imp" hidden>
-      <img src="uploads/1782305853610.jpeg" alt="Jason Dixon leading a software implementation workshop with a client project team" loading="lazy">
+      <picture><source srcset="uploads/1782305853610.webp" type="image/webp"><img src="uploads/1782305853610.jpeg" alt="Jason Dixon leading a software implementation workshop with a client project team" loading="lazy" width="1600" height="934"></picture>
       <div class="jbody">
         <div class="jrole">Offsight · 2022 — Present</div>
         <h3>Implementation Management</h3>
-        <p>End-to-end client onboarding — requirements gathering, configuration, training, go-live, and post-launch support — run as a managed project with executive stakeholders, not a help-desk ticket.</p>
+        <p>End-to-end client onboarding covering requirements gathering, configuration, training, go-live, and post-launch support, run as a managed project with executive stakeholders, not a help-desk ticket.</p>
         <ul>
           <li>Average implementation time cut by more than 50%</li>
-          <li>Trusted technical advisor to executives — data-driven bottleneck analysis and high-ROI process changes</li>
+          <li>Trusted technical advisor to executives, providing data-driven bottleneck analysis and high-ROI process changes</li>
           <li>Onboarding that lands in weeks, not quarters, and holds after go-live</li>
         </ul>
       </div>
     </div>
     <div class="jpanel" role="tabpanel" id="panel-ai" aria-labelledby="tab-ai" hidden>
-      <img src="uploads/1782305863122.jpeg" alt="Jason Dixon working with a team around laptops and screens in a planning session" loading="lazy">
+      <picture><source srcset="uploads/1782305863122.webp" type="image/webp"><img src="uploads/1782305863122.jpeg" alt="Jason Dixon working with a team around laptops and screens in a planning session" loading="lazy" width="2048" height="1208"></picture>
       <div class="jbody">
         <div class="jrole">Current focus</div>
         <h3>AI Engineering</h3>
-        <p>Operations people spend years waiting on a dev queue for tools that never quite fit. I stopped waiting. I use AI engineering tools to build the internal tools, automations, and reporting my work actually needs — and to put AI to work inside manufacturing operations.</p>
+        <p>Operations people spend years waiting on a dev queue for tools that never quite fit. I stopped waiting. I use AI engineering tools to build the internal tools, automations, and reporting my work actually needs, and to put AI to work inside manufacturing operations.</p>
         <ul>
           <li>Builds internal tools, automations, and reporting with AI engineering tools rather than waiting on development capacity</li>
-          <li>Applies AI inside manufacturing operations — analysis, documentation, and decision support for production and quality teams</li>
+          <li>Applies AI inside manufacturing operations for analysis, documentation, and decision support for production and quality teams</li>
           <li>Brings an operator's judgment to it: the output has to hold up on the floor, not just in a demo</li>
         </ul>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= STATEMENT (NEW) ================= -->
+<section class="stmt" aria-label="Operating principle">
+  <div class="wrap stmt-in">
+    <p id="stmtLine"><span class="w">Sustainable</span> <span class="w">performance</span> <span class="w">comes</span> <span class="w">from</span> <span class="w">strong</span> <span class="w">systems,</span> <span class="w">not</span> <span class="w">harder</span> <span class="w">pushing.</span></p>
+    <p class="tail">Clear processes, reliable data, disciplined execution, and accountability at every level. The same principle whether it is a quality system, a software rollout, or a crew learning a new station.</p>
+  </div>
+</section>
+
+<!-- ================= APPROACH ================= -->
+<section class="case" id="approach">
+  <div class="wrap case-in">
+    <div data-reveal>
+      <div class="k-tag">03 — Approach</div>
+      <h2 class="h-lg" style="max-width:24ch">One implementation, start to finish.</h2>
+      <p style="font-size:16px;line-height:1.7;color:var(--mut);max-width:62ch;margin:20px 0 0">A proven implementation approach refined through real manufacturing projects, focused on understanding factory operations, configuring the software around the workflow, and making sure the team is confident long after go-live.</p>
+    </div>
+    <div class="case-grid">
+      <div class="case-step" data-reveal>
+        <div class="n">01 · Discovery</div>
+        <h3>Four days on their floor</h3>
+        <p>A panelized manufacturer was running production off memory and paper on the production floor. Walked every station, timed the handoffs, and mapped where information actually died between engineering and production.</p>
+      </div>
+      <div class="case-step" data-reveal>
+        <div class="n">02 · Configuration</div>
+        <h3>Built to match the line</h3>
+        <p>Digital data capture, stations, QC checkpoints, and material tracking configured in week one, modeled on the sequence the crews already worked.</p>
+      </div>
+      <div class="case-step" data-reveal>
+        <div class="n">03 · Adoption</div>
+        <h3>Crews owning it by week four</h3>
+        <p>Supervisors trained first so they could coach, then operators in station. Competency measured against benchmarks, and the rollout held after going live.</p>
+      </div>
+    </div>
+    <div class="case-out" data-reveal>
+      <div><b>Week 1</b><span>Configured to the line</span></div>
+      <div><b>Week 4</b><span>Crews owning the process</span></div>
+      <div><b>0</b><span>Paper left on the production floor</span></div>
     </div>
   </div>
 </section>
@@ -531,11 +659,12 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--blue);outline-offse
 <section id="experience" class="xp">
   <div class="wrap xp-in">
     <div data-reveal style="margin-bottom:56px">
-      <div class="k-tag dark">03 — Experience</div>
+      <div class="k-tag dark">04 — Experience</div>
       <h2 class="h-lg">Twenty-five years of building teams, systems, and results.</h2>
       <p style="font-size:15px;color:var(--mut-dk);margin:18px 0 0;font-family:var(--mono)">Select a role to expand it.</p>
     </div>
 
+    <div class="xp-list">
     <div class="xp-item open" data-reveal>
       <button class="xp-btn" aria-expanded="true">
         <span class="xp-when">SEP 2022 — PRESENT<br><b>OFFSIGHT</b></span>
@@ -547,7 +676,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--blue);outline-offse
           <div></div>
           <ul>
             <li>Delivered operational excellence consulting to modular and prefab construction clients, aligning software capability with operational goals to improve efficiency and reduce errors.</li>
-            <li>Led end-to-end client onboarding — requirements gathering, configuration, training, post-launch support — cutting average implementation time by over 50%.</li>
+            <li>Led end-to-end client onboarding, from requirements gathering and configuration through training and post-launch support, cutting average implementation time by over 50%.</li>
             <li>Partnered with product and development teams to translate client needs into feature updates, driving a 25% increase in user adoption across key accounts.</li>
             <li>Conducted on-site and virtual workshops, with participants achieving competency benchmarks within the first month of training.</li>
             <li>Designed customized workflow configurations and integrations connecting engineering, production, and quality control.</li>
@@ -568,7 +697,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--blue);outline-offse
         <div class="xp-panel-in">
           <div></div>
           <ul>
-            <li>Developed end-to-end quality assurance systems ensuring compliance with building codes, engineering specs, and customer requirements — reducing rework by 30%.</li>
+            <li>Developed end-to-end quality assurance systems ensuring compliance with building codes, engineering specs, and customer requirements, reducing rework by 30%.</li>
             <li>Established layered process audits and corrective action protocols driving continuous improvement across production lines and service operations.</li>
             <li>Coordinated engineering, production, and third-party inspectors to streamline inspections, cutting project completion timelines by 15%.</li>
             <li>Created digital process tracking and reporting tools enabling real-time quality performance monitoring across departments.</li>
@@ -582,7 +711,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--blue);outline-offse
     <div class="xp-item" data-reveal>
       <button class="xp-btn" aria-expanded="false">
         <span class="xp-when">JAN 2018 — SEP 2019<br><b>RITZ-CRAFT · VBC</b></span>
-        <span class="xp-role">Service Coordinator<span class="xp-org">Ritz-Craft Custom Homes → Volumetric Building Companies · Hamlet, NC</span></span>
+        <span class="xp-role">Service Manager<span class="xp-org">Ritz-Craft Custom Homes → Volumetric Building Companies · Hamlet, NC</span></span>
         <span class="xp-x" aria-hidden="true">+</span>
       </button>
       <div class="xp-panel">
@@ -596,7 +725,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--blue);outline-offse
       </div>
     </div>
 
-    <div class="xp-item" data-reveal>
+    <div class="xp-item past" data-reveal>
       <button class="xp-btn" aria-expanded="false">
         <span class="xp-when">OCT 2016 — JAN 2018<br><b>CZ WIRELESS</b></span>
         <span class="xp-role">District Manager<span class="xp-org">Multi-store wireless retail operations · United States</span></span>
@@ -606,7 +735,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--blue);outline-offse
         <div class="xp-panel-in">
           <div></div>
           <ul>
-            <li>Built a single-store operation toward multi-store scale — employees, inventory, purchasing, vendor relationships, and marketing.</li>
+            <li>Built a single-store operation toward multi-store scale, managing employees, inventory, purchasing, vendor relationships, and marketing.</li>
             <li>Increased sales 15%+ across every key performance indicator and grew profits 25%+ year over year.</li>
             <li>Launched a business-to-business IT solutions venture as Business Solutions Consultant.</li>
           </ul>
@@ -614,7 +743,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--blue);outline-offse
       </div>
     </div>
 
-    <div class="xp-item" data-reveal>
+    <div class="xp-item past" data-reveal>
       <button class="xp-btn" aria-expanded="false">
         <span class="xp-when">MAR 2015 — SEP 2016<br><b>RITZ-CRAFT</b></span>
         <span class="xp-role">Regional Account Manager<span class="xp-org">Ritz-Craft Custom Homes · Southeast territory</span></span>
@@ -624,7 +753,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--blue);outline-offse
         <div class="xp-panel-in">
           <div></div>
           <ul>
-            <li>Grew a low-producing territory into a multi-million dollar book of business with consistent growth — total sales up 38% year over year in 2015.</li>
+            <li>Grew a low-producing territory into a multi-million dollar book of business with consistent growth, total sales up 38% year over year in 2015.</li>
             <li>Signed the largest account in the Southeast coastal territory in 2016.</li>
             <li>Supported builder clients with estimating, marketing, and dedicated account service.</li>
           </ul>
@@ -632,7 +761,11 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--blue);outline-offse
       </div>
     </div>
 
-    <div class="xp-item" data-reveal>
+    <div class="xp-earlier" data-reveal>
+      <div class="xp-earlier-lbl">Earlier, retail leadership foundation</div>
+    </div>
+
+    <div class="xp-item past" data-reveal>
       <button class="xp-btn" aria-expanded="false">
         <span class="xp-when">SEP 2001 — FEB 2015<br><b>AT&amp;T · ALLTEL</b></span>
         <span class="xp-role">Store Manager · Sales Rep → Assistant Store Manager<span class="xp-org">Wireless retail · North Carolina, four-county market</span></span>
@@ -643,12 +776,13 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--blue);outline-offse
           <div></div>
           <ul>
             <li>Trained, coached, and held accountable retail teams across a four-county North Carolina market; built sales training and tracking programs from scratch.</li>
-            <li>Key contributor implementing new billing systems during a migration of 600,000+ customers — training, troubleshooting, and escalations across multiple locations.</li>
-            <li>Alltel Sales Gold Circle winner — top sales in a three-county region and top ten market-wide.</li>
+            <li>Key contributor implementing new billing systems during a migration of 600,000+ customers, covering training, troubleshooting, and escalations across multiple locations.</li>
+            <li>Alltel Sales Gold Circle winner, top sales in a three-county region and top ten market-wide.</li>
           </ul>
         </div>
       </div>
     </div>
+    </div><!-- /.xp-list -->
   </div>
 </section>
 
@@ -656,17 +790,17 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--blue);outline-offse
 <section id="floor" class="gal" aria-label="Photo gallery — on the floor">
   <div class="wrap gal-in">
     <div data-reveal style="margin-bottom:44px">
-      <div class="k-tag">04 — On the floor</div>
+      <div class="k-tag">05 — On the floor</div>
       <h2 class="h-lg">Crews, kickoffs, and shop floors across North America.</h2>
     </div>
     <div class="gal-grid" data-reveal>
-      <button data-cap="Executive walkthrough — live factory dashboard"><img src="uploads/1782305854754.jpeg" alt="Jason Dixon presenting a live factory production dashboard during an executive walkthrough" loading="lazy"></button>
-      <button data-cap="Implementation workshop — mapping workflows with the client team"><img src="uploads/1782305853610.jpeg" alt="Jason Dixon leading an implementation workshop, mapping production workflows with a client team" loading="lazy"></button>
-      <button data-cap="Operator training — production crew classroom session"><img src="uploads/1782305851172.jpeg" alt="Jason Dixon running an operator training session with a production crew in a prefab factory" loading="lazy"></button>
-      <button data-cap="Quality and production leads — tablets on the line"><img src="uploads/1782305863950.jpeg" alt="Jason Dixon with quality and production leads using tablets on a manufacturing line" loading="lazy"></button>
-      <button data-cap="Project kickoff with a client leadership team"><img src="uploads/1782305863122.jpeg" alt="Jason Dixon in a project kickoff meeting with a client leadership team" loading="lazy"></button>
-      <button data-cap="With the crew on the shop floor"><img src="uploads/1782305865637.jpeg" alt="Jason Dixon with a production crew on a modular construction shop floor" loading="lazy"></button>
-      <button data-cap="On site — digital building components facility"><img src="uploads/1782305861072.jpeg" alt="Jason Dixon on site at a prefab digital building components facility" loading="lazy"></button>
+      <button data-cap="Executive walkthrough, live factory dashboard"><picture><source srcset="uploads/1782305854754.webp" type="image/webp"><img src="uploads/1782305854754.jpeg" alt="Jason Dixon presenting a live factory production dashboard during an executive walkthrough" loading="lazy" width="2048" height="1230"></picture><span class="gal-cap">Executive walkthrough, live factory dashboard</span><span class="gal-zoom" aria-hidden="true">⤢</span></button>
+      <button data-cap="Implementation workshop, mapping workflows with the client team"><picture><source srcset="uploads/1782305853610.webp" type="image/webp"><img src="uploads/1782305853610.jpeg" alt="Jason Dixon leading an implementation workshop, mapping production workflows with a client team" loading="lazy" width="1600" height="934"></picture><span class="gal-cap">Implementation workshop, mapping workflows with the client team</span><span class="gal-zoom" aria-hidden="true">⤢</span></button>
+      <button data-cap="Operator training, production crew classroom session"><picture><source srcset="uploads/1782305851172.webp" type="image/webp"><img src="uploads/1782305851172.jpeg" alt="Jason Dixon running an operator training session with a production crew in a prefab factory" loading="lazy" width="2048" height="1200"></picture><span class="gal-cap">Operator training, production crew classroom session</span><span class="gal-zoom" aria-hidden="true">⤢</span></button>
+      <button data-cap="Quality and production leads, tablets on the line"><picture><source srcset="uploads/1782305863950.webp" type="image/webp"><img src="uploads/1782305863950.jpeg" alt="Jason Dixon with quality and production leads using tablets on a manufacturing line" loading="lazy" width="2048" height="1318"></picture><span class="gal-cap">Quality and production leads, tablets on the line</span><span class="gal-zoom" aria-hidden="true">⤢</span></button>
+      <button data-cap="Project kickoff with a client leadership team"><picture><source srcset="uploads/1782305863122.webp" type="image/webp"><img src="uploads/1782305863122.jpeg" alt="Jason Dixon in a project kickoff meeting with a client leadership team" loading="lazy" width="2048" height="1208"></picture><span class="gal-cap">Project kickoff with a client leadership team</span><span class="gal-zoom" aria-hidden="true">⤢</span></button>
+      <button data-cap="With the crew on the shop floor"><picture><source srcset="uploads/1782305865637.webp" type="image/webp"><img src="uploads/1782305865637.jpeg" alt="Jason Dixon with a production crew on a modular construction shop floor" loading="lazy" width="2007" height="1536"></picture><span class="gal-cap">With the crew on the shop floor</span><span class="gal-zoom" aria-hidden="true">⤢</span></button>
+      <button data-cap="On site, digital building components facility"><picture><source srcset="uploads/1782305861072.webp" type="image/webp"><img src="uploads/1782305861072.jpeg" alt="Jason Dixon on site at a prefab digital building components facility" loading="lazy" width="2048" height="1536"></picture><span class="gal-cap">On site, digital building components facility</span><span class="gal-zoom" aria-hidden="true">⤢</span></button>
     </div>
     <p class="gal-note">Select any photo to enlarge · Crews, kickoffs, and shop floors across North America</p>
   </div>
@@ -683,10 +817,10 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--blue);outline-offse
 <!-- ================= QUOTES ================= -->
 <section class="quotes" aria-label="Recommendations">
   <div class="wrap quotes-in">
-    <div class="k-tag" data-reveal style="margin-bottom:48px">05 — What colleagues say</div>
+    <div class="k-tag" data-reveal style="margin-bottom:48px">06 — What colleagues say</div>
     <div class="q-grid">
       <blockquote data-reveal>
-        <p>"Jason is intelligent, hard working and a creative problem solver — with a willingness and ability to learn and apply advanced Quality and Lean concepts. His grasp of systems, programs and concepts is outstanding."</p>
+        <p>"Jason is intelligent, hard working and a creative problem solver, with a willingness and ability to learn and apply advanced Quality and Lean concepts. His grasp of systems, programs and concepts is outstanding."</p>
         <footer>Lance Lillian<br>Director of Operational Excellence, Volumetric Building Companies</footer>
       </blockquote>
       <blockquote data-reveal>
@@ -700,7 +834,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--blue);outline-offse
 <!-- ================= CREDENTIALS ================= -->
 <section id="credentials" class="cred">
   <div class="wrap cred-in">
-    <div class="k-tag" data-reveal style="margin-bottom:48px">06 — Credentials</div>
+    <div class="k-tag" data-reveal style="margin-bottom:48px">07 — Credentials</div>
     <div class="cred-grid">
       <div data-reveal>
         <h3>Certifications</h3>
@@ -734,12 +868,12 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--blue);outline-offse
   <div class="wrap contact-in">
     <div data-reveal>
       <h2 class="h-lg" style="font-size:clamp(34px,5vw,56px);margin-bottom:24px;max-width:22ch">Let's talk about what your floor is telling you.</h2>
-      <p>Whether you're launching a line, tightening quality, rolling out new operational technology, or looking for a speaker who's lived it — I'm glad to compare notes.</p>
+      <p>Whether you're launching a line, tightening quality, rolling out new operational technology, or looking for a speaker who's lived it, I'm glad to compare notes.</p>
     </div>
     <div class="c-links" data-reveal>
-      <a href="https://www.linkedin.com/in/jasoncdixon" target="_blank" rel="noopener">LinkedIn — /in/jasoncdixon →</a>
-      <a class="line" href="mailto:jason.c.dixon@gmail.com">jason.c.dixon@gmail.com</a>
-      <a class="line" href="uploads/Jason-C-Dixon-Resume.pdf" target="_blank" rel="noopener">Download resume (PDF) ↓</a>
+      <a class="primary" href="https://www.linkedin.com/in/jasoncdixon" target="_blank" rel="noopener"><span>LinkedIn, /in/jasoncdixon</span><span>→</span></a>
+      <a href="mailto:jason.c.dixon@gmail.com"><span>jason.c.dixon@gmail.com</span><span>✉</span></a>
+      <a href="uploads/Jason-C-Dixon-Resume.pdf" target="_blank" rel="noopener"><span>Download resume (PDF)</span><span>↓</span></a>
       <div class="c-meta">Hamlet, North Carolina<br>Available for travel across North America</div>
     </div>
   </div>
@@ -748,6 +882,12 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--blue);outline-offse
 </main>
 
 <!-- ================= ASK BOT ================= -->
+<nav class="dock" id="dock" aria-label="Section shortcuts">
+  <a href="#about">About</a><a href="#journey">Journey</a><a href="#approach">Approach</a><a href="#experience">Experience</a><a href="#floor">Floor</a><a href="#contact">Contact</a>
+</nav>
+
+<button class="totop" id="toTop" aria-label="Back to top">↑</button>
+
 <button class="ask-fab" id="askFab" aria-expanded="false" aria-controls="askPanel">
   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
     <path d="M3 5.5A2.5 2.5 0 0 1 5.5 3h13A2.5 2.5 0 0 1 21 5.5v8a2.5 2.5 0 0 1-2.5 2.5H9l-5 4.5v-4.5H5.5A2.5 2.5 0 0 1 3 13.5z" stroke="#111311" stroke-width="1.8" stroke-linejoin="round"/>
@@ -771,7 +911,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--blue);outline-offse
     <input id="askInput" type="text" placeholder="Ask about his experience, results, skills…">
     <button type="submit">Ask</button>
   </form>
-  <p class="ask-note">Answers come from a fixed knowledge base of Jason's verified career facts — nothing is generated or invented.</p>
+  <p class="ask-note">Answers come from a fixed knowledge base of Jason's verified career facts, nothing is generated or invented.</p>
 </section>
 
 <footer class="ftr">
@@ -963,6 +1103,63 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--blue);outline-offse
     if(e.key === 'ArrowLeft') stepLb(-1);
   });
 
+  /* CHANGE 4 — stagger reveals within each section */
+  document.querySelectorAll('section').forEach(function(sec){
+    sec.querySelectorAll('[data-reveal]').forEach(function(n,i){
+      n.style.transitionDelay = Math.min(i*80, 320) + 'ms';
+    });
+  });
+
+  /* JETON-INSPIRED: words light up as the statement scrolls through */
+  var stmt = document.getElementById('stmtLine');
+  if(stmt){
+    var words = Array.prototype.slice.call(stmt.querySelectorAll('.w'));
+    if(reduce){ words.forEach(function(w){ w.classList.add('lit'); }); }
+    else {
+      var paintWords = function(){
+        var r = stmt.getBoundingClientRect();
+        var start = window.innerHeight * 0.85, end = window.innerHeight * 0.35;
+        var prog = (start - r.top) / (start - end);
+        prog = Math.max(0, Math.min(1, prog));
+        var upto = Math.round(prog * words.length);
+        words.forEach(function(w,i){ w.classList.toggle('lit', i < upto); });
+      };
+      window.addEventListener('scroll', paintWords, {passive:true});
+      window.addEventListener('resize', paintWords);
+      paintWords();
+    }
+  }
+
+  /* JETON-INSPIRED: floating dock appears once past the hero */
+  var dock = document.getElementById('dock');
+  var dockLinks = Array.prototype.slice.call(dock.querySelectorAll('a'));
+  var dockTargets = dockLinks.map(function(a){ return document.querySelector(a.getAttribute('href')); }).filter(Boolean);
+  function dockSpy(){
+    var y = window.scrollY;
+    dock.classList.toggle('on', y > 700 && y < document.body.scrollHeight - window.innerHeight - 40);
+    var pos = y + 140, cur = null;
+    dockTargets.forEach(function(t){ if(t.offsetTop <= pos) cur = t.id; });
+    dockLinks.forEach(function(a){ a.classList.toggle('is-on', a.getAttribute('href') === '#' + cur); });
+  }
+  window.addEventListener('scroll', dockSpy, {passive:true});
+  dockSpy();
+
+  /* CHANGE 5 — back-to-top */
+  var toTop = document.getElementById('toTop');
+  window.addEventListener('scroll', function(){
+    toTop.classList.toggle('on', window.scrollY > 900);
+  }, {passive:true});
+  toTop.addEventListener('click', function(){
+    window.scrollTo({top:0, behavior: reduce ? 'auto' : 'smooth'});
+  });
+
+  /* keep the active journey tab in view on the mobile strip */
+  document.querySelectorAll('.jtab').forEach(function(t){
+    t.addEventListener('click', function(){
+      if(window.innerWidth <= 960) t.scrollIntoView({block:'nearest', inline:'center', behavior:'smooth'});
+    });
+  });
+
   /* =====================================================================
      ASK-ABOUT-JASON BOT
      Self-contained. Every answer below is drawn from Jason's verified
@@ -982,7 +1179,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--blue);outline-offse
 
     { id:'offsight',
       k:['what is offsight','offsight platform','offsight software','what does offsight do'],
-      a:"Offsight is a production and quality tracking platform built for prefab and modular construction manufacturers — used to track production status, quality issues, materials, and labor across factory stations. Jason has been a solutions engineer there since September 2022 and holds Offsight certifications in materials &amp; inventory management and labor tracking &amp; timesheets.",
+      a:"Offsight is a production and quality tracking platform built for prefab and modular construction manufacturers, used to track production status, quality issues, materials, and labor across factory stations. Jason has been a solutions engineer there since September 2022 and holds Offsight certifications in materials &amp; inventory management and labor tracking &amp; timesheets.",
       c:['What does he do at Offsight?','What certifications does he have?'] },
 
     { id:'results',
@@ -992,12 +1189,17 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--blue);outline-offse
 
     { id:'quality',
       k:['quality','qa','qc','quality control','quality management','rework','audit','audits','capa','corrective action','inspection','inspections','building code','compliance','volumetric'],
-      a:"As <b>Quality Control Manager at Volumetric Building Companies</b> (Aug 2019 – Sep 2022) he built end-to-end quality assurance systems ensuring compliance with building codes, engineering specs, and customer requirements — <b>reducing rework by 30%</b>. He established layered process audits and corrective action protocols, coordinated engineering, production and third-party inspectors to cut project timelines <b>15%</b>, and built digital process tracking tools for real-time quality monitoring.",
+      a:"As <b>Quality Control Manager at Volumetric Building Companies</b> (Aug 2019 – Sep 2022) he built end-to-end quality assurance systems ensuring compliance with building codes, engineering specs, and customer requirements, <b>reducing rework by 30%</b>. He established layered process audits and corrective action protocols, coordinated engineering, production and third-party inspectors to cut project timelines <b>15%</b>, and built digital process tracking tools for real-time quality monitoring.",
       c:['What results has he delivered?','What did he do before that?'] },
+
+    { id:'approach',
+      k:['approach','method','methodology','process','how do you implement','implementation approach','discovery','rollout steps','what are the steps'],
+      a:"His implementation runs in three stages. <b>Discovery</b>, days on the floor walking every station, timing the handoffs, and mapping where information dies between engineering and production. <b>Configuration</b>, digital data capture, stations, QC checkpoints, and material tracking set up in week one, modeled on the sequence the crews already work. <b>Adoption</b>, supervisors trained first so they can coach, then operators in station, with competency measured against benchmarks so the rollout holds after go-live.",
+      c:['What results has he delivered?','How fast are his implementations?','What is his quality background?'] },
 
     { id:'implementation',
       k:['implementation','onboarding','go live','go-live','rollout','roll out','deploy','deployment','adoption','change management','configuration'],
-      a:"He runs implementations end to end — requirements gathering, configuration, training, go-live, and post-launch support — and has <b>cut average implementation time by more than 50%</b>. He treats onboarding as a managed project with executive stakeholders rather than a support ticket, and designs workflow configurations and integrations connecting engineering, production, and quality control.",
+      a:"He runs implementations end to end, covering requirements gathering, configuration, training, go-live, and post-launch support, and has <b>cut average implementation time by more than 50%</b>. He treats onboarding as a managed project with executive stakeholders rather than a support ticket, and designs workflow configurations and integrations connecting engineering, production, and quality control.",
       c:['What results has he delivered?','How does he train teams?'] },
 
     { id:'training',
@@ -1007,22 +1209,22 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--blue);outline-offse
 
     { id:'ai',
       k:['ai','artificial intelligence','ai engineering','automation','automate','llm','machine learning','ai tools','build tools','no code','vibe coding'],
-      a:"AI engineering is his current build focus. He uses AI engineering tools to create the internal tools, automations, and reporting his work needs — rather than waiting on development capacity — and applies AI inside manufacturing operations for analysis, documentation, and decision support. He brings an operator's judgment to it: the output has to hold up on the factory floor, not just in a demo.",
+      a:"AI engineering is his current build focus. He uses AI engineering tools to create the internal tools, automations, and reporting his work needs, rather than waiting on development capacity, and applies AI inside manufacturing operations for analysis, documentation, and decision support. He brings an operator's judgment to it: the output has to hold up on the factory floor, not just in a demo.",
       c:['What does he do at Offsight?','What are his core skills?'] },
 
     { id:'modular',
       k:['modular','prefab','prefabricated','offsite','off-site','construction','manufacturing','factory','industry','volumetric building'],
-      a:"Modular and prefab manufacturing is his industry. He's worked inside it since 2015 — first as a regional account manager and service coordinator with Ritz-Craft Custom Homes, then as Quality Control Manager at Volumetric Building Companies (volumetric modular), and now serving prefab and modular manufacturers across North America as a solutions engineer at Offsight.",
+      a:"Modular and prefab manufacturing is his industry. He's worked inside it since 2015, first as a regional account manager and service coordinator with Ritz-Craft Custom Homes, then as Quality Control Manager at Volumetric Building Companies (volumetric modular), and now serving prefab and modular manufacturers across North America as a solutions engineer at Offsight.",
       c:['What is his quality background?','Where is he located?'] },
 
     { id:'experience',
       k:['experience','career','history','roles','jobs','work history','timeline','resume','cv','how long','years of experience'],
-      a:"His career runs from 2001 to today:<ul><li><b>Solutions Engineer</b>, Offsight — Sep 2022 to present</li><li><b>Quality Control Manager</b>, Volumetric Building Companies — 2019–2022</li><li><b>Service Coordinator</b>, Ritz-Craft → Volumetric Building Companies — 2018–2019</li><li><b>District Manager</b>, CZ Wireless — 2016–2018</li><li><b>Regional Account Manager</b>, Ritz-Craft Custom Homes — 2015–2016</li><li><b>Store Manager</b>, AT&amp;T / Alltel Wireless — 2011–2015</li><li><b>Sales Rep → Assistant Store Manager</b>, Alltel Wireless — 2001–2011</li></ul>That's 20+ years leading teams. You can download his full resume from this page.",
+      a:"His career runs from 2001 to today:<ul><li><b>Solutions Engineer</b>, Offsight, Sep 2022 to present</li><li><b>Quality Control Manager</b>, Volumetric Building Companies — 2019–2022</li><li><b>Service Manager</b>, Ritz-Craft → Volumetric Building Companies — 2018–2019</li><li><b>District Manager</b>, CZ Wireless — 2016–2018</li><li><b>Regional Account Manager</b>, Ritz-Craft Custom Homes — 2015–2016</li><li><b>Store Manager</b>, AT&amp;T / Alltel Wireless — 2011–2015</li><li><b>Sales Rep → Assistant Store Manager</b>, Alltel Wireless — 2001–2011</li></ul>That's 20+ years leading teams. You can download his full resume from this page.",
       c:['What results has he delivered?','What is his early career?'] },
 
     { id:'early',
       k:['early career','retail','wireless','alltel','at&t','att','sales','account management','cz wireless','ritz craft','ritz-craft','territory','district manager','store manager'],
-      a:"Before manufacturing, he spent 14 years in wireless retail leadership with Alltel and AT&amp;T — coaching teams across a four-county North Carolina market and playing a key role in a billing migration of 600,000+ customers. As Regional Account Manager at Ritz-Craft he grew a low-producing territory into a multi-million dollar one (<b>+38% sales in 2015</b>, largest Southeast coastal account signed in 2016), and as District Manager at CZ Wireless he grew <b>sales 15%+ across every KPI and profits 25%+</b> year over year.",
+      a:"Before manufacturing, he spent 14 years in wireless retail leadership with Alltel and AT&amp;T, coaching teams across a four-county North Carolina market and playing a key role in a billing migration of 600,000+ customers. As Regional Account Manager at Ritz-Craft he grew a low-producing territory into a multi-million dollar one (<b>+38% sales in 2015</b>, largest Southeast coastal account signed in 2016), and as District Manager at CZ Wireless he grew <b>sales 15%+ across every KPI and profits 25%+</b> year over year.",
       c:['What is his full work history?','What honors has he won?'] },
 
     { id:'skills',
@@ -1067,12 +1269,12 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--blue);outline-offse
 
     { id:'philosophy',
       k:['philosophy','approach','believe','principle','style','how does he work','method','why','different','stand out'],
-      a:"His principle: <b>sustainable performance comes from strong systems, not harder pushing</b> — clear processes, reliable data, disciplined execution, and accountability at every level. What makes him unusual is the vantage point: he built quality systems from the inside as a QC manager and now implements operational technology from the outside, so he understands both how factories run and how to make tools serve the way they run.",
+      a:"His principle: <b>sustainable performance comes from strong systems, not harder pushing</b>, clear processes, reliable data, disciplined execution, and accountability at every level. What makes him unusual is the vantage point: he built quality systems from the inside as a QC manager and now implements operational technology from the outside, so he understands both how factories run and how to make tools serve the way they run.",
       c:['What is his AI experience?','What results has he delivered?'] },
 
     { id:'meta',
       k:['are you jason','are you a bot','who are you','are you real','are you ai','chatgpt','what are you','is this ai'],
-      a:"I'm a small scripted assistant built into this page — not Jason, and not a live AI model. I answer from a fixed set of facts taken from his verified profile, so I can't invent anything. For anything I don't cover, email him at <a href=\"mailto:jason.c.dixon@gmail.com\">jason.c.dixon@gmail.com</a>.",
+      a:"I'm a small scripted assistant built into this page, not Jason, and not a live AI model. I answer from a fixed set of facts taken from his verified profile, so I can't invent anything. For anything I don't cover, email him at <a href=\"mailto:jason.c.dixon@gmail.com\">jason.c.dixon@gmail.com</a>.",
       c:['Who is Jason?','How do I contact him?'] }
   ];
 
@@ -1161,7 +1363,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--blue);outline-offse
     askFab.setAttribute('aria-expanded','true');
     if(!askOpened){
       askOpened = true;
-      bubble("Hi — I'm a scripted assistant for Jason Dixon's profile. Ask about his experience, results, skills, or how to reach him. I answer only from his verified career facts.", 'bot');
+      bubble("Hi, I'm a scripted assistant for Jason Dixon's profile. Ask about his experience, results, skills, or how to reach him. I answer only from his verified career facts.", 'bot');
       setChips(['Who is Jason?','What results has he delivered?','What is his AI experience?']);
     }
     setTimeout(function(){ askInput.focus(); }, 60);
