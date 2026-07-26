@@ -66,7 +66,8 @@
         "Manufacturing software implementation", "Training and leadership development",
         "Change management", "KPI development and executive reporting",
         "AI-assisted tooling", "AI for manufacturing operations", "Workflow automation",
-        "Owner's representative", "Owner's agent", "Project oversight for building owners"
+        "Owner's representative", "Owner's agent", "Project oversight for building owners",
+        "Legal practice management", "Law firm operations", "Docket and deadline management"
       ]
     },
     {
@@ -201,6 +202,15 @@ h1,h2,h3{font-family:var(--disp);margin:0}
 .chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
 .chips span{border:1px solid rgba(17,19,17,.18);padding:10px 16px;font-size:13px;font-weight:500;border-radius:var(--r-pill);background:rgba(17,19,17,.03);transition:background .16s,border-color .16s}
 .chips span:hover{background:var(--tint);border-color:var(--blue-dk)}
+/* "also practising" sub-block in the About column */
+.aside-block{margin-top:36px;border:1px solid rgba(17,19,17,.16);border-left:3px solid var(--blue-dk);border-radius:var(--r-card);background:rgba(17,19,17,.035);padding:26px 28px}
+.ab-tag{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--blue-dk);margin-bottom:9px}
+.aside-block h3{font-family:var(--disp);font-weight:700;font-size:21px;letter-spacing:-.01em;margin:0 0 11px;color:var(--ink)}
+.aside-block>p{font-size:15px;line-height:1.7;margin:0 0 18px;color:#3C4039;text-wrap:pretty}
+.ab-list{margin:0;padding:0;list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:10px 24px}
+.ab-list li{position:relative;padding-left:15px;font-size:14px;line-height:1.5}
+.ab-list li::before{content:"";position:absolute;left:0;top:7px;width:6px;height:6px;border-radius:50%;background:var(--blue-dk)}
+@media(max-width:700px){.ab-list{grid-template-columns:1fr}.aside-block{padding:22px 20px}}
 @media(max-width:960px){.about-in{grid-template-columns:1fr;gap:44px;padding:64px 0}}
 
 /* ---------- journey (pillars) ---------- */
@@ -600,6 +610,21 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--blue);outline-offse
         <span>AI Applied to Manufacturing Operations</span>
         <span>KPI Development &amp; Executive Reporting</span>
         <span>Owner&rsquo;s Representative &amp; Owner&rsquo;s Agent</span>
+        <span>Legal Practice Management &amp; Operations</span>
+      </div>
+
+      <div class="aside-block" data-reveal>
+        <div class="ab-tag">Also practicing</div>
+        <h3>Legal practice management</h3>
+        <p>Alongside the manufacturing work, I handle day-to-day practice management for a law firm. It is a different floor with the same underlying problem: deadlines that cannot slip, people who need to know where things stand, and systems that have to hold up under pressure.</p>
+        <ul class="ab-list">
+          <li>Day-to-day practice management</li>
+          <li>Operations, systems, and organization</li>
+          <li>Client expectation management</li>
+          <li>Rapport with judges and court clerks</li>
+          <li>Deadline execution and management</li>
+          <li>Office system creation and rollout</li>
+        </ul>
       </div>
     </div>
   </div>
@@ -1299,6 +1324,11 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--blue);outline-offse
       a:"Yes. Jason is available to serve as an <b>Owner&rsquo;s Representative or Owner&rsquo;s Agent</b>, protecting the owner&rsquo;s interests on modular and prefab projects. It draws on the same background as the rest of his work: he has run quality from inside a plant, so he knows what good looks like on a production line and where schedules and quality actually slip, and he has sat on the vendor side implementing operational technology, so he can read what a manufacturer or supplier is telling you. For scope, availability, and terms, email <a href=\"mailto:jason.c.dixon@gmail.com\">jason.c.dixon@gmail.com</a>.",
       c:['What is his quality background?','How do I contact him?','What results has he delivered?'] },
 
+    { id:'legal',
+      k:["law","law firm","legal","lawyer","attorney","court","judge","judges","clerk","clerks","docket","paralegal","practice management","law office","litigation"],
+      a:"Alongside the manufacturing work, Jason handles <b>day-to-day practice management for a law firm</b>. It covers practice management and firm operations, arranging systems and organization, managing client expectations, building rapport and working outwardly with judges and court clerks, deadline execution and management, and creating and rolling out office systems. It is the same operations discipline applied to a different environment: hard deadlines, people who need to know where things stand, and systems that have to hold up under pressure.",
+      c:['What does he do at Offsight?','What are his core competencies?','How do I contact him?'] },
+
     { id:'approach',
       k:['approach','method','methodology','process','how do you implement','implementation approach','discovery','rollout steps','what are the steps'],
       a:"His implementation runs in three stages. <b>Discovery</b>, days on the floor walking every station, timing the handoffs, and mapping where information dies between engineering and production. <b>Configuration</b>, digital data capture, stations, QC checkpoints, and material tracking set up in week one, modeled on the sequence the crews already work. <b>Adoption</b>, supervisors trained first so they can coach, then operators in station, with competency measured against benchmarks so the rollout holds after go-live.",
@@ -1336,7 +1366,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--blue);outline-offse
 
     { id:'skills',
       k:['skills','competencies','capabilities','strengths','expertise','specialties','what is he good at','core competencies'],
-      a:"His core competencies: operational excellence &amp; continuous improvement, quality management systems &amp; CAPA, solutions engineering &amp; technical discovery, modular &amp; prefab construction operations, process mapping &amp; workflow design, implementation &amp; change management, AI engineering &amp; workflow automation, KPI development &amp; executive reporting, and training, coaching &amp; team leadership.",
+      a:"His core competencies: operational excellence &amp; continuous improvement, quality management systems &amp; CAPA, solutions engineering &amp; technical discovery, modular &amp; prefab construction operations, process mapping &amp; workflow design, implementation &amp; change management, AI engineering &amp; workflow automation, KPI development &amp; executive reporting, training, coaching &amp; team leadership, and legal practice management &amp; operations.",
       c:['What is his AI experience?','What certifications does he have?'] },
 
     { id:'certs',
