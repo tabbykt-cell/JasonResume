@@ -126,6 +126,7 @@ img{max-width:100%;height:auto}  /* required: width/height attrs would otherwise
 @media(max-width:640px){.wrap{padding:0 20px}}
 
 .skip{position:absolute;left:-9999px;top:0;background:var(--blue);color:var(--ink);padding:12px 18px;z-index:200;font-family:var(--mono);font-size:13px}
+.vh{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 .skip:focus{left:12px;top:12px}
 
 .k-tag{font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--blue);margin-bottom:24px}
@@ -274,7 +275,7 @@ h1,h2,h3{font-family:var(--disp);margin:0}
 /* ---------- experience ---------- */
 .xp{background:var(--paper);color:var(--ink)}
 .xp-in{padding:100px 0}
-/* CHANGE 2 — timeline rail so 25 years reads as a path, not a text wall */
+/* CHANGE 2 — timeline rail so the 20+ year history reads as a path, not a text wall */
 .xp-list{position:relative;padding-left:34px}
 .xp-list::before{content:"";position:absolute;left:7px;top:14px;bottom:14px;width:2px;background:linear-gradient(var(--blue-dk),rgba(31,92,147,.15))}
 .xp-item{border-top:1px solid rgba(17,19,17,.18);position:relative}
@@ -369,7 +370,8 @@ h1,h2,h3{font-family:var(--disp);margin:0}
 .ftr-in{padding:38px 0;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#9A9E94}
 
 /* ---------- ask bot ---------- */
-.ask-fab{position:fixed;right:22px;bottom:22px;z-index:110;display:flex;align-items:center;gap:10px;background:var(--blue);color:var(--ink);border:0;cursor:pointer;font-family:var(--disp);font-weight:700;font-size:14.5px;padding:14px 22px;border-radius:var(--r-pill);box-shadow:0 10px 30px rgba(0,0,0,.42);transition:background .18s,transform .18s}
+.ask-fab{position:fixed;right:22px;bottom:22px;z-index:110;display:flex;align-items:center;gap:10px;background:var(--blue);color:var(--ink);border:0;cursor:pointer;font-family:var(--disp);font-weight:700;font-size:14.5px;padding:14px 22px;border-radius:var(--r-pill);box-shadow:0 10px 30px rgba(0,0,0,.42);transition:background .18s,transform .25s ease,opacity .25s ease}
+.ask-fab.tuck{opacity:0;transform:translateY(24px) scale(.96);pointer-events:none}
 .ask-fab:hover{background:#8FC0EA;transform:translateY(-2px)}
 .ask-fab svg{flex:0 0 auto}
 .ask-fab.hide{display:none}
@@ -418,8 +420,40 @@ h1,h2,h3{font-family:var(--disp);margin:0}
 .prog{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--blue),#8FC0EA);z-index:400;transition:width .08s linear}
 
 /* copy-email confirmation */
-.copied{position:fixed;left:50%;transform:translateX(-50%);bottom:96px;z-index:200;background:var(--ink);color:var(--paper);font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;padding:12px 20px;border-radius:999px;opacity:0;pointer-events:none;transition:opacity .25s,transform .25s;border:1px solid rgba(245,242,236,.18)}
-.copied.on{opacity:1;transform:translateX(-50%) translateY(-6px)}
+/* contact form modal */
+.cf-overlay{position:fixed;inset:0;z-index:300;display:none;align-items:center;justify-content:center;padding:20px;background:rgba(10,11,10,.74);-webkit-backdrop-filter:blur(3px);backdrop-filter:blur(3px)}
+.cf-overlay.on{display:flex}
+.cf-modal{position:relative;width:100%;max-width:520px;max-height:90vh;overflow-y:auto;background:var(--ink-2);border:1px solid var(--line-l);border-radius:var(--r-card);padding:40px 34px 34px;box-shadow:0 24px 60px rgba(0,0,0,.5);animation:riseIn .3s ease-out both}
+.cf-x{position:absolute;top:16px;right:16px;width:34px;height:34px;border-radius:50%;background:rgba(245,242,236,.06);border:1px solid var(--line-l);color:var(--paper);font-size:15px;cursor:pointer;line-height:1}
+.cf-x:hover{background:rgba(245,242,236,.12)}
+.cf-title{font-family:var(--disp);font-weight:800;font-size:24px;letter-spacing:-.01em;margin:0 0 8px;color:var(--paper)}
+.cf-sub{font-size:14.5px;color:var(--mut-dk);margin:0 0 24px;line-height:1.55}
+.cf-field{display:block;margin-bottom:18px}
+.cf-field>span{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--mut);margin-bottom:8px}
+.cf-field>span em{font-style:normal;color:var(--mut-dk);text-transform:none;letter-spacing:0}
+.cf-field input,.cf-field textarea{width:100%;background:var(--ink);border:1px solid var(--line-l);border-radius:var(--r-sm);color:var(--paper);font-family:var(--body);font-size:15px;padding:12px 14px;transition:border-color .16s}
+.cf-field textarea{resize:vertical;min-height:110px}
+.cf-field input:focus,.cf-field textarea:focus{outline:none;border-color:var(--blue)}
+.cf-hp{position:absolute!important;left:-9999px!important;opacity:0;height:0;width:0}
+.cf-send{width:100%;margin-top:6px;background:var(--blue);color:var(--ink);border:0;border-radius:var(--r-pill);font-family:var(--disp);font-weight:700;font-size:15px;padding:15px;cursor:pointer;transition:background .18s,opacity .18s}
+.cf-send:hover{background:#6FB0E6}
+.cf-send:disabled{opacity:.6;cursor:default}
+.cf-status{font-size:14px;margin:16px 0 0;text-align:center;min-height:1em;line-height:1.5}
+.cf-status.ok{color:#7FD1A3}
+.cf-status.err{color:#E8908C}
+
+/* cookie consent banner */
+.cc-banner{position:fixed;left:16px;right:16px;bottom:16px;z-index:320;display:none;gap:16px 20px;align-items:center;justify-content:space-between;flex-wrap:wrap;max-width:720px;margin:0 auto;background:var(--ink-2);border:1px solid var(--line-l);border-radius:var(--r-card);padding:16px 20px;box-shadow:0 16px 40px rgba(0,0,0,.45)}
+.cc-banner.on{display:flex}
+.cc-text{margin:0;font-size:13.5px;color:var(--mut);line-height:1.5;flex:1;min-width:220px}
+.cc-text a{color:var(--blue);text-decoration:underline}
+.cc-actions{display:flex;gap:10px;flex-shrink:0}
+.cc-btn{font-family:var(--disp);font-weight:700;font-size:13.5px;padding:10px 20px;border-radius:var(--r-pill);cursor:pointer;border:1px solid var(--line-l);transition:background .16s}
+.cc-decline{background:transparent;color:var(--paper)}
+.cc-decline:hover{background:rgba(245,242,236,.08)}
+.cc-accept{background:var(--blue);color:var(--ink);border-color:var(--blue)}
+.cc-accept:hover{background:#6FB0E6}
+@media(max-width:560px){.cc-banner{flex-direction:column;align-items:stretch}.cc-actions{justify-content:flex-end}}
 
 /* reveal */
 /* CHANGE 4 — staggered reveals so sections resolve in sequence, not all at once */
@@ -518,7 +552,6 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--blue);outline-offse
 <body>
 <a class="skip" href="#main">Skip to content</a>
 <div class="prog" id="prog" aria-hidden="true"></div>
-<div class="copied" id="copied" role="status">Email copied</div>
 
 
 <header class="hdr">
@@ -542,7 +575,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--blue);outline-offse
       <a href="#experience">Experience</a>
       <a href="#floor">On the Floor</a>
       <a href="#credentials">Credentials</a>
-      <a class="cta" href="#contact">Get in touch</a>
+      <a class="cta" href="#contact" data-contact>Get in touch</a>
     </nav>
   </div>
 </header>
@@ -557,7 +590,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--blue);outline-offse
       <h1 class="h-xl">Better factories aren't pushed harder. They're built on better systems.</h1>
       <p class="lede">I help modular and prefab manufacturers improve quality, throughput, and accountability, aligning operations, technology, and people around systems that actually work on the factory floor.</p>
       <div class="btn-row">
-        <a href="#contact" class="btn solid">Start a conversation</a>
+        <a href="#contact" class="btn solid" data-contact>Start a conversation</a>
         <a href="uploads/Jason-C-Dixon-Resume.pdf" target="_blank" rel="noopener" class="btn ghost">Download resume</a>
       </div>
     </div>
@@ -764,7 +797,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--blue);outline-offse
   <div class="wrap xp-in">
     <div data-reveal style="margin-bottom:56px">
       <div class="k-tag dark">04 — Experience</div>
-      <h2 class="h-lg">Twenty-five years of building teams, systems, and results.</h2>
+      <h2 class="h-lg">20+ years of building teams, systems, and results.</h2>
       <p style="font-size:15px;color:var(--mut-dk);margin:18px 0 0;font-family:var(--mono)">Select a role to expand it.</p>
     </div>
 
@@ -918,9 +951,32 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--blue);outline-offse
   <button class="lb-next" id="lbNext" aria-label="Next photo">→</button>
 </div>
 
+<!-- contact form modal -->
+<div class="cf-overlay" id="cfOverlay" role="dialog" aria-modal="true" aria-labelledby="cfTitle" aria-hidden="true">
+  <div class="cf-modal">
+    <button class="cf-x" id="cfX" type="button" aria-label="Close contact form">✕</button>
+    <h2 class="cf-title" id="cfTitle">Send Jason a message</h2>
+    <p class="cf-sub">Fill this out and it goes straight to his inbox. He'll get back to you.</p>
+    <form id="cfForm">
+      <!-- Web3Forms: paste your access key between the quotes below -->
+      <input type="hidden" name="access_key" value="c4ff296f-8172-432a-a020-47b7a374f01d">
+      <input type="hidden" name="subject" value="New message from jasoncdixon.com">
+      <input type="hidden" name="from_name" value="jasoncdixon.com contact form">
+      <input type="checkbox" name="botcheck" class="cf-hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <label class="cf-field"><span>Name</span><input type="text" name="name" id="cfName" required autocomplete="name"></label>
+      <label class="cf-field"><span>Email</span><input type="email" name="email" required autocomplete="email"></label>
+      <label class="cf-field"><span>Company <em>(optional)</em></span><input type="text" name="company" autocomplete="organization"></label>
+      <label class="cf-field"><span>Message</span><textarea name="message" rows="5" required></textarea></label>
+      <button type="submit" class="cf-send" id="cfSend">Send message</button>
+      <p class="cf-status" id="cfStatus" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+</div>
+
 <!-- ================= QUOTES ================= -->
 <section class="quotes" aria-label="Recommendations">
   <div class="wrap quotes-in">
+    <h2 class="vh">What colleagues say</h2>
     <div class="k-tag" data-reveal style="margin-bottom:48px">06 — What colleagues say</div>
     <div class="q-grid">
       <blockquote data-reveal>
@@ -938,6 +994,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--blue);outline-offse
 <!-- ================= CREDENTIALS ================= -->
 <section id="credentials" class="cred">
   <div class="wrap cred-in">
+    <h2 class="vh">Credentials</h2>
     <div class="k-tag" data-reveal style="margin-bottom:48px">07 — Credentials</div>
     <div class="cred-grid">
       <div data-reveal>
@@ -1228,6 +1285,13 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--blue);outline-offse
     if(e.key === 'Escape') closeLb();
     if(e.key === 'ArrowRight') stepLb(1);
     if(e.key === 'ArrowLeft') stepLb(-1);
+    if(e.key === 'Tab'){
+      var f = [document.getElementById('lbX'), document.getElementById('lbPrev'), document.getElementById('lbNext')];
+      var first = f[0], last = f[f.length - 1];
+      if(f.indexOf(document.activeElement) === -1){ e.preventDefault(); first.focus(); }
+      else if(e.shiftKey && document.activeElement === first){ e.preventDefault(); last.focus(); }
+      else if(!e.shiftKey && document.activeElement === last){ e.preventDefault(); first.focus(); }
+    }
   });
 
   /* CHANGE 4 — stagger reveals within each section */
@@ -1279,6 +1343,96 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--blue);outline-offse
   toTop.addEventListener('click', function(){
     window.scrollTo({top:0, behavior: reduce ? 'auto' : 'smooth'});
   });
+
+  /* reading-progress bar */
+  var prog = document.getElementById('prog');
+  if(prog){
+    function updateProg(){
+      var max = document.documentElement.scrollHeight - window.innerHeight;
+      var p = max > 0 ? (window.scrollY / max) * 100 : 0;
+      prog.style.width = Math.max(0, Math.min(100, p)) + '%';
+    }
+    window.addEventListener('scroll', updateProg, {passive:true});
+    window.addEventListener('resize', updateProg);
+    updateProg();
+  }
+
+  /* contact form modal — submits to Web3Forms, delivered to Jason's inbox */
+  var cfOverlay = document.getElementById('cfOverlay');
+  var cfForm = document.getElementById('cfForm');
+  var emailLink = document.querySelector('.c-links a[href^="mailto:"]');
+  if(cfOverlay && cfForm && emailLink){
+    var cfStatus = document.getElementById('cfStatus');
+    var cfSend = document.getElementById('cfSend');
+    var cfLastFocus = null;
+    function openCf(){
+      cfOverlay.classList.add('on');
+      cfOverlay.setAttribute('aria-hidden','false');
+      cfLastFocus = document.activeElement;
+      document.body.style.overflow = 'hidden';
+      setTimeout(function(){ var n = document.getElementById('cfName'); if(n) n.focus(); }, 40);
+    }
+    function closeCf(){
+      cfOverlay.classList.remove('on');
+      cfOverlay.setAttribute('aria-hidden','true');
+      document.body.style.overflow = '';
+      if(cfLastFocus) cfLastFocus.focus();
+    }
+    emailLink.addEventListener('click', function(e){ e.preventDefault(); openCf(); });
+    Array.prototype.forEach.call(document.querySelectorAll('[data-contact]'), function(el){
+      el.addEventListener('click', function(e){ e.preventDefault(); openCf(); });
+    });
+    document.getElementById('cfX').addEventListener('click', closeCf);
+    cfOverlay.addEventListener('click', function(e){ if(e.target === cfOverlay) closeCf(); });
+    document.addEventListener('keydown', function(e){
+      if(!cfOverlay.classList.contains('on')) return;
+      if(e.key === 'Escape'){ closeCf(); return; }
+      if(e.key === 'Tab'){
+        var f = Array.prototype.filter.call(
+          cfOverlay.querySelectorAll('button, input, textarea'),
+          function(el){ return el.offsetParent !== null && !el.disabled; });
+        if(!f.length) return;
+        var first = f[0], last = f[f.length - 1];
+        if(e.shiftKey && document.activeElement === first){ e.preventDefault(); last.focus(); }
+        else if(!e.shiftKey && document.activeElement === last){ e.preventDefault(); first.focus(); }
+      }
+    });
+    cfForm.addEventListener('submit', function(e){
+      e.preventDefault();
+      var key = cfForm.access_key.value;
+      if(!key || key.indexOf('YOUR_WEB3FORMS') === 0){
+        cfStatus.className = 'cf-status err';
+        cfStatus.textContent = 'This form is not configured yet — the Web3Forms access key still needs to be added.';
+        return;
+      }
+      cfSend.disabled = true;
+      cfSend.textContent = 'Sending…';
+      cfStatus.className = 'cf-status';
+      cfStatus.textContent = '';
+      var data = {};
+      new FormData(cfForm).forEach(function(v, k){ data[k] = v; });
+      fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {'Content-Type':'application/json', 'Accept':'application/json'},
+        body: JSON.stringify(data)
+      }).then(function(r){ return r.json(); }).then(function(json){
+        if(json.success){
+          cfStatus.className = 'cf-status ok';
+          cfStatus.textContent = 'Thanks — your message is on its way to Jason.';
+          cfForm.reset();
+        } else {
+          cfStatus.className = 'cf-status err';
+          cfStatus.textContent = (json.message || 'Something went wrong.') + ' You can also email jason.c.dixon@gmail.com directly.';
+        }
+      }).catch(function(){
+        cfStatus.className = 'cf-status err';
+        cfStatus.textContent = 'Network error. Please email jason.c.dixon@gmail.com directly.';
+      }).then(function(){
+        cfSend.disabled = false;
+        cfSend.textContent = 'Send message';
+      });
+    });
+  }
 
   /* keep the active journey tab in view on the mobile strip */
   document.querySelectorAll('.jtab').forEach(function(t){
@@ -1485,7 +1639,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--blue);outline-offse
       setChips(['Who is Jason?','What results has he delivered?','What is his AI experience?']);
       return;
     }
-    if(THANKS.some(function(t){ return nq.indexOf(t) > -1; }) && nq.trim().split(' ').length <= 4){
+    if(THANKS.some(function(t){ return nq.indexOf(' ' + t + ' ') > -1; }) && nq.trim().split(' ').length <= 4){
       bubble("Anytime. If you'd like to reach Jason directly: <a href=\"mailto:jason.c.dixon@gmail.com\">jason.c.dixon@gmail.com</a>.", 'bot');
       setChips(['Who is Jason?','What is his full work history?','Can I get his resume?']);
       return;
@@ -1517,9 +1671,22 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--blue);outline-offse
     askPanel.classList.remove('on');
     askFab.classList.remove('hide');
     askFab.setAttribute('aria-expanded','false');
+    tuckFab();
     askFab.focus();
   }
   askFab.addEventListener('click', openAsk);
+
+  /* keep the launcher clear of the hero caption; reveal once past the hero */
+  var heroSec = document.getElementById('top');
+  function tuckFab(){
+    if(askPanel.classList.contains('on')) return;
+    var threshold = heroSec ? heroSec.offsetHeight - 160 : 480;
+    askFab.classList.toggle('tuck', window.scrollY < threshold);
+  }
+  window.addEventListener('scroll', tuckFab, {passive:true});
+  window.addEventListener('resize', tuckFab);
+  tuckFab();
+
   document.getElementById('askX').addEventListener('click', closeAsk);
   askForm.addEventListener('submit', function(e){
     e.preventDefault();
@@ -1529,6 +1696,51 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--blue);outline-offse
   });
   document.addEventListener('keydown', function(e){
     if(e.key === 'Escape' && askPanel.classList.contains('on')) closeAsk();
+  });
+})();
+</script>
+
+<!-- cookie consent banner -->
+<div class="cc-banner" id="ccBanner" role="dialog" aria-label="Cookie consent">
+  <p class="cc-text">This site uses Google Analytics cookies to measure traffic (page views, referrers, general location). No personal data is sold or shared. <a href="mailto:jason.c.dixon@gmail.com">Questions?</a></p>
+  <div class="cc-actions">
+    <button type="button" class="cc-btn cc-decline" id="ccDecline">Decline</button>
+    <button type="button" class="cc-btn cc-accept" id="ccAccept">Accept</button>
+  </div>
+</div>
+
+<!-- Google Analytics 4 — loads ONLY after the visitor accepts. Paste your Measurement ID (G-XXXXXXXXXX) below. -->
+<script>
+(function(){
+  var GA_ID = 'G-XXXXXXXXXX';
+  var banner = document.getElementById('ccBanner');
+  if(!banner) return;
+  var KEY = 'cc-consent';
+  function loadGA(){
+    if(!GA_ID || GA_ID.indexOf('G-XXXX') === 0) return;   /* not configured yet */
+    if(window.__gaLoaded) return; window.__gaLoaded = true;
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
+    document.head.appendChild(s);
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    window.gtag = gtag;
+    gtag('js', new Date());
+    gtag('config', GA_ID, { anonymize_ip: true });
+  }
+  var choice = null;
+  try { choice = localStorage.getItem(KEY); } catch(e){}
+  if(choice === 'granted'){ loadGA(); }
+  else if(choice !== 'denied'){ banner.classList.add('on'); }
+  document.getElementById('ccAccept').addEventListener('click', function(){
+    try { localStorage.setItem(KEY, 'granted'); } catch(e){}
+    banner.classList.remove('on');
+    loadGA();
+  });
+  document.getElementById('ccDecline').addEventListener('click', function(){
+    try { localStorage.setItem(KEY, 'denied'); } catch(e){}
+    banner.classList.remove('on');
   });
 })();
 </script>

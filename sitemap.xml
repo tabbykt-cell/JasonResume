@@ -4,7 +4,7 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://jasoncdixon.com/</loc>
-    <lastmod>2026-07-26</lastmod>
+    <lastmod>2026-07-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
     <image:image>
@@ -18,6 +18,26 @@
     <image:image>
       <image:loc>https://jasoncdixon.com/uploads/1782305851172.jpeg</image:loc>
       <image:caption>Jason Dixon running an operator training session with a production crew in a prefab factory</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://jasoncdixon.com/uploads/1782305853610.jpeg</image:loc>
+      <image:caption>Jason Dixon leading an implementation workshop, mapping production workflows with a client team</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://jasoncdixon.com/uploads/1782305863950.jpeg</image:loc>
+      <image:caption>Jason Dixon with quality and production leads using tablets on a manufacturing line</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://jasoncdixon.com/uploads/1782305863122.jpeg</image:loc>
+      <image:caption>Jason Dixon in a project kickoff meeting with a client leadership team</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://jasoncdixon.com/uploads/1782305865637.jpeg</image:loc>
+      <image:caption>Jason Dixon with a production crew on a modular construction shop floor</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://jasoncdixon.com/uploads/1782305861072.jpeg</image:loc>
+      <image:caption>Jason Dixon on site at a prefab digital building components facility</image:caption>
     </image:image>
   </url>
 </urlset>
