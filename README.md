@@ -6,6 +6,8 @@ No build step, no framework, nothing to install. Hosted on GitHub Pages from thi
 ```
 index.html      the entire site (HTML, CSS, JS inline)
 CNAME           holds the custom domain (jasoncdixon.com) for GitHub Pages
+favicon.ico     browser-tab and Google-results icon (16/32/48px)
+apple-touch-icon.png  iOS home-screen icon (180px)
 robots.txt      crawler permissions + sitemap pointer
 sitemap.xml     lists the page + key images for search engines
 uploads/        photos (JPEG + WebP pairs), the video + poster frames,
@@ -60,10 +62,13 @@ The site is verified in Google Search Console (the `google-site-verification`
 meta tag near the top of `index.html`). If you edit content meaningfully, update
 `<lastmod>` in `sitemap.xml` — it is maintained by hand.
 
-## Known follow-ups
+## Icons
 
-- The favicon is an inline SVG data URI. Adding a real `favicon.ico` and an
-  `apple-touch-icon` PNG (plus `<link>` tags for them) would improve how the
-  site appears in Google results and on iOS home screens.
+`favicon.ico` and `apple-touch-icon.png` sit at the repo root, where browsers
+and crawlers look for them by default, and are also declared with `<link>` tags
+in `index.html` alongside the inline SVG icon (which modern browsers prefer for
+tabs). All three use the same mark: a blue square, a cream square, dark
+background. To change the artwork, replace both files at the same sizes
+(16/32/48 px in the .ico, 180×180 for the PNG) and update the inline SVG.
 
 This README is documentation only — not part of the website.
