@@ -233,13 +233,13 @@ h1,h2,h3{font-family:var(--disp);margin:0}
 .journey-in{padding:100px 0}
 .jr-head{display:flex;justify-content:space-between;align-items:flex-end;gap:48px;margin-bottom:48px;flex-wrap:wrap}
 .jr-head p{font-size:16px;line-height:1.7;color:var(--mut);max-width:44ch;margin:0;text-wrap:pretty}
-.jtabs{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--line-l);border:1px solid var(--line-l);border-radius:var(--r-card) var(--r-card) 0 0;overflow:hidden;margin-bottom:0}
+.jtabs{display:grid;grid-template-columns:repeat(6,1fr);gap:1px;background:var(--line-l);border:1px solid var(--line-l);border-radius:var(--r-card) var(--r-card) 0 0;overflow:hidden;margin-bottom:0}
 .jtab{background:var(--ink);border:0;color:var(--mut);font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;padding:20px 16px;cursor:pointer;text-align:left;line-height:1.5;transition:background .18s,color .18s}
 /* JETON-INSPIRED: numbered step pills */
 .jtab .pill{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;border:1px solid rgba(245,242,236,.32);font-size:10.5px;margin-bottom:10px;transition:background .18s,border-color .18s,color .18s}
 .jtab[aria-selected="true"] .pill{background:var(--ink);border-color:var(--ink);color:var(--blue)}
 .jtab em{display:block;font-style:normal;font-family:var(--disp);font-weight:700;font-size:15.5px;letter-spacing:0;text-transform:none;color:var(--paper);margin-top:6px}
-@media(min-width:961px) and (max-width:1180px){.jtab{padding:16px 11px;font-size:11px}.jtab em{font-size:14px}}
+@media(min-width:961px) and (max-width:1240px){.jtab{padding:16px 10px;font-size:10.5px}.jtab em{font-size:13px}}
 .jtab[aria-selected="true"]{background:var(--blue);color:rgba(17,19,17,.7)}
 .jtab[aria-selected="true"] em{color:var(--ink)}
 .jtab:hover:not([aria-selected="true"]){background:var(--ink-2);color:var(--paper)}
@@ -548,6 +548,9 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--blue);outline-offse
       reaches the gutter. Stack it above the ask button on the right instead. */
 @media(max-width:1400px){.totop{left:auto;right:22px;bottom:78px}}
 @media(max-width:560px){.totop{left:auto;right:14px;bottom:70px}}
+/* keep the stacked floating controls (ask FAB + back-to-top) from sitting on
+   the last of the page content once the visitor reaches the bottom */
+@media(max-width:900px){.ftr-in{padding-bottom:120px}}
 
 /* 6. Gallery captions and the zoom badge only appeared on :hover, so on a
       phone the photos were permanently unlabelled and gave no hint they open.
@@ -743,7 +746,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--blue);outline-offse
         <div class="k-tag">02 — Leadership journey</div>
         <h2 class="h-lg" style="max-width:22ch">Six disciplines. One operator.</h2>
       </div>
-      <p>Most people pick one lane. Jason has led from all six, which is why the systems he builds survive contact with a real production line. Select a discipline to see the work.</p>
+      <p>Most people pick one lane. I've led from all six, which is why the systems I build survive contact with a real production line. Select a discipline to see the work.</p>
     </div>
 
     <div class="jtabs" role="tablist" aria-label="Leadership disciplines" data-reveal>
@@ -1099,8 +1102,8 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--blue);outline-offse
 <div class="cf-overlay" id="cfOverlay" role="dialog" aria-modal="true" aria-labelledby="cfTitle" aria-hidden="true">
   <div class="cf-modal">
     <button class="cf-x" id="cfX" type="button" aria-label="Close contact form">✕</button>
-    <h2 class="cf-title" id="cfTitle">Send Jason a message</h2>
-    <p class="cf-sub">Fill this out and it goes straight to his inbox. He'll get back to you.</p>
+    <h2 class="cf-title" id="cfTitle">Send me a message</h2>
+    <p class="cf-sub">Fill this out and it goes straight to my inbox. I'll get back to you.</p>
     <form id="cfForm">
       <input type="hidden" name="access_key" value="c4ff296f-8172-432a-a020-47b7a374f01d">
       <input type="hidden" name="subject" value="New message from jasoncdixon.com">
@@ -1186,7 +1189,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--blue);outline-offse
 
 <!-- ================= ASK BOT ================= -->
 <nav class="dock" id="dock" aria-label="Section shortcuts">
-  <a href="#about">About</a><a href="#journey">Journey</a><a href="#approach">Approach</a><a href="#capabilities">Capabilities</a><a href="#experience">Experience</a><a href="#floor">Floor</a><a href="#contact">Contact</a>
+  <a href="#about">About</a><a href="#journey">Journey</a><a href="#approach">Approach</a><a href="#capabilities">Capabilities</a><a href="#experience">Experience</a><a href="#floor">Floor</a><a href="#credentials">Credentials</a><a href="#contact">Contact</a>
 </nav>
 
 <button class="totop" id="toTop" aria-label="Back to top">↑</button>
@@ -1300,6 +1303,12 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--blue);outline-offse
       es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('seen'); io.unobserve(e.target); } });
     }, {rootMargin:'0px 0px -8% 0px', threshold:.05});
     revealed.forEach(function(n){ io.observe(n); });
+    /* anchor jumps smooth-scroll past sections faster than the observer reveals
+       them, leaving half-faded content — show everything once someone navigates */
+    document.addEventListener('click', function(e){
+      var a = e.target.closest && e.target.closest('a[href^="#"]');
+      if(a && !a.hasAttribute('data-contact')){ revealed.forEach(function(n){ n.classList.add('seen'); }); }
+    });
   }
 
   /* animated counters */
@@ -1570,7 +1579,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--blue);outline-offse
       }).then(function(r){ return r.json(); }).then(function(json){
         if(json.success){
           cfStatus.className = 'cf-status ok';
-          cfStatus.textContent = 'Thanks — your message is on its way to Jason.';
+          cfStatus.textContent = 'Thanks — your message is on its way. I\'ll get back to you.';
           cfForm.reset();
         } else {
           cfStatus.className = 'cf-status err';
