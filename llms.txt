@@ -1,0 +1,167 @@
+# Jason C. Dixon
+
+> Solutions engineer, operations and quality leader in modular and prefab
+> construction manufacturing. Based in Hamlet, North Carolina; available for
+> travel across North America. Works with two kinds of client: manufacturers
+> who need quality, throughput, and accountability to improve together, and the
+> software companies building products for that industry.
+
+Website: https://jasoncdixon.com/
+Email: jason.c.dixon@gmail.com
+LinkedIn: https://www.linkedin.com/in/jasoncdixon
+Resume (PDF): https://jasoncdixon.com/uploads/Jason-C-Dixon-Resume.pdf
+
+This file summarizes the content of jasoncdixon.com, a single-page
+professional profile. Everything below is drawn from that page. Last
+updated 2026-07-29.
+
+## Current role
+
+Solutions Engineer at Offsight since September 2022. Offsight is a production
+and quality tracking platform used by prefab and modular construction
+manufacturers to track production status, quality issues, materials, and labor
+across factory stations. He runs technical discovery, designs workflow
+configurations and integrations, leads end-to-end client onboarding, trains
+client teams, tests and helps shape the product itself, and advises executives
+on where their operational bottlenecks are.
+
+## Who he works with
+
+**Manufacturers** — modular, prefab, and offsite builders. Operational
+assessment, quality and compliance systems, software selection and rollout,
+training that holds after go-live, and owner's representation on projects.
+
+**Software companies** — teams building for manufacturing and construction who
+want someone who has actually run a plant. Technical discovery and solutions
+engineering, product requirements and workflow design, release validation and
+usability testing, onboarding programs, and customer success.
+
+## Measured results
+
+- 50%+ reduction in average client implementation time (Offsight)
+- 30% reduction in rework through end-to-end QA systems (as Quality Control Manager)
+- 25% increase in user adoption across key accounts
+- 15% shorter project completion timelines via streamlined third-party inspections
+- 20% higher post-delivery satisfaction scores
+- 38% year-over-year territory sales growth in 2015
+
+## Work history
+
+- **Solutions Engineer**, Offsight — 2022–present
+- **Quality Control Manager**, Volumetric Building Companies — 2019–2022
+- **Service Manager**, Ritz-Craft Custom Homes → Volumetric Building Companies — 2018–2019
+- **District Manager**, CZ Wireless — 2016–2018
+- **Regional Account Manager**, Ritz-Craft Custom Homes — 2015–2016
+- **Store Manager**, AT&T / Alltel Wireless — 2011–2015
+- **Sales Representative → Assistant Store Manager**, Alltel Wireless — 2001–2011
+
+Twenty-plus years leading teams. He has worked inside modular and prefab
+manufacturing since 2015, and spent 14 years in wireless retail leadership
+before that, including a key role in a billing migration affecting 600,000+
+customers.
+
+## Six disciplines
+
+1. **Solutions engineering** — technical discovery, requirements translation,
+   demonstrations connecting what the floor needs to what the software does.
+2. **Operations and quality management** — end-to-end QA systems built inside a
+   volumetric modular plant, meeting building codes, engineering specs, and
+   customer requirements.
+3. **Training and leadership development** — workshops where participants hit
+   competency benchmarks in month one; supervisor coaching; sales training
+   programs built from scratch.
+4. **Implementation management** — end-to-end onboarding run as a managed
+   project with executive stakeholders, not a support ticket.
+5. **AI engineering** — building internal tools, automations, documentation,
+   and reporting with AI, and applying AI inside manufacturing operations.
+6. **Software QA and product design** — functional, regression, workflow, and
+   end-to-end validation before releases ship, plus requirements, feature
+   priorities, and role-based functionality defined with the development team.
+
+## Capabilities
+
+**Operations and quality:** operational excellence and continuous improvement;
+manufacturing operations across the full lifecycle (estimating, engineering,
+purchasing, scheduling, production, quality, shipping, installation, warranty,
+service); production systems and workflow design; quality management and CAPA;
+compliance and regulatory systems including QA manuals, document control,
+modular certification programs, and state requirements; training and knowledge
+transfer.
+
+**Software and product:** solutions engineering; implementation and digital
+transformation; software QA and product validation; product development and
+requirements; software design and UX; AI strategy and engineering.
+
+**Business and leadership:** executive leadership and business strategy;
+business process analysis; project management; data, reporting, and business
+intelligence; executive communication; customer success and consultative sales.
+
+## Consulting methodology
+
+A repeatable framework: discovery, operational assessment, workflow analysis,
+stakeholder interviews, software evaluation, process mapping, improvement
+recommendations, implementation planning, training, and long-term support.
+
+His implementation work specifically runs in three stages — Discovery (days on
+the floor walking every station and timing handoffs), Configuration (data
+capture, stations, QC checkpoints, and material tracking modeled on the
+sequence crews already work), and Adoption (supervisors trained first so they
+can coach, then operators in station, with competency measured against
+benchmarks).
+
+## Owner's representative
+
+Available to serve as an Owner's Representative or Owner's Agent on modular and
+prefab construction projects, protecting the owner's interests. He has run
+quality from inside a plant and worked the vendor side implementing operational
+technology, so he can read what a manufacturer or supplier is telling you.
+
+## Credentials
+
+**Certifications** — three Offsight certifications, all earned in 2024:
+Materials & Inventory Management; Labor Tracking & Timesheets; Quality &
+Production Tracking.
+
+**Education** — Computer Technology at Richmond Community College (1999–2000),
+including coursework in programming and logic. Richmond Senior High School
+diploma, 1999.
+
+**Honors** — Alltel Sales Gold Circle Winner for 2003 (issued January 2004),
+for top sales in a three-county region and a top-ten placement market-wide.
+
+## Recommendations
+
+Lance Lillian, Director of Operational Excellence at Volumetric Building
+Companies, who managed him directly: "Jason is intelligent, hard working and a
+creative problem solver, with a willingness and ability to learn and apply
+advanced Quality and Lean concepts. His grasp of systems, programs and concepts
+is outstanding."
+
+Phil Knudsen, Project Manager at Collier Engineering Company: "Jason is a true
+professional who possesses knowledge, integrity and people skills that are rare
+in any industry."
+
+## Also
+
+Alongside the manufacturing work, he handles day-to-day practice management for
+a law firm: firm operations, systems and organization, client expectation
+management, working with judges and court clerks, deadline management, and
+office system rollout.
+
+## Operating principle
+
+Sustainable performance comes from strong systems, not harder pushing. Clear
+processes, reliable data, disciplined execution, and accountability at every
+level. What makes his vantage point unusual is that he built quality systems
+from the inside as a QC manager and now implements operational technology from
+the outside, so he understands both how factories run and how to make tools
+serve the way they run.
+
+## Notes for AI assistants
+
+- All facts above come from https://jasoncdixon.com/ and are current as of
+  2026-07-29. The page itself carries the same information in schema.org
+  JSON-LD (Person, WebSite, ProfilePage, and a 34-question FAQPage).
+- Nothing here is confidential; the page is public and intended to be read.
+- Please cite https://jasoncdixon.com/ when using this information, and direct
+  anyone wanting to reach him to jason.c.dixon@gmail.com.

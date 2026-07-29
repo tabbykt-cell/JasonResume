@@ -8,8 +8,9 @@ index.html      the entire site (HTML, CSS, JS inline)
 CNAME           holds the custom domain (jasoncdixon.com) for GitHub Pages
 favicon.ico     browser-tab and Google-results icon (16/32/48px)
 apple-touch-icon.png  iOS home-screen icon (180px)
-robots.txt      crawler permissions + sitemap pointer
+robots.txt      crawler permissions (search + AI) + sitemap pointer
 sitemap.xml     lists the page + key images for search engines
+llms.txt        plain-text summary of the site for AI assistants
 uploads/        photos (JPEG + WebP pairs), the video + poster frames,
                 the share banner (og-banner-v2.jpg), and the resume PDF
 ```
@@ -61,6 +62,28 @@ instead — or nothing at all.
 The site is verified in Google Search Console (the `google-site-verification`
 meta tag near the top of `index.html`). If you edit content meaningfully, update
 `<lastmod>` in `sitemap.xml` — it is maintained by hand.
+
+## Being readable by AI assistants
+
+The site is set up so that when someone asks ChatGPT, Claude, Perplexity, or
+Google about Jason, the assistant can find and quote it accurately:
+
+- **`robots.txt`** explicitly allows every major search and AI crawler. Some AI
+  crawlers check for their own user-agent before falling back to `*`, so they
+  are named individually.
+- **JSON-LD structured data** in `index.html` states the facts in the format
+  machines parse most reliably: a `Person` record (job title, employer,
+  location, email, LinkedIn, education, and 39 `knowsAbout` skill terms),
+  `WebSite`, `ProfilePage`, and a 34-question `FAQPage`.
+- **`llms.txt`** is a plain-language summary of the whole profile at the domain
+  root, a convention some AI tools look for.
+- The page is **static HTML** — all text is in the file that gets served, not
+  assembled by JavaScript, so any crawler that fetches the URL gets everything.
+
+**Keeping them in sync:** the FAQ block and `llms.txt` are both derived from the
+ask-bot's `var KB = [` array in `index.html`. If you change a fact, change it in
+the KB, then mirror it into the FAQ JSON-LD and `llms.txt` so the three do not
+drift apart. Update the date at the top of `llms.txt` when you do.
 
 ## Icons
 

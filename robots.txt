@@ -1,6 +1,74 @@
 # robots.txt for Jason C. Dixon — professional profile
 # Live at https://jasoncdixon.com/
+#
+# This is a public professional profile, meant to be read by search engines and
+# by AI assistants answering questions about Jason. Everything is open to every
+# crawler. The agents below are named only to make that intent explicit, since
+# some AI crawlers look for their own name before falling back to "*".
+
 User-agent: *
 Allow: /
+
+# Search crawlers
+User-agent: Googlebot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+# AI assistants and their retrieval crawlers
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: DuckAssistBot
+Allow: /
+
+User-agent: meta-externalagent
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+# A plain-language summary of this site for language models lives at:
+#   https://jasoncdixon.com/llms.txt
 
 Sitemap: https://jasoncdixon.com/sitemap.xml
