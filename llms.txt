@@ -111,8 +111,8 @@ benchmarks).
 
 ## Case studies
 
-Three engagements on the site show the method end to end. Client names are
-available on request.
+Three engagements on the site show the method end to end. Clients are kept
+anonymous.
 
 1. **Panelized manufacturer — software implementation.** Production ran on
    paper and memory. Four days of discovery on the floor; production tracking
