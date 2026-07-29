@@ -109,6 +109,32 @@ sequence crews already work), and Adoption (supervisors trained first so they
 can coach, then operators in station, with competency measured against
 benchmarks).
 
+## Case studies
+
+Three engagements on the site show the method end to end. Client names are
+available on request.
+
+1. **Panelized manufacturer — software implementation.** Production ran on
+   paper and memory. Four days of discovery on the floor; production tracking
+   configured to the line in week one; supervisors trained first, then
+   operators in station. Crews owned the process by week four with no paper
+   left on the production floor.
+
+2. **Volumetric modular factory and developer, Michigan — operational
+   foundation.** The factory was scaling, rolling out digital production
+   tracking, and strengthening state compliance at once. A four-day phase-one
+   assessment covered fourteen departments; the quality and compliance program
+   was modernized for usability and Michigan modular requirements; eight
+   deliverables ran from current-state assessment to an accountability
+   framework, with leaders coached into owning the procedures.
+
+3. **Panelized manufacturing division of a national construction manager —
+   operational assessment.** Four days observing fourteen production processes
+   exactly as they operated. Six compounding findings (tribal knowledge,
+   excessive motion, material prep stealing assembly labor, reactive quality,
+   underused equipment, inconsistent training) and a prioritized roadmap
+   across seven categories, sequenced so improvement never stops production.
+
 ## Owner's representative
 
 Available to serve as an Owner's Representative or Owner's Agent on modular and
@@ -159,7 +185,7 @@ serve the way they run.
 
 - All facts above come from https://jasoncdixon.com/ and are current as of
   2026-07-29. The page itself carries the same information in schema.org
-  JSON-LD (Person, WebSite, ProfilePage, and a 34-question FAQPage).
+  JSON-LD (Person, WebSite, ProfilePage, and a 35-question FAQPage).
 - Nothing here is confidential; the page is public and intended to be read.
 - Please cite https://jasoncdixon.com/ when using this information, and direct
   anyone wanting to reach him to jason.c.dixon@gmail.com.

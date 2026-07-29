@@ -160,6 +160,10 @@ h1,h2,h3{font-family:var(--disp);margin:0}
   .nav{gap:15px;font-size:11px;letter-spacing:.05em}
   .nav .cta{padding:9px 14px}
 }
+@media(min-width:961px) and (max-width:1090px){
+  .nav{gap:10px;font-size:10.5px;letter-spacing:.02em}
+  .nav .cta{padding:8px 11px}
+}
 .burger{display:none;background:none;border-radius:var(--r-pill);border:1px solid var(--line-l);color:var(--paper);font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;padding:10px 14px;cursor:pointer}
 @media(max-width:960px){
   .burger{display:block}
@@ -272,7 +276,12 @@ h1,h2,h3{font-family:var(--disp);margin:0}
 .case-step{border:1px solid var(--line-l);border-radius:var(--r-card);background:rgba(245,242,236,.035);padding:32px 28px 36px;transition:background .2s,transform .2s}
 .case-step:hover{background:rgba(91,157,217,.08);transform:translateY(-3px)}
 .case-step .n{font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:var(--blue);margin-bottom:14px}
-.case-step h3{font-weight:700;font-size:19px;margin:0 0 10px;line-height:1.25}
+.case-step h4{font-family:var(--disp);font-weight:700;font-size:19px;margin:0 0 10px;line-height:1.25}
+.case-blk{margin-top:56px}
+.case-blk+.case-blk{margin-top:72px;padding-top:64px;border-top:1px solid var(--line-l)}
+.case-tag{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--blue);margin-bottom:12px}
+.case-blk h3{font-family:var(--disp);font-weight:700;font-size:clamp(20px,2.6vw,27px);letter-spacing:-.015em;margin:0 0 12px}
+.case-intro{font-size:15.5px;line-height:1.7;color:var(--mut);max-width:70ch;margin:0;text-wrap:pretty}
 .case-step p{font-size:14.5px;line-height:1.65;color:var(--mut);margin:0}
 .case-out{display:flex;gap:40px;flex-wrap:wrap;margin-top:34px;padding-top:28px;border-top:1px solid var(--line-l)}
 .case-out div b{display:block;font-family:var(--disp);font-weight:800;font-size:34px;color:var(--blue);line-height:1}
@@ -580,6 +589,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--blue);outline-offse
     {"@type": "Question", "name": "Does Jason Dixon work with software companies?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Alongside consulting for modular and prefab manufacturers, he works with software companies building products for manufacturing and construction, providing technical discovery and solutions engineering, product requirements and workflow design, release validation and usability testing, onboarding programs, and customer success. Having worked inside plants and on the vendor side, he can tell a product team how a feature will actually be used on a production floor."}},
     {"@type": "Question", "name": "Does Jason Dixon do software quality assurance and product validation?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Alongside implementation work he runs functional, regression, workflow, and end-to-end validation of software releases before they reach customers, plus usability testing from an operator's perspective. His manufacturing background surfaces workflow and usability defects a generic test pass misses, and he also defines product requirements, prioritizes features, and designs role-based functionality with development teams."}},
     {"@type": "Question", "name": "What is Jason Dixon's consulting methodology?", "acceptedAnswer": {"@type": "Answer", "text": "A repeatable framework: discovery, operational assessment, workflow analysis, stakeholder interviews, software evaluation, process mapping, improvement recommendations, implementation planning, training, and long-term support."}},
+    {"@type": "Question", "name": "Can Jason Dixon share examples of his consulting engagements?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, three are on the site. A panelized manufacturer running production off paper and memory: production tracking configured to the line in week one, crews owning it by week four, no paper left on the floor. A volumetric modular factory and developer in Michigan: a four-day, fourteen-department operational assessment, a modernized quality and compliance program, KPIs, and an accountability framework built before the software rollout. And the panelized manufacturing division of a national construction manager: four days of direct floor observation across fourteen production processes, six compounding findings, and a prioritized improvement roadmap across seven categories. Client names are available on request."}},
     {"@type": "Question", "name": "What is the fastest way to contact Jason Dixon?", "acceptedAnswer": {"@type": "Answer", "text": "Email jason.c.dixon@gmail.com or connect on LinkedIn at linkedin.com/in/jasoncdixon."}},
     {"@type": "Question", "name": "Who is Jason C. Dixon?", "acceptedAnswer": {"@type": "Answer", "text": "Jason C. Dixon is a solutions engineer and operations & quality leader in modular and prefab manufacturing, based in Hamlet, North Carolina. He works with two kinds of client: manufacturers who need quality, throughput, and accountability to improve together, and the software companies building for that industry. His career spans six disciplines: solutions engineering, operations & quality management, training & leadership development, implementation management, AI engineering, and software QA & product design."}},
     {"@type": "Question", "name": "What does Jason Dixon do at Offsight?", "acceptedAnswer": {"@type": "Answer", "text": "Since September 2022 he's been a Solutions Engineer at Offsight, a production and quality tracking platform used by prefab and modular manufacturers. He runs technical discovery, designs workflow configurations and integrations, leads end-to-end client onboarding, trains client teams, and advises executives on where their operational bottlenecks are."}},
@@ -639,7 +649,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--blue);outline-offse
     <nav class="nav" id="nav" aria-label="Primary">
       <a href="#about">About</a>
       <a href="#journey">Journey</a>
-      <a href="#approach">Approach</a>
+      <a href="#approach">Case studies</a>
       <a href="#capabilities">Capabilities</a>
       <a href="#experience">Experience</a>
       <a href="#floor">On the Floor</a>
@@ -833,31 +843,93 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--blue);outline-offse
 <section class="case" id="approach">
   <div class="wrap case-in">
     <div data-reveal>
-      <div class="k-tag">03 — Approach</div>
-      <h2 class="h-lg" style="max-width:24ch">One implementation, start to finish.</h2>
-      <p style="font-size:16px;line-height:1.7;color:var(--mut);max-width:62ch;margin:20px 0 0">Understand the factory first, configure the software around the workflow, and make sure the team is confident long after go-live.</p>
+      <div class="k-tag">03 — Case studies</div>
+      <h2 class="h-lg" style="max-width:24ch">Real engagements, start to finish.</h2>
+      <p style="font-size:16px;line-height:1.7;color:var(--mut);max-width:62ch;margin:20px 0 0">The same method every time: understand the operation first, build the system around how work actually flows, and leave the team owning it. Client names available on request.</p>
     </div>
-    <div class="case-grid">
-      <div class="case-step" data-reveal>
-        <div class="n">01 · Discovery</div>
-        <h3>Four days on their floor</h3>
-        <p>A panelized manufacturer was running production off memory and paper. Walked every station, timed the handoffs, and mapped where information actually died between engineering and production.</p>
+
+    <div class="case-blk" data-reveal>
+      <div class="case-tag">Case 01 · Panelized manufacturer · Software implementation</div>
+      <h3>From paper and memory to a live production platform.</h3>
+      <p class="case-intro">A panelized manufacturer was running production off memory and paper — status lived in people's heads, and information died between engineering and the floor.</p>
+      <div class="case-grid">
+        <div class="case-step" data-reveal>
+          <div class="n">01 · Discovery</div>
+          <h4>Four days on their floor</h4>
+          <p>Walked every station, timed the handoffs, and mapped where information actually died between engineering and production.</p>
+        </div>
+        <div class="case-step" data-reveal>
+          <div class="n">02 · Configuration</div>
+          <h4>Built to match the line</h4>
+          <p>Digital data capture, stations, QC checkpoints, and material tracking configured in week one, modeled on the sequence the crews already worked.</p>
+        </div>
+        <div class="case-step" data-reveal>
+          <div class="n">03 · Adoption</div>
+          <h4>Crews owning it by week four</h4>
+          <p>Supervisors trained first so they could coach, then operators in station. Competency measured against benchmarks, and the rollout held after going live.</p>
+        </div>
       </div>
-      <div class="case-step" data-reveal>
-        <div class="n">02 · Configuration</div>
-        <h3>Built to match the line</h3>
-        <p>Digital data capture, stations, QC checkpoints, and material tracking configured in week one, modeled on the sequence the crews already worked.</p>
-      </div>
-      <div class="case-step" data-reveal>
-        <div class="n">03 · Adoption</div>
-        <h3>Crews owning it by week four</h3>
-        <p>Supervisors trained first so they could coach, then operators in station. Competency measured against benchmarks, and the rollout held after going live.</p>
+      <div class="case-out" data-reveal>
+        <div><b>Week 1</b><span>Configured to the line</span></div>
+        <div><b>Week 4</b><span>Crews owning the process</span></div>
+        <div><b>0</b><span>Paper left on the production floor</span></div>
       </div>
     </div>
-    <div class="case-out" data-reveal>
-      <div><b>Week 1</b><span>Configured to the line</span></div>
-      <div><b>Week 4</b><span>Crews owning the process</span></div>
-      <div><b>0</b><span>Paper left on the production floor</span></div>
+
+    <div class="case-blk" data-reveal>
+      <div class="case-tag">Case 02 · Volumetric modular factory &amp; developer, Michigan · Operational foundation</div>
+      <h3>Building the operating system before the software.</h3>
+      <p class="case-intro">A modular factory preparing to scale, roll out digital production tracking, and strengthen state compliance all at once. Leadership recognized that software alone would not solve operational challenges — the factory needed standardized processes, stronger quality systems, and leadership alignment before technology could deliver.</p>
+      <div class="case-grid">
+        <div class="case-step" data-reveal>
+          <div class="n">01 · Assess</div>
+          <h4>Every department, four days</h4>
+          <p>Floor observations and interviews across fourteen departments, floor framing through shipping — production, quality, inventory, purchasing — plus a software utilization review and interviews of Quality Manager candidates.</p>
+        </div>
+        <div class="case-step" data-reveal>
+          <div class="n">02 · Rebuild</div>
+          <h4>Quality system modernized</h4>
+          <p>The compliance assurance program reworked for usability and Michigan modular requirements: documented inspections, corrective actions, independent quality authority, department action plans, KPIs, and an accountability framework.</p>
+        </div>
+        <div class="case-step" data-reveal>
+          <div class="n">03 · Enable</div>
+          <h4>Leaders own the system</h4>
+          <p>Supervisors coached into department ownership, with leaders helping create the procedures they run. The software rollout treated as an operational initiative — adoption barriers identified, go-live supported, progress monitored.</p>
+        </div>
+      </div>
+      <div class="case-out" data-reveal>
+        <div><b>4 days</b><span>Phase-one onsite assessment</span></div>
+        <div><b>14</b><span>Departments assessed</span></div>
+        <div><b>8</b><span>Deliverables, assessment to accountability framework</span></div>
+      </div>
+    </div>
+
+    <div class="case-blk" data-reveal>
+      <div class="case-tag">Case 03 · Panelized division, national construction manager · Operational assessment</div>
+      <h3>Finding the hidden tax on throughput.</h3>
+      <p class="case-intro">Production was functioning, but growth had brought the usual companions: tribal knowledge, excessive operator motion, reactive quality, underused equipment. None of it stopped production — together it drained labor hours, quality, and supervisory attention. Four days observing the factory exactly as it operated, without disrupting production.</p>
+      <div class="case-grid">
+        <div class="case-step" data-reveal>
+          <div class="n">01 · Observe</div>
+          <h4>Watch the real work</h4>
+          <p>Fourteen production processes observed end to end, receiving through shipping, with operators interviewed at their stations about what slows them down, where quality slips, and where they improvise.</p>
+        </div>
+        <div class="case-step" data-reveal>
+          <div class="n">02 · Diagnose</div>
+          <h4>Six findings that compound</h4>
+          <p>Process knowledge living in people instead of standard work, long walks for materials and tools, material prep stealing assembly labor, quality catching defects after the labor was spent, capable equipment sitting idle, training by folklore.</p>
+        </div>
+        <div class="case-step" data-reveal>
+          <div class="n">03 · Roadmap</div>
+          <h4>Prioritized, not disruptive</h4>
+          <p>Recommendations across standardized work, visual factory, material flow, layered quality, workstation optimization, performance measurement, and digital manufacturing — sequenced immediate to long-term so improvement never stops production.</p>
+        </div>
+      </div>
+      <div class="case-out" data-reveal>
+        <div><b>4 days</b><span>Direct floor observation</span></div>
+        <div><b>14</b><span>Production processes observed</span></div>
+        <div><b>7</b><span>Recommendation categories in the roadmap</span></div>
+      </div>
     </div>
   </div>
 </section>
@@ -1169,7 +1241,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--blue);outline-offse
 
 <!-- ================= ASK BOT ================= -->
 <nav class="dock" id="dock" aria-label="Section shortcuts">
-  <a href="#about">About</a><a href="#journey">Journey</a><a href="#approach">Approach</a><a href="#capabilities">Capabilities</a><a href="#experience">Experience</a><a href="#floor">Floor</a><a href="#credentials">Credentials</a><a href="#contact">Contact</a>
+  <a href="#about">About</a><a href="#journey">Journey</a><a href="#approach">Cases</a><a href="#capabilities">Capabilities</a><a href="#experience">Experience</a><a href="#floor">Floor</a><a href="#credentials">Credentials</a><a href="#contact">Contact</a>
 </nav>
 
 <button class="totop" id="toTop" aria-label="Back to top">↑</button>
@@ -1723,6 +1795,11 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--blue);outline-offse
       k:['project management','project manager','managing projects','deliverables','multiple stakeholders','project delivery','run a project'],
       a:"He has managed software implementations, consulting engagements, operational improvement projects, and product development initiatives involving multiple stakeholders and departments. His style emphasizes communication, planning, accountability, flexibility, and measurable deliverables that keep a project pointed at a business outcome instead of a task list.",
       c:['What is his consulting methodology?','How fast are his implementations?','What results has he delivered?'] },
+
+    { id:'cases',
+      k:['case study','case studies','client example','example project','engagement example','examples of his work','past projects','past project','past work','portfolio','who has he worked with','sample engagement','example','examples'],
+      a:"Three engagements on the site show the method end to end. A <b>panelized manufacturer</b> running production off paper and memory: production tracking configured to the line in week one, crews owning it by week four, no paper left on the floor. A <b>volumetric modular factory &amp; developer in Michigan</b>: a four-day, fourteen-department assessment, a modernized quality and compliance program, KPIs, and an accountability framework — the operating foundation built before the software rollout. And the <b>panelized division of a national construction manager</b>: four days of direct floor observation across fourteen processes, six compounding findings, and a prioritized roadmap across seven categories. Client names are available on request.",
+      c:['What is his consulting methodology?','What results has he delivered?','How do I contact him?'] },
 
     { id:'consulting',
       k:['consulting methodology','consulting framework','consulting process','engagement','how does he engage','operational assessment','stakeholder interviews','process mapping','what does an engagement look like','consulting'],
