@@ -1,0 +1,73 @@
+/* ==========================================================================
+   Jason C. Dixon — Design Tokens
+   Single source of truth for color, type, space, and radii.
+   ========================================================================== */
+
+:root {
+  /* ---- Color ------------------------------------------------------------ */
+  --paper:        #F7F5F0;   /* page background (warm off-white)            */
+  --ink:          #1B1D1B;   /* headings, primary text, dark footer bg      */
+  --body:         #3A3D38;   /* body copy                                   */
+  --muted:        #55584F;   /* secondary text, nav links                   */
+  --faint:        #8A8D83;   /* captions, kickers, metadata                 */
+  --accent:       #2E4B38;   /* deep green — links, emphasis, numbers       */
+  --accent-tint:  #9DB5A4;   /* green tint, dark surfaces only              */
+  --card:         #FFFFFF;   /* card surface                                */
+  --card-alt:     #EDEAE2;   /* warm callout surface                        */
+  --band-blue:    #F9FBFD;   /* very light blue band (home stats)           */
+  --band-sage:    #E9EDE3;   /* sage band (details gallery)                 */
+
+  --line:         rgba(27, 29, 27, 0.15);  /* section top rules             */
+  --line-soft:    rgba(27, 29, 27, 0.10);  /* row dividers                  */
+  --line-faint:   rgba(27, 29, 27, 0.08);  /* card + nav borders            */
+
+  --footer-line:  rgba(247, 245, 240, 0.14);
+  --footer-link:  rgba(247, 245, 240, 0.35);
+  --footer-muted: #B9BCB2;
+
+  /* ---- Type families --------------------------------------------------- */
+  --font-display: 'Newsreader', Georgia, 'Times New Roman', serif;
+  --font-sans:    'Archivo', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+  /* ---- Type scale (fluid) ---------------------------------------------- */
+  --fs-h1:        clamp(38px, 5.2vw, 64px);   /* home hero                  */
+  --fs-h1-sub:    clamp(34px, 4.6vw, 56px);   /* secondary page hero        */
+  --fs-h2:        clamp(26px, 3.2vw, 38px);   /* section heading            */
+  --fs-h2-footer: clamp(30px, 4.2vw, 52px);   /* footer heading             */
+  --fs-h3:        clamp(21px, 2.4vw, 27px);   /* case-card title            */
+  --fs-h3-sm:     22px;                       /* discipline / column title  */
+  --fs-stat:      40px;                       /* stat numeral               */
+  --fs-quote:     clamp(19px, 2.2vw, 24px);   /* pull quote                 */
+  --fs-lead:      17px;
+  --fs-body:      16.5px;
+  --fs-body-sm:   15.5px;
+  --fs-ui:        15px;
+  --fs-meta:      14.5px;
+  --fs-small:     14px;
+  --fs-kicker:    13px;
+  --fs-eyebrow:   12.5px;
+
+  /* ---- Type detail ----------------------------------------------------- */
+  --lh-display:   1.08;
+  --lh-heading:   1.2;
+  --lh-body:      1.65;
+  --lh-body-open: 1.7;
+  --ls-tight:     -0.01em;
+  --ls-kicker:    0.14em;
+  --ls-eyebrow:   0.12em;
+
+  /* ---- Space ----------------------------------------------------------- */
+  --page-max:     1200px;
+  --gutter:       clamp(24px, 6vw, 72px);
+  --section-gap:  clamp(64px, 9vw, 110px);   /* space below a section       */
+  --section-top:  clamp(32px, 5vw, 56px);    /* rule → content             */
+  --col-gap:      clamp(28px, 5vw, 64px);    /* rail → content             */
+  --rail-w:       180px;
+  --card-pad:     clamp(24px, 3.5vw, 40px);
+  --card-pad-sm:  clamp(22px, 3vw, 32px);
+
+  /* ---- Radii & effects ------------------------------------------------- */
+  --radius:       2px;                       /* near-square, everywhere     */
+  --photo-sat:    saturate(0.88);
+  --blur-nav:     blur(8px);
+}
