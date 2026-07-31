@@ -4,44 +4,42 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://jasoncdixon.com/</loc>
-    <lastmod>2026-07-29</lastmod>
+    <lastmod>2026-07-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
     <image:image>
-      <image:loc>https://jasoncdixon.com/uploads/1663043378519.jpeg</image:loc>
+      <image:loc>https://jasoncdixon.com/assets/img/portrait.jpeg</image:loc>
       <image:caption>Portrait of Jason C. Dixon, solutions engineer and operations leader in modular construction</image:caption>
     </image:image>
+  </url>
+  <url>
+    <loc>https://jasoncdixon.com/details.html</loc>
+    <lastmod>2026-07-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
     <image:image>
-      <image:loc>https://jasoncdixon.com/uploads/1782305854754.jpeg</image:loc>
+      <image:loc>https://jasoncdixon.com/assets/img/floor-01-executive-walkthrough.jpeg</image:loc>
       <image:caption>Jason Dixon presenting a live factory production dashboard during an executive walkthrough</image:caption>
     </image:image>
     <image:image>
-      <image:loc>https://jasoncdixon.com/uploads/1782305851172.jpeg</image:loc>
-      <image:caption>Jason Dixon running an operator training session with a production crew in a prefab factory</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://jasoncdixon.com/uploads/1782305853610.jpeg</image:loc>
+      <image:loc>https://jasoncdixon.com/assets/img/floor-02-implementation-workshop.jpeg</image:loc>
       <image:caption>Jason Dixon leading an implementation workshop, mapping production workflows with a client team</image:caption>
     </image:image>
     <image:image>
-      <image:loc>https://jasoncdixon.com/uploads/1782305863950.jpeg</image:loc>
+      <image:loc>https://jasoncdixon.com/assets/img/floor-03-operator-training.jpeg</image:loc>
+      <image:caption>Jason Dixon running an operator training session with a production crew in a prefab factory</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://jasoncdixon.com/assets/img/floor-04-tablets-on-the-line.jpeg</image:loc>
       <image:caption>Jason Dixon with quality and production leads using tablets on a manufacturing line</image:caption>
     </image:image>
     <image:image>
-      <image:loc>https://jasoncdixon.com/uploads/1782305863122.jpeg</image:loc>
+      <image:loc>https://jasoncdixon.com/assets/img/floor-05-project-kickoff.jpeg</image:loc>
       <image:caption>Jason Dixon in a project kickoff meeting with a client leadership team</image:caption>
     </image:image>
     <image:image>
-      <image:loc>https://jasoncdixon.com/uploads/1782305865637.jpeg</image:loc>
+      <image:loc>https://jasoncdixon.com/assets/img/floor-06-crew-shop-floor.jpeg</image:loc>
       <image:caption>Jason Dixon with a production crew on a modular construction shop floor</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://jasoncdixon.com/uploads/1782305861072.jpeg</image:loc>
-      <image:caption>Jason Dixon on site at a prefab digital building components facility</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://jasoncdixon.com/uploads/jason-dixon-product-design.jpeg</image:loc>
-      <image:caption>Jason Dixon at his desk reviewing software during product design and validation work</image:caption>
     </image:image>
   </url>
 </urlset>

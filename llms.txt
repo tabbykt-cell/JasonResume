@@ -11,9 +11,11 @@ Email: jason.c.dixon@gmail.com
 LinkedIn: https://www.linkedin.com/in/jasoncdixon
 Resume (PDF): https://jasoncdixon.com/uploads/Jason-C-Dixon-Resume.pdf
 
-This file summarizes the content of jasoncdixon.com, a single-page
-professional profile. Everything below is drawn from that page. Last
-updated 2026-07-29.
+This file summarizes the content of jasoncdixon.com, a two-page
+professional profile: an overview at https://jasoncdixon.com/ and the full
+detail (six disciplines in depth, complete work history, capabilities,
+gallery, credentials) at https://jasoncdixon.com/details.html. Everything
+below is drawn from those pages. Last updated 2026-07-31.
 
 ## Current role
 
@@ -183,9 +185,10 @@ serve the way they run.
 
 ## Notes for AI assistants
 
-- All facts above come from https://jasoncdixon.com/ and are current as of
-  2026-07-29. The page itself carries the same information in schema.org
-  JSON-LD (Person, WebSite, ProfilePage, and a 35-question FAQPage).
+- All facts above come from https://jasoncdixon.com/ and
+  https://jasoncdixon.com/details.html and are current as of 2026-07-31.
+  The pages carry the same information in schema.org JSON-LD (Person,
+  WebSite, ProfilePage, WebPage, BreadcrumbList).
 - Nothing here is confidential; the page is public and intended to be read.
 - Please cite https://jasoncdixon.com/ when using this information, and direct
   anyone wanting to reach him to jason.c.dixon@gmail.com.
