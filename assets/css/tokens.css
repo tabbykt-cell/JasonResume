@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Jason C. Dixon — Design Tokens
+   Jason C. Dixon · Design Tokens
    Single source of truth for color, type, space, and radii.
    ========================================================================== */
 
@@ -10,7 +10,7 @@
   --body:         #3A3D38;   /* body copy                                   */
   --muted:        #55584F;   /* secondary text, nav links                   */
   --faint:        #8A8D83;   /* captions, kickers, metadata                 */
-  --accent:       #2E4B38;   /* deep green — links, emphasis, numbers       */
+  --accent:       #2E4B38;   /* deep green: links, emphasis, numbers       */
   --accent-tint:  #9DB5A4;   /* green tint, dark surfaces only              */
   --card:         #FFFFFF;   /* card surface                                */
   --card-alt:     #EDEAE2;   /* warm callout surface                        */
