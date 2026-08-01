@@ -471,6 +471,25 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 400; text-wrap: pret
 
 a, .inline-link, .footer__links a { transition: color 0.2s ease, border-color 0.2s ease; }
 
+/* ---- About video -------------------------------------------------------- */
+
+.about-row {
+  display: flex; flex-wrap: wrap; gap: clamp(24px, 4vw, 44px);
+  align-items: flex-start; margin-bottom: 36px;
+}
+.about-copy { flex: 1 1 340px; min-width: min(320px, 100%); }
+.about-copy .copy:last-child { margin-bottom: 0; }
+.about-vid { flex: 0 1 250px; min-width: min(220px, 100%); margin: 0; }
+.about-vid video,
+.about-vid img {
+  display: block; width: 100%; aspect-ratio: 4 / 5; object-fit: cover;
+  border-radius: var(--radius); filter: var(--photo-sat); background: var(--card-alt);
+}
+.about-vid figcaption {
+  margin-top: 10px; font-size: var(--fs-eyebrow);
+  letter-spacing: 0.1em; text-transform: uppercase; color: var(--faint);
+}
+
 /* ---- Cookie consent banner ---------------------------------------------- */
 
 .cc-banner {
