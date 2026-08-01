@@ -10,7 +10,7 @@
 
   /* ---- Scroll reveal ---------------------------------------------------- */
   var targets = document.querySelectorAll(
-    '.section .h2, .section .note, .card, .callout, .stat, .disc, .role, .job, .quote, .shot, .audience > div, .colhead, .deflist, .cred, .split__rail .kicker'
+    '.section .h2, .section .note, .card, .callout, .stat, .disc, .role, .job, .quote, .shot, .about-vid, .audience > div, .colhead, .deflist, .cred, .split__rail .kicker'
   );
 
   if (!reduce && 'IntersectionObserver' in window) {
@@ -64,6 +64,31 @@
         });
       }, { threshold: 0.4 });
       sio.observe(stats[0].closest('.band') || stats[0]);
+    }
+  }
+
+  /* ---- About video: load and play only while visible --------------------- */
+  var vid = document.getElementById('aboutVid');
+  if (vid) {
+    if (reduce) {
+      // Reduce Motion: never autoplay. Show the poster, offer manual controls.
+      vid.setAttribute('preload', 'metadata');
+      vid.setAttribute('controls', '');
+    } else if ('IntersectionObserver' in window) {
+      var vio = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            if (vid.preload === 'none') { vid.preload = 'auto'; vid.load(); }
+            var p = vid.play();
+            if (p && p.catch) p.catch(function () {});
+          } else {
+            vid.pause();
+          }
+        });
+      }, { threshold: 0.35 });
+      vio.observe(vid);
+    } else {
+      vid.setAttribute('controls', '');
     }
   }
 
