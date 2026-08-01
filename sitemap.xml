@@ -42,4 +42,14 @@
       <image:caption>Jason Dixon with a production crew on a modular construction shop floor</image:caption>
     </image:image>
   </url>
+  <url>
+    <loc>https://jasoncdixon.com/why-implementations-fail.html</loc>
+    <lastmod>2026-08-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://jasoncdixon.com/assets/img/floor-04-tablets-on-the-line.jpeg</image:loc>
+      <image:caption>Production crew on a panelized manufacturing floor using tablets on the line</image:caption>
+    </image:image>
+  </url>
 </urlset>

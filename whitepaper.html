@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Why Most Manufacturing Software Implementations Fail · White Paper · Jason C. Dixon</title>
+<meta name="description" content="A white paper on why manufacturing software implementations struggle, with two real-world examples and nine best practices for a rollout that holds.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#F7F5F0">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Archivo:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/tokens.css">
+<link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body class="doc" id="top">
+
+<div class="doc__bar no-print">
+  <a class="nav__mark" href="index.html">Jason C. Dixon</a>
+  <div class="actions">
+    <button class="btn" type="button" onclick="window.print()">Download as PDF ↓</button>
+    <a class="btn btn--text" href="why-implementations-fail.html">← Back to the article</a>
+  </div>
+</div>
+
+<main class="sheet" id="main">
+
+  <header class="sheet__cover">
+    <p class="kicker kicker--accent">White paper · Manufacturing operations</p>
+    <h1>Why most manufacturing software implementations fail, and how to prevent it.</h1>
+    <p class="lead">Five reasons rollouts struggle, two real-world implementations, and nine practices that turn new software into a lasting operational advantage.</p>
+    <figure class="article__hero" style="margin-bottom: 28px;">
+      <img src="assets/img/floor-04-tablets-on-the-line.jpeg" alt="Production crew on a panelized manufacturing floor holding tablets running production tracking software">
+      <figcaption>Adoption is decided on the floor, not in the demo.</figcaption>
+    </figure>
+    <div class="sheet__meta">
+      <p style="margin: 0;"><strong style="font-weight: 600; color: var(--ink);">Jason C. Dixon</strong> · Solutions Engineer, modular &amp; prefab manufacturing</p>
+      <p style="margin: 0;">jasoncdixon.com · jason.c.dixon@gmail.com</p>
+    </div>
+  </header>
+
+  <nav class="sheet__toc" aria-label="Contents">
+    <p class="kicker">Contents</p>
+    <ol>
+      <li>The wrong people are leading the implementation</li>
+      <li>Every factory needs a subject matter expert</li>
+      <li>Poor planning creates long and expensive implementations</li>
+      <li>Don't overlook the hardware and IT infrastructure</li>
+      <li>Companies stop using the software as a management tool</li>
+      <li>Real-world example: fast doesn't always mean successful</li>
+      <li>Real-world example: when culture becomes the bottleneck</li>
+      <li>Nine best practices for a successful implementation</li>
+      <li>Final thoughts and key takeaways</li>
+    </ol>
+  </nav>
+
+  <div class="prose">
+
+    <h2>Technology isn't usually the problem</h2>
+    <p>Over the past several years, I've helped manufacturing companies implement software ranging from ERP and MES systems to production tracking, quality management, inventory control, and labor management platforms.</p>
+    <p>I've seen companies completely transform their operations in a matter of weeks. I've also seen companies spend thousands of dollars on software only to abandon it months later.</p>
+    <p>The interesting part is that the software usually wasn't the problem. Most manufacturing software implementations fail because companies underestimate the operational changes required to make the software successful.</p>
+    <p class="pull">Software simply exposes the strengths and weaknesses that already exist inside an organization.</p>
+    <p>If your processes are disciplined, software accelerates your success. If your processes lack accountability, software simply makes those problems more visible.</p>
+    <p>After working with manufacturers across the modular, panelized, and prefab industries, I've found five common reasons implementations struggle.</p>
+
+    <hr>
+
+    <h2><span class="numbered">Reason 01</span>The wrong people are leading the implementation</h2>
+    <p>One of the biggest mistakes I see is assigning software implementation to the people who simply use the software every day. Those employees absolutely need to be involved; their input is critical because they're the ones performing the work. But they shouldn't own the implementation.</p>
+    <p>Successful implementations require someone whose job is making the project successful, not someone trying to squeeze implementation work between their normal daily responsibilities. The implementation leader should have enough authority to make decisions, remove roadblocks, and hold people accountable. Just as importantly, they need to genuinely believe in the project.</p>
+    <p>When leadership assigns software to someone who has little ownership, little authority, or little interest, the project almost always loses momentum.</p>
+
+    <hr>
+
+    <h2><span class="numbered">Reason 02</span>Every factory needs a subject matter expert</h2>
+    <p>Another major reason implementations struggle is the absence of a dedicated Subject Matter Expert. An SME understands three things:</p>
+    <ul>
+      <li>How the factory actually operates.</li>
+      <li>How the software is designed to work.</li>
+      <li>How to bridge the gap between those two worlds.</li>
+    </ul>
+    <p>Without someone filling this role, companies often configure software based on assumptions rather than actual workflows. The result is frustration from employees who feel like the software "doesn't fit."</p>
+    <p>In many situations, hiring an implementation manager, working with a consultant, or bringing in a trainer from the software company is one of the best investments a manufacturer can make. The upfront cost is usually far less than the cost of months of delays, poor adoption, and bad data.</p>
+
+    <hr>
+
+    <h2><span class="numbered">Reason 03</span>Poor planning creates long and expensive implementations</h2>
+    <p>Many organizations focus almost entirely on one question: <em>"How much does the software cost?"</em> The better question is: <em>"What will it cost us to successfully implement the software?"</em></p>
+    <p>That includes much more than the purchase price. A proper implementation plan should consider:</p>
+    <ul>
+      <li>Software licensing</li>
+      <li>Hardware requirements</li>
+      <li>Implementation labor</li>
+      <li>Employee training</li>
+      <li>Process changes</li>
+      <li>Downtime during rollout</li>
+      <li>Internal project management</li>
+      <li>Ongoing support</li>
+    </ul>
+    <p>Perhaps the biggest planning mistake is unrealistic expectations. Factories often assume implementation will happen quickly. In reality, implementation takes as long as the organization takes to develop disciplined habits.</p>
+    <p class="pull">The software isn't slow. Changing habits is.</p>
+    <p>I've often joked with clients that implementation usually takes about twice as long as they expect.</p>
+
+    <hr>
+
+    <h2><span class="numbered">Reason 04</span>Don't overlook the hardware and IT infrastructure</h2>
+    <p>One of the most overlooked aspects of a successful software implementation has nothing to do with the software itself: it's the hardware and network infrastructure that support it. I've seen companies invest significant time and money into selecting the right software only to discover, during implementation, that their factory isn't ready to support it.</p>
+    <p>Before going live, ask yourself questions like:</p>
+    <ul>
+      <li>Do we have reliable Wi-Fi coverage throughout the entire facility?</li>
+      <li>Are there dead zones on the production floor where tablets or scanners won't stay connected?</li>
+      <li>Do we have enough tablets, computers, barcode scanners, printers, or other hardware for employees to perform their work efficiently?</li>
+      <li>Is our network secure and capable of handling additional connected devices?</li>
+      <li>Who will support the hardware if something fails during production?</li>
+    </ul>
+    <p>These questions should be answered before implementation begins, not after employees are already trying to use the system. For many manufacturers, partnering with an experienced IT company or assigning dedicated internal IT personnel is a worthwhile investment. They can ensure wireless access points are properly positioned, devices are configured correctly, security policies are in place, and hardware is ready before the software goes live.</p>
+    <p>Nothing frustrates employees more than being asked to use new software on unreliable equipment or over an unstable network. If the tablet continually loses its connection or the barcode scanner won't communicate with the system, employees quickly lose confidence, not only in the hardware but in the software itself.</p>
+    <p>A successful implementation depends on the entire technology ecosystem working together. The software may be the centerpiece, but reliable hardware, dependable Wi-Fi, properly configured devices, and responsive IT support are all critical components of long-term success.</p>
+
+    <hr>
+
+    <h2><span class="numbered">Reason 05</span>Companies stop using the software as a management tool</h2>
+    <p>Many factories successfully go live. Unfortunately, that's where many implementations begin to fail. People continue entering information. Reports continue running. But no one actually uses the data, and the software becomes nothing more than a digital checkbox.</p>
+    <p>Instead of asking:</p>
+    <ul>
+      <li>What are today's production bottlenecks?</li>
+      <li>Which department is falling behind?</li>
+      <li>Where is rework increasing?</li>
+      <li>Which KPIs are changing?</li>
+    </ul>
+    <p>Leadership simply collects data because "that's what we're supposed to do."</p>
+    <p>Software should drive conversations. It should improve decisions. It should expose problems before they become expensive. Without accountability, even great software eventually becomes ignored.</p>
+
+    <hr>
+
+    <h2>Real-world example: fast doesn't always mean successful</h2>
+    <p>One of the fastest implementations I've ever completed was at a panelized manufacturing facility. We successfully launched the software in just two weeks. From a technical perspective, everything worked, and the project manager began using reports generated by the software to monitor weekly production.</p>
+    <p>There was just one problem. Employees weren't entering accurate information. As a result, the reports looked impressive, but they weren't telling the truth.</p>
+    <p>Instead of auditing the data and coaching the team toward better habits, the organization slowly returned to its old paper-based processes. Ironically, they ended up relying on paper again while still struggling with inaccurate information, because the real issue had never been addressed.</p>
+    <p class="pull">The software wasn't the failure. Accountability was.</p>
+
+    <hr>
+
+    <h2>Real-world example: when culture becomes the bottleneck</h2>
+    <p>Another manufacturer struggled with implementation for months. Employees would use the software for a few weeks, stop using it, then try again. The owner became frustrated because the reports couldn't be trusted.</p>
+    <p>I was asked to walk through the factory and identify the root cause. After spending time observing operations, interviewing leadership, and watching daily workflows, it became clear the software wasn't the biggest issue. Leadership consistency was.</p>
+    <p>Employees naturally follow the standards demonstrated by leadership. If management treats software as optional, employees will too.</p>
+    <p>After presenting my findings, leadership made several organizational changes. Later, I returned to conduct leadership training focused on accountability, communication, and operational management. Once leadership changed its approach, software adoption dramatically improved. Culture had been slowing progress far more than technology ever was.</p>
+
+    <hr>
+
+    <h2>Best practices for a successful implementation</h2>
+
+    <h3>1. Appoint a dedicated implementation leader</h3>
+    <p>Give one person ownership of the project. Ideally, this person also serves as the Subject Matter Expert and has a backup who understands the system and can keep the project moving when they're unavailable.</p>
+
+    <h3>2. Evaluate software before buying it</h3>
+    <p>Create evaluation criteria before speaking with vendors. Consider the problems you're trying to solve, budget, required functionality, ease of use, implementation timeline, integration requirements, and long-term scalability. Remember that implementation time is often more expensive than the software itself.</p>
+
+    <h3>3. Limit the evaluation period</h3>
+    <p>Software evaluations shouldn't last forever. Most organizations can evaluate multiple platforms within <strong>30 to 45 days</strong>. Long evaluation periods usually delay improvement rather than improve decisions.</p>
+
+    <h3>4. Demand proof of concept</h3>
+    <p>Don't simply believe marketing demonstrations. Request a trial. Use your own data. Test real workflows. Ask vendors to prove they can solve your specific operational problems. If possible, ask to speak with an existing customer who has implemented the software successfully. An experienced software consultant from the vendor who understands your business can also provide tremendous value during the evaluation process.</p>
+
+    <h3>5. Build a detailed implementation roadmap</h3>
+    <p>Every implementation should include milestone dates for hardware installation, network readiness, software configuration, user training, pilot testing, go-live, reporting, and performance reviews. Everyone should understand what success looks like before implementation begins.</p>
+
+    <h3>6. Review progress frequently</h3>
+    <p>Meet regularly throughout implementation. If milestones begin slipping, determine why immediately. Document delays. Create recovery plans. Accountability should exist at every level of the organization.</p>
+
+    <h3>7. Support your implementation team</h3>
+    <p>One of the strongest indicators of success is visible executive support. When ownership consistently reinforces the importance of the project, employees take it seriously. Celebrate milestones, recognize progress, and show employees the value the software is creating.</p>
+
+    <h3>8. Conduct a 90-day review</h3>
+    <p>Going live isn't the finish line. After three months, evaluate software usage, data quality, reporting accuracy, user adoption, process compliance, and opportunities for improvement. Many companies discover they're only using a fraction of what their software can actually do.</p>
+
+    <h3>9. Perform an annual operational assessment</h3>
+    <p>One year after implementation, bring in someone from outside your organization. An experienced consultant can identify untapped software capabilities, inefficient workflows, cultural barriers, reporting gaps, and missed automation opportunities. Fresh eyes frequently uncover opportunities internal teams no longer notice.</p>
+
+    <hr>
+
+    <h2>Final thoughts</h2>
+    <p>Manufacturing software doesn't improve factories. People improve factories. Software simply gives those people better information, greater visibility, and stronger tools for making decisions.</p>
+    <p>Successful implementations happen when organizations invest just as much effort into people, leadership, planning, infrastructure, and accountability as they do into selecting the software itself.</p>
+    <p class="pull">Technology is an investment. Operational discipline is what produces the return on that investment.</p>
+    <p>The manufacturers who consistently succeed aren't the ones with the most expensive software. They're the ones who build the right culture around it.</p>
+
+    <hr>
+
+    <h2>Key takeaways</h2>
+    <p>A successful manufacturing software implementation is far more than installing a new system; it's leading organizational change. Keep these principles in mind:</p>
+    <ul>
+      <li><strong>Evaluate</strong> software based on your operational needs, not just features.</li>
+      <li><strong>Test</strong> the software using real-world workflows before purchasing.</li>
+      <li><strong>Plan</strong> for the total cost, including hardware, training, IT infrastructure, and implementation resources.</li>
+      <li><strong>Assign</strong> a dedicated implementation manager or SME to lead the project.</li>
+      <li><strong>Prepare</strong> your factory's technology by ensuring Wi-Fi, tablets, scanners, computers, and printers are ready before go-live.</li>
+      <li><strong>Create</strong> clear implementation milestones and hold regular progress reviews.</li>
+      <li><strong>Hold everyone accountable</strong>, from leadership to operators, for following the new processes.</li>
+      <li><strong>Audit</strong> software usage after go-live to ensure accurate data and proper adoption.</li>
+      <li><strong>Continuously improve</strong> by reviewing reports, KPIs, and user feedback.</li>
+      <li><strong>Bring in outside expertise</strong> when needed. A trusted consultant can identify operational gaps, cultural challenges, and untapped capabilities internal teams may overlook.</li>
+    </ul>
+    <p>Software alone will never transform a factory. The combination of <strong>the right people, the right planning, the right technology, and consistent accountability</strong> is what turns a software implementation into a lasting competitive advantage.</p>
+
+    <hr>
+
+    <p class="small" style="max-width: 62ch;"><strong style="color: var(--ink);">Jason C. Dixon</strong> is a Solutions Engineer working with modular, panelized, and prefab manufacturers across North America: operational assessment, quality systems, and software implementation. Hamlet, North Carolina.<br>
+    <a class="inline-link" href="mailto:jason.c.dixon@gmail.com">jason.c.dixon@gmail.com</a> · <a class="inline-link" href="https://www.linkedin.com/in/jasoncdixon">linkedin.com/in/jasoncdixon</a> · jasoncdixon.com</p>
+    <p class="meta" style="margin-top: 28px;">© 2026 Jason C. Dixon. Shared for the benefit of manufacturers evaluating or recovering an implementation.</p>
+
+  </div>
+</main>
+
+</body>
+</html>

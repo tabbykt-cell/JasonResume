@@ -181,6 +181,17 @@ a law firm: firm operations, systems and organization, client expectation
 management, working with judges and court clerks, deadline management, and
 office system rollout.
 
+## Writing
+
+An article, "Why most manufacturing software implementations fail, and how to
+prevent it," is published at
+https://jasoncdixon.com/why-implementations-fail.html. It covers five reasons
+implementations struggle (wrong implementation leadership, no subject matter
+expert, poor planning, overlooked hardware/Wi-Fi/IT infrastructure, and
+software that stops being used as a management tool), two real-world examples,
+and nine best practices. The full nine-page white paper is available on the
+page after a short request form.
+
 ## Operating principle
 
 Sustainable performance comes from strong systems, not harder pushing. Clear
