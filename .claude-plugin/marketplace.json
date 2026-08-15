@@ -1,0 +1,18 @@
+{
+  "name": "jasoncdixon",
+  "owner": {
+    "name": "Jason C. Dixon",
+    "url": "https://jasoncdixon.com"
+  },
+  "plugins": [
+    {
+      "name": "resume-site",
+      "source": "./plugins/resume-site",
+      "description": "Maintains jasoncdixon.com: propagates content edits across every page, audits links, SEO metadata, and contact-detail consistency, and gates publishing.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Jason C. Dixon"
+      }
+    }
+  ]
+}
