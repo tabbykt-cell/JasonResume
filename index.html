@@ -105,6 +105,21 @@
 <link rel="stylesheet" href="assets/css/styles.css">
 <script>document.documentElement.classList.add('js');</script>
 <script src="assets/js/site.js" defer></script>
+<style>
+.hero__figure--slides{position:relative}
+.hero__figure--slides .slide{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .9s ease}
+.hero__figure--slides .slide.is-on{opacity:1;position:relative}
+@media (prefers-reduced-motion: reduce){.hero__figure--slides .slide{transition:none}}
+.rg-veil{position:fixed;inset:0;background:rgba(20,20,18,.55);display:none;align-items:center;justify-content:center;padding:24px;z-index:60}
+.rg-veil.is-open{display:flex}
+.rg-card{background:#fff;max-width:460px;width:100%;padding:28px;border-radius:2px;box-shadow:0 24px 60px rgba(0,0,0,.25)}
+.rg-card h3{margin:0 0 8px;font-size:1.35rem;line-height:1.25}
+.rg-card p{margin:0 0 18px}
+.rg-row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.rg-card input{flex:1 1 220px;padding:12px 14px;border:1px solid #ccc8bf;font:inherit;border-radius:2px}
+.rg-skip{background:none;border:0;padding:8px 2px;font:inherit;text-decoration:underline;cursor:pointer;color:inherit}
+.rg-note{font-size:.85rem;opacity:.72;margin:14px 0 0}
+</style>
 </head>
 <body id="top">
 
@@ -130,15 +145,21 @@
       <div class="hero__text">
         <p class="kicker kicker--accent">Senior Solutions Engineer · Modular Construction</p>
         <h1 class="h1">Better factories aren't pushed harder. <em>They're built on better systems.</em></h1>
-        <p class="lead">I help modular and prefab manufacturers improve quality, throughput, and accountability, and help the software companies serving them build products that hold up on the factory floor.</p>
+        <p class="lead">I help modular and prefab manufacturers improve quality, throughput, and accountability, and help the software companies serving them build products that hold up on the factory floor. The result is fewer defects leaving the building, schedules the business can trust, and technology crews actually use.</p>
         <div class="actions">
           <a class="btn" href="#contact">Get in touch</a>
           <a class="btn btn--text" href="uploads/Jason-C-Dixon-Resume.pdf">Download resume ↓</a>
         </div>
       </div>
-      <figure class="hero__figure">
-        <img src="assets/img/portrait.jpeg" alt="Portrait of Jason C. Dixon" width="800" height="800">
-        <figcaption>North Carolina · 20+ years leading teams</figcaption>
+      <figure class="hero__figure hero__figure--slides" id="heroSlides">
+        <img class="slide is-on" src="assets/img/portrait.jpeg" alt="Jason C. Dixon" width="800" height="800">
+        <img class="slide" src="assets/img/floor-01-executive-walkthrough.jpeg" alt="Walking a production line with plant leadership" width="800" height="800" loading="lazy">
+        <img class="slide" src="assets/img/floor-06-crew-shop-floor.jpeg" alt="On the shop floor with a production crew" width="800" height="800" loading="lazy">
+        <img class="slide" src="assets/img/floor-03-operator-training.jpeg" alt="Training operators on the line" width="800" height="800" loading="lazy">
+        <img class="slide" src="assets/img/floor-04-tablets-on-the-line.jpeg" alt="Tablets in use at the workstation" width="800" height="800" loading="lazy">
+        <img class="slide" src="assets/img/floor-02-implementation-workshop.jpeg" alt="Running an implementation workshop" width="800" height="800" loading="lazy">
+        <img class="slide" src="assets/img/floor-05-project-kickoff.jpeg" alt="Project kickoff with the client team" width="800" height="800" loading="lazy">
+        <figcaption>On the floor · North Carolina · 20+ years leading teams</figcaption>
       </figure>
     </div>
   </div>
@@ -148,15 +169,15 @@
   <div class="wrap grid grid--stats">
     <div class="stat">
       <p class="stat__num">50%+</p>
-      <p class="stat__label">Faster average implementation time</p>
+      <p class="stat__label">Faster average implementation across national prefab manufacturers</p>
     </div>
     <div class="stat">
       <p class="stat__num">25%</p>
-      <p class="stat__label">Increase in user adoption across key accounts</p>
+      <p class="stat__label">Higher user adoption across enterprise accounts</p>
     </div>
     <div class="stat">
       <p class="stat__num">20%</p>
-      <p class="stat__label">Increase in post-delivery satisfaction</p>
+      <p class="stat__label">Higher post-delivery satisfaction as QC manager</p>
     </div>
     <div class="stat">
       <p class="stat__num">20+</p>
@@ -203,7 +224,7 @@
       <p class="note">The same method every time: understand the operation first, build the system around how work actually flows, and leave the team owning it. Clients kept anonymous.</p>
       <div class="stack">
         <article class="card">
-          <p class="eyebrow">Case 01 · Panelized manufacturer · Software implementation</p>
+          <p class="eyebrow">Case 01 · A major commercial specialty contractor in the Northeast · Software implementation</p>
           <h3 class="h3">From paper and memory to a live production platform.</h3>
           <p class="card__copy">Production ran off memory and paper. Four days walking the floor, configuration modeled on the sequence crews already worked, supervisors trained first so they could coach.</p>
           <div class="card__metrics">
@@ -213,7 +234,7 @@
           </div>
         </article>
         <article class="card">
-          <p class="eyebrow">Case 02 · Volumetric modular factory · Operational foundation</p>
+          <p class="eyebrow">Case 02 · A general contractor and real estate developer in the central United States · Operational foundation</p>
           <h3 class="h3">Building the operating system before the software.</h3>
           <p class="card__copy">A factory preparing to scale needed standardized processes and stronger quality systems before technology could deliver. Fourteen departments assessed, the compliance program rebuilt, supervisors coached into ownership.</p>
           <div class="card__metrics">
@@ -223,7 +244,7 @@
           </div>
         </article>
         <article class="card">
-          <p class="eyebrow">Case 03 · Panelized division, national builder · Operational assessment</p>
+          <p class="eyebrow">Case 03 · One of the largest contractors on the East Coast · Operational assessment</p>
           <h3 class="h3">Finding the hidden tax on throughput.</h3>
           <p class="card__copy">Growth had brought tribal knowledge, excess motion, and reactive quality. Nothing stopped production, but together it drained hours and attention. Fourteen processes observed end to end, six compounding findings, a roadmap sequenced so improvement never stops production.</p>
           <div class="card__metrics">
@@ -316,6 +337,7 @@
     <div class="footer__links">
       <a href="mailto:jason.c.dixon@gmail.com">jason.c.dixon@gmail.com</a>
       <a href="https://www.linkedin.com/in/jasoncdixon">LinkedIn · /in/jasoncdixon</a>
+      <a href="https://calendar.app.google/TAnaHLzFtc856T2B7" target="_blank" rel="noopener">Book a time to talk ↗</a>
       <a href="uploads/Jason-C-Dixon-Resume.pdf">Resume (PDF) ↓</a>
     </div>
     <div class="footer__base">
@@ -334,5 +356,55 @@
   </div>
 </div>
 
+<div class="rg-veil" id="rgVeil" role="dialog" aria-modal="true" aria-labelledby="rgTitle">
+  <div class="rg-card">
+    <h3 id="rgTitle">Before you go</h3>
+    <p>Leave an email if you would like me to know you stopped by. Not required, and the resume downloads either way.</p>
+    <form id="rgForm" novalidate>
+      <div class="rg-row">
+        <input type="email" id="rgEmail" name="email" autocomplete="email" placeholder="you@company.com" aria-label="Your email">
+        <button class="btn" type="submit">Send &amp; download ↓</button>
+      </div>
+      <p class="rg-note"><button class="rg-skip" type="button" id="rgSkip">No thanks, just download the resume</button></p>
+      <p class="rg-note">No list, no newsletter. It only goes to me.</p>
+    </form>
+  </div>
+</div>
+<script>
+(function(){
+  var f=document.getElementById('heroSlides');
+  if(f && !window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+    var s=f.querySelectorAll('.slide'), i=0;
+    setInterval(function(){
+      s[i].classList.remove('is-on'); s[i].style.position='absolute';
+      i=(i+1)%s.length;
+      s[i].style.position='relative'; s[i].classList.add('is-on');
+    },5000);
+  }
+  var PDF='uploads/Jason-C-Dixon-Resume.pdf', veil=document.getElementById('rgVeil');
+  var form=document.getElementById('rgForm'), skip=document.getElementById('rgSkip');
+  function go(){ var a=document.createElement('a'); a.href=PDF; a.setAttribute('download',''); document.body.appendChild(a); a.click(); a.remove(); veil.classList.remove('is-open'); }
+  document.addEventListener('click',function(e){
+    var link=e.target.closest && e.target.closest('a[href$="Jason-C-Dixon-Resume.pdf"]'); if(!link) return;
+    e.preventDefault();
+    try{ if(localStorage.getItem('jcd_resume_seen')==='1'){ go(); return; } }catch(err){}
+    veil.classList.add('is-open'); document.getElementById('rgEmail').focus();
+  });
+  skip.addEventListener('click',function(){ try{localStorage.setItem('jcd_resume_seen','1');}catch(e){} go(); });
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    var v=document.getElementById('rgEmail').value.trim();
+    if(/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v)){
+      try{ fetch('https://formsubmit.co/ajax/jason.c.dixon@gmail.com',{method:'POST',
+        headers:{'Content-Type':'application/json','Accept':'application/json'},
+        body:JSON.stringify({_subject:'Resume download - jasoncdixon.com',email:v,asset:'resume-pdf'})}).catch(function(){}); }catch(err){}
+      try{ localStorage.setItem('jcd_resume_seen','1'); }catch(err){}
+    }
+    go();
+  });
+  veil.addEventListener('click',function(e){ if(e.target===veil) veil.classList.remove('is-open'); });
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape') veil.classList.remove('is-open'); });
+})();
+</script>
 </body>
 </html>
