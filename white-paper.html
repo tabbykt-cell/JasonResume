@@ -1,0 +1,350 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex">
+<title>Why Manufacturing Software Implementations Fail</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,16..72,400;0,16..72,500;1,16..72,400&display=swap" rel="stylesheet">
+<style>
+/* ---------------------------------------------------------------
+   Print source for assets/white-paper-implementations.pdf.
+   Render with:
+     "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" \
+       --headless --disable-gpu --no-pdf-header-footer \
+       --print-to-pdf=assets/white-paper-implementations.pdf white-paper.html
+   Pages are explicit blocks so the footer can carry a page number.
+   --------------------------------------------------------------- */
+:root{
+  --ink:#16181d; --body:#31343c; --muted:#787d87; --rule:#dcdfe4;
+  --serif:"Newsreader",Georgia,"Times New Roman",serif;
+  --sans:"Archivo","Helvetica Neue",Arial,sans-serif;
+}
+@page{ size:Letter; margin:0 }
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  font-family:var(--sans); color:var(--body);
+  font-size:10.2pt; line-height:1.62;
+  -webkit-font-smoothing:antialiased;
+}
+.page{
+  position:relative; width:8.5in; height:11in;
+  padding:0.98in 0.8in 0.8in;
+  page-break-after:always; break-after:page; overflow:hidden;
+}
+.page:last-child{page-break-after:auto; break-after:auto}
+.foot{
+  position:absolute; left:0.8in; right:0.8in; bottom:0.5in;
+  display:flex; justify-content:space-between; gap:1rem;
+  padding-top:6px; border-top:1px solid var(--rule);
+  font-size:6.6pt; letter-spacing:.02em; color:var(--muted);
+}
+
+h1{font-family:var(--serif); font-weight:400; font-size:30pt; line-height:1.16;
+   color:var(--ink); margin:0 0 .5rem; letter-spacing:-.005em}
+h2{font-family:var(--serif); font-weight:400; font-size:16.5pt; line-height:1.25;
+   color:var(--ink); margin:0 0 .55rem; letter-spacing:-.004em}
+h3{font-family:var(--sans); font-weight:600; font-size:10.2pt; line-height:1.45;
+   color:var(--ink); margin:1.15rem 0 .3rem}
+p{margin:0 0 .72rem}
+.eyebrow{font-family:var(--sans); font-weight:600; font-size:7.2pt;
+   letter-spacing:.16em; text-transform:uppercase; color:var(--muted); margin:0 0 .45rem}
+.rule-top{width:52px; height:2px; background:var(--ink); margin:0 0 1.5rem}
+.lede{font-size:11pt; line-height:1.6; color:var(--body); margin:0 0 1.6rem; max-width:5.9in}
+.sec{margin-top:1.9rem; padding-top:1.5rem; border-top:1px solid var(--rule)}
+.sec--first{margin-top:0; padding-top:0; border-top:0}
+.quote{font-family:var(--serif); font-style:italic; font-size:12.2pt; line-height:1.44;
+   color:var(--ink); margin:1.1rem 0 1.15rem; padding-left:.85rem;
+   border-left:2px solid var(--ink)}
+ul{margin:.15rem 0 .95rem; padding-left:1.05rem}
+li{margin:0 0 .26rem; padding-left:.1rem}
+.muted{color:var(--muted)}
+a{color:inherit; text-decoration:none}
+
+/* Cover */
+.cover-figure{margin:0 0 .4rem}
+.cover-figure img{width:100%; height:2.55in; object-fit:cover;
+   object-position:center 22%; display:block}
+.cover-cap{font-size:7pt; color:var(--muted); margin:.4rem 0 0}
+.cover-meta{display:flex; justify-content:space-between; gap:2rem;
+   margin-top:1.5rem; padding-top:1.05rem; border-top:1px solid var(--rule)}
+.cover-meta .name{font-family:var(--serif); font-size:13pt; color:var(--ink); margin:0 0 .5rem}
+.cover-meta p{margin:0 0 .18rem; font-size:9pt}
+.cover-meta .right{text-align:right; font-size:9pt}
+.cover-meta .right .site{color:var(--ink); font-weight:600}
+.date{margin-top:1.25rem; font-size:8.6pt; color:var(--muted)}
+
+/* Contents */
+.toc{margin-top:.4rem}
+.toc-row{display:flex; gap:1.15rem; align-items:baseline;
+   padding:.62rem 0; border-bottom:1px solid var(--rule)}
+.toc-row:first-child{border-top:1px solid var(--rule)}
+.toc-num{font-family:var(--sans); font-weight:600; font-size:8.4pt;
+   color:var(--muted); width:1.5rem; flex:none; letter-spacing:.04em}
+.toc-txt{font-family:var(--serif); font-size:11.4pt; color:var(--ink)}
+
+/* About the author */
+.about{background:#f4f5f7; padding:1.15rem 1.25rem; margin-top:1.9rem}
+.about h2{margin-bottom:.5rem}
+.about p{font-size:9.4pt; margin-bottom:.6rem}
+.about .contact{border-top:1px solid #dfe2e7; padding-top:.75rem; margin-top:.9rem;
+   font-size:8.8pt; line-height:1.75; color:var(--body)}
+.about .contact .site{color:var(--ink); font-weight:600}
+.copyright{font-size:7.2pt; color:var(--muted); margin-top:.85rem}
+</style>
+</head>
+<body>
+
+<!-- 1 . COVER -->
+<section class="page">
+  <div class="rule-top"></div>
+  <p class="eyebrow">White paper &middot; Manufacturing operations</p>
+  <h1>Why most manufacturing software implementations fail, and how to prevent it.</h1>
+  <p class="lede">Five reasons rollouts struggle, two real-world implementations, and nine practices that turn new software into a lasting operational advantage.</p>
+
+  <figure class="cover-figure">
+    <img src="assets/img/floor-04-tablets-on-the-line.jpeg" alt="Tablets in use at a production workstation">
+    <figcaption class="cover-cap">Adoption is decided on the floor, not in the demo.</figcaption>
+  </figure>
+
+  <div class="cover-meta">
+    <div>
+      <p class="name">Jason C. Dixon</p>
+      <p>Senior Solutions Engineer &middot; Modular &amp; prefab manufacturing</p>
+      <p class="muted">North Carolina</p>
+    </div>
+    <div class="right">
+      <p class="site">jasoncdixon.com</p>
+      <p>+1 (910) 817-5022</p>
+      <p>jason.c.dixon@gmail.com</p>
+      <p>linkedin.com/in/jasoncdixon</p>
+    </div>
+  </div>
+  <p class="date">August 2026</p>
+
+  <div class="foot"><span>jasoncdixon.com &middot; +1 (910) 817-5022 &middot; jason.c.dixon@gmail.com</span><span>Why Manufacturing Software Implementations Fail &middot; 1 / 10</span></div>
+</section>
+
+<!-- 2 . CONTENTS -->
+<section class="page">
+  <p class="eyebrow">Contents</p>
+  <h2>What&rsquo;s inside</h2>
+  <div class="toc">
+    <div class="toc-row"><span class="toc-num">01</span><span class="toc-txt">The wrong people are leading the implementation</span></div>
+    <div class="toc-row"><span class="toc-num">02</span><span class="toc-txt">Every factory needs a subject matter expert</span></div>
+    <div class="toc-row"><span class="toc-num">03</span><span class="toc-txt">Poor planning creates long and expensive implementations</span></div>
+    <div class="toc-row"><span class="toc-num">04</span><span class="toc-txt">Don&rsquo;t overlook the hardware and IT infrastructure</span></div>
+    <div class="toc-row"><span class="toc-num">05</span><span class="toc-txt">Companies stop using the software as a management tool</span></div>
+    <div class="toc-row"><span class="toc-num">06</span><span class="toc-txt">Real-world example: fast doesn&rsquo;t always mean successful</span></div>
+    <div class="toc-row"><span class="toc-num">07</span><span class="toc-txt">Real-world example: when culture becomes the bottleneck</span></div>
+    <div class="toc-row"><span class="toc-num">08</span><span class="toc-txt">Nine best practices for a successful implementation</span></div>
+    <div class="toc-row"><span class="toc-num">09</span><span class="toc-txt">Final thoughts and key takeaways</span></div>
+  </div>
+  <div class="foot"><span>jasoncdixon.com &middot; +1 (910) 817-5022 &middot; jason.c.dixon@gmail.com</span><span>Why Manufacturing Software Implementations Fail &middot; 2 / 10</span></div>
+</section>
+
+<!-- 3 . OPENING + REASON 01 -->
+<section class="page">
+  <div class="sec sec--first">
+    <h2>Technology isn&rsquo;t usually the problem</h2>
+    <p>Over the past several years, I&rsquo;ve helped manufacturing companies implement software ranging from ERP and MES systems to production tracking, quality management, inventory control, and labor management platforms.</p>
+    <p>I&rsquo;ve seen companies completely transform their operations in a matter of weeks. I&rsquo;ve also seen companies spend thousands of dollars on software only to abandon it months later.</p>
+    <p>The interesting part is that the software usually wasn&rsquo;t the problem. Most manufacturing software implementations fail because companies underestimate the operational changes required to make the software successful.</p>
+    <p class="quote">Software simply exposes the strengths and weaknesses that already exist inside an organization.</p>
+    <p>If your processes are disciplined, software accelerates your success. If your processes lack accountability, software simply makes those problems more visible.</p>
+    <p>After working with manufacturers across the modular, panelized, and prefab industries, I&rsquo;ve found five common reasons implementations struggle.</p>
+  </div>
+
+  <div class="sec">
+    <p class="eyebrow">Reason 01</p>
+    <h2>The wrong people are leading the implementation</h2>
+    <p>One of the biggest mistakes I see is assigning software implementation to the people who simply use the software every day. Those employees absolutely need to be involved; their input is critical because they&rsquo;re the ones performing the work. But they shouldn&rsquo;t own the implementation.</p>
+    <p>Successful implementations require someone whose job is making the project successful, not someone trying to squeeze implementation work between their normal daily responsibilities. The implementation leader should have enough authority to make decisions, remove roadblocks, and hold people accountable. Just as importantly, they need to genuinely believe in the project.</p>
+    <p>When leadership assigns software to someone who has little ownership, little authority, or little interest, the project almost always loses momentum.</p>
+  </div>
+  <div class="foot"><span>jasoncdixon.com &middot; +1 (910) 817-5022 &middot; jason.c.dixon@gmail.com</span><span>Why Manufacturing Software Implementations Fail &middot; 3 / 10</span></div>
+</section>
+
+<!-- 4 . REASON 02 + REASON 03 -->
+<section class="page">
+  <div class="sec sec--first">
+    <p class="eyebrow">Reason 02</p>
+    <h2>Every factory needs a subject matter expert</h2>
+    <p>Another major reason implementations struggle is the absence of a dedicated Subject Matter Expert. An SME understands three things:</p>
+    <ul>
+      <li>How the factory actually operates.</li>
+      <li>How the software is designed to work.</li>
+      <li>How to bridge the gap between those two worlds.</li>
+    </ul>
+    <p>Without someone filling this role, companies often configure software based on assumptions rather than actual workflows. The result is frustration from employees who feel like the software &ldquo;doesn&rsquo;t fit.&rdquo;</p>
+    <p>In many situations, hiring an implementation manager, working with a consultant, or bringing in a trainer from the software company is one of the best investments a manufacturer can make. The upfront cost is usually far less than the cost of months of delays, poor adoption, and bad data.</p>
+  </div>
+
+  <div class="sec">
+    <p class="eyebrow">Reason 03</p>
+    <h2>Poor planning creates long and expensive implementations</h2>
+    <p>Many organizations focus almost entirely on one question: &ldquo;How much does the software cost?&rdquo; The better question is: &ldquo;What will it cost us to successfully implement the software?&rdquo;</p>
+    <p>That includes much more than the purchase price. A proper implementation plan should consider:</p>
+    <ul>
+      <li>Software licensing</li>
+      <li>Hardware requirements</li>
+      <li>Implementation labor</li>
+      <li>Employee training</li>
+      <li>Process changes</li>
+      <li>Downtime during rollout</li>
+      <li>Internal project management</li>
+      <li>Ongoing support</li>
+    </ul>
+    <p>Perhaps the biggest planning mistake is unrealistic expectations. Factories often assume implementation will happen quickly. In reality, implementation takes as long as the organization takes to develop disciplined habits.</p>
+    <p class="quote">The software isn&rsquo;t slow. Changing habits is.</p>
+    <p>I&rsquo;ve often joked with clients that implementation usually takes about twice as long as they expect.</p>
+  </div>
+  <div class="foot"><span>jasoncdixon.com &middot; +1 (910) 817-5022 &middot; jason.c.dixon@gmail.com</span><span>Why Manufacturing Software Implementations Fail &middot; 4 / 10</span></div>
+</section>
+
+<!-- 5 . REASON 04 -->
+<section class="page">
+  <div class="sec sec--first">
+    <p class="eyebrow">Reason 04</p>
+    <h2>Don&rsquo;t overlook the hardware and IT infrastructure</h2>
+    <p>One of the most overlooked aspects of a successful software implementation has nothing to do with the software itself: it&rsquo;s the hardware and network infrastructure that support it. I&rsquo;ve seen companies invest significant time and money into selecting the right software only to discover, during implementation, that their factory isn&rsquo;t ready to support it.</p>
+    <p>Before going live, ask yourself questions like:</p>
+    <ul>
+      <li>Do we have reliable Wi-Fi coverage throughout the entire facility?</li>
+      <li>Are there dead zones on the production floor where tablets or scanners won&rsquo;t stay connected?</li>
+      <li>Do we have enough tablets, computers, barcode scanners, printers, or other hardware for employees to perform their work efficiently?</li>
+      <li>Is our network secure and capable of handling additional connected devices?</li>
+      <li>Who will support the hardware if something fails during production?</li>
+    </ul>
+    <p>These questions should be answered before implementation begins, not after employees are already trying to use the system. For many manufacturers, partnering with an experienced IT company or assigning dedicated internal IT personnel is a worthwhile investment. They can ensure wireless access points are properly positioned, devices are configured correctly, security policies are in place, and hardware is ready before the software goes live.</p>
+    <p>Nothing frustrates employees more than being asked to use new software on unreliable equipment or over an unstable network. If the tablet continually loses its connection or the barcode scanner won&rsquo;t communicate with the system, employees quickly lose confidence, not only in the hardware but in the software itself.</p>
+    <p>A successful implementation depends on the entire technology ecosystem working together. The software may be the centerpiece, but reliable hardware, dependable Wi-Fi, properly configured devices, and responsive IT support are all critical components of long-term success.</p>
+  </div>
+  <div class="foot"><span>jasoncdixon.com &middot; +1 (910) 817-5022 &middot; jason.c.dixon@gmail.com</span><span>Why Manufacturing Software Implementations Fail &middot; 5 / 10</span></div>
+</section>
+
+<!-- 6 . REASON 05 + EXAMPLE ONE -->
+<section class="page">
+  <div class="sec sec--first">
+    <p class="eyebrow">Reason 05</p>
+    <h2>Companies stop using the software as a management tool</h2>
+    <p>Many factories successfully go live. Unfortunately, that&rsquo;s where many implementations begin to fail. People continue entering information. Reports continue running. But no one actually uses the data, and the software becomes nothing more than a digital checkbox.</p>
+    <p>Instead of asking:</p>
+    <ul>
+      <li>What are today&rsquo;s production bottlenecks?</li>
+      <li>Which department is falling behind?</li>
+      <li>Where is rework increasing?</li>
+      <li>Which KPIs are changing?</li>
+    </ul>
+    <p>Leadership simply collects data because &ldquo;that&rsquo;s what we&rsquo;re supposed to do.&rdquo;</p>
+    <p>Software should drive conversations. It should improve decisions. It should expose problems before they become expensive. Without accountability, even great software eventually becomes ignored.</p>
+  </div>
+
+  <div class="sec">
+    <p class="eyebrow">Real-world example 01</p>
+    <h2>Fast doesn&rsquo;t always mean successful</h2>
+    <p>One of the fastest implementations I&rsquo;ve ever completed was at a panelized manufacturing facility. We successfully launched the software in just two weeks. From a technical perspective, everything worked, and the project manager began using reports generated by the software to monitor weekly production.</p>
+    <p>There was just one problem. Employees weren&rsquo;t entering accurate information. As a result, the reports looked impressive, but they weren&rsquo;t telling the truth.</p>
+    <p>Instead of auditing the data and coaching the team toward better habits, the organization slowly returned to its old paper-based processes. Ironically, they ended up relying on paper again while still struggling with inaccurate information, because the real issue had never been addressed.</p>
+    <p class="quote">The software wasn&rsquo;t the failure. Accountability was.</p>
+  </div>
+  <div class="foot"><span>jasoncdixon.com &middot; +1 (910) 817-5022 &middot; jason.c.dixon@gmail.com</span><span>Why Manufacturing Software Implementations Fail &middot; 6 / 10</span></div>
+</section>
+
+<!-- 7 . EXAMPLE TWO + BEST PRACTICES 1-3 -->
+<section class="page">
+  <div class="sec sec--first">
+    <p class="eyebrow">Real-world example 02</p>
+    <h2>When culture becomes the bottleneck</h2>
+    <p>Earlier in my career, before I joined Offsight, another manufacturer struggled with implementation for months. Employees would use the software for a few weeks, stop using it, then try again. The owner became frustrated because the reports couldn&rsquo;t be trusted.</p>
+    <p>I was asked to walk through the factory and identify the root cause. After spending time observing operations, interviewing leadership, and watching daily workflows, it became clear the software wasn&rsquo;t the biggest issue. Leadership consistency was.</p>
+    <p>Employees naturally follow the standards demonstrated by leadership. If management treats software as optional, employees will too.</p>
+    <p>After presenting my findings, leadership made several organizational changes. I later returned to conduct leadership training focused on accountability, communication, and operational management. Once leadership changed its approach, software adoption dramatically improved. Culture had been slowing progress far more than technology ever was.</p>
+  </div>
+
+  <div class="sec">
+    <p class="eyebrow">Best practices</p>
+    <h2>Nine practices for a successful implementation</h2>
+    <h3>1. Appoint a dedicated implementation leader</h3>
+    <p>Give one person ownership of the project. Ideally, this person also serves as the Subject Matter Expert and has a backup who understands the system and can keep the project moving when they&rsquo;re unavailable.</p>
+    <h3>2. Evaluate software before buying it</h3>
+    <p>Create evaluation criteria before speaking with vendors. Consider the problems you&rsquo;re trying to solve, budget, required functionality, ease of use, implementation timeline, integration requirements, and long-term scalability. Remember that implementation time is often more expensive than the software itself.</p>
+    <h3>3. Limit the evaluation period</h3>
+    <p>Software evaluations shouldn&rsquo;t last forever. Most organizations can evaluate multiple platforms within 30 to 45 days. Long evaluation periods usually delay improvement rather than improve decisions.</p>
+  </div>
+  <div class="foot"><span>jasoncdixon.com &middot; +1 (910) 817-5022 &middot; jason.c.dixon@gmail.com</span><span>Why Manufacturing Software Implementations Fail &middot; 7 / 10</span></div>
+</section>
+
+<!-- 8 . BEST PRACTICES 4-9 -->
+<section class="page">
+  <div class="sec sec--first">
+    <h3 style="margin-top:0">4. Demand proof of concept</h3>
+    <p>Don&rsquo;t simply believe marketing demonstrations. Request a trial. Use your own data. Test real workflows. Ask vendors to prove they can solve your specific operational problems. If possible, ask to speak with an existing customer who has implemented the software successfully. An experienced software consultant from the vendor who understands your business can also provide tremendous value during the evaluation process.</p>
+    <h3>5. Build a detailed implementation roadmap</h3>
+    <p>Every implementation should include milestone dates for hardware installation, network readiness, software configuration, user training, pilot testing, go-live, reporting, and performance reviews. Everyone should understand what success looks like before implementation begins.</p>
+    <h3>6. Review progress frequently</h3>
+    <p>Meet regularly throughout implementation. If milestones begin slipping, determine why immediately. Document delays. Create recovery plans. Accountability should exist at every level of the organization.</p>
+    <h3>7. Support your implementation team</h3>
+    <p>One of the strongest indicators of success is visible executive support. When ownership consistently reinforces the importance of the project, employees take it seriously. Celebrate milestones, recognize progress, and show employees the value the software is creating.</p>
+    <h3>8. Conduct a 90-day review</h3>
+    <p>Going live isn&rsquo;t the finish line. After three months, evaluate software usage, data quality, reporting accuracy, user adoption, process compliance, and opportunities for improvement. Many companies discover they&rsquo;re only using a fraction of what their software can actually do.</p>
+    <h3>9. Perform an annual operational assessment</h3>
+    <p>One year after implementation, bring in someone from outside your organization. An experienced consultant can identify untapped software capabilities, inefficient workflows, cultural barriers, reporting gaps, and missed automation opportunities. Fresh eyes frequently uncover opportunities internal teams no longer notice.</p>
+  </div>
+  <div class="foot"><span>jasoncdixon.com &middot; +1 (910) 817-5022 &middot; jason.c.dixon@gmail.com</span><span>Why Manufacturing Software Implementations Fail &middot; 8 / 10</span></div>
+</section>
+
+<!-- 9 . FINAL THOUGHTS -->
+<section class="page">
+  <div class="sec sec--first">
+    <h2>Final thoughts</h2>
+    <p>Manufacturing software doesn&rsquo;t improve factories. People improve factories. Software simply gives those people better information, greater visibility, and stronger tools for making decisions.</p>
+    <p>Successful implementations happen when organizations invest just as much effort into people, leadership, planning, infrastructure, and accountability as they do into selecting the software itself.</p>
+    <p class="quote">Technology is an investment. Operational discipline is what produces the return on that investment.</p>
+    <p>The manufacturers who consistently succeed aren&rsquo;t the ones with the most expensive software. They&rsquo;re the ones who build the right culture around it.</p>
+  </div>
+
+  <div class="sec">
+    <h2>Key takeaways</h2>
+    <p>A successful manufacturing software implementation is far more than installing a new system; it&rsquo;s leading organizational change. Keep these principles in mind:</p>
+    <ul>
+      <li>Evaluate software based on your operational needs, not just features.</li>
+      <li>Test the software using real-world workflows before purchasing.</li>
+      <li>Plan for the total cost, including hardware, training, IT infrastructure, and implementation resources.</li>
+      <li>Assign a dedicated implementation manager or SME to lead the project.</li>
+      <li>Prepare your factory&rsquo;s technology by ensuring Wi-Fi, tablets, scanners, computers, and printers are ready before go-live.</li>
+      <li>Create clear implementation milestones and hold regular progress reviews.</li>
+      <li>Hold everyone accountable, from leadership to operators, for following the new processes.</li>
+      <li>Audit software usage after go-live to ensure accurate data and proper adoption.</li>
+      <li>Continuously improve by reviewing reports, KPIs, and user feedback.</li>
+      <li>Bring in outside expertise when needed. A trusted consultant can identify operational gaps, cultural challenges, and untapped capabilities internal teams may overlook.</li>
+    </ul>
+  </div>
+  <div class="foot"><span>jasoncdixon.com &middot; +1 (910) 817-5022 &middot; jason.c.dixon@gmail.com</span><span>Why Manufacturing Software Implementations Fail &middot; 9 / 10</span></div>
+</section>
+
+<!-- 10 . CLOSE + ABOUT THE AUTHOR -->
+<section class="page">
+  <div class="sec sec--first">
+    <p>Software alone will never transform a factory. The combination of the right people, the right planning, the right technology, and consistent accountability is what turns a software implementation into a lasting competitive advantage.</p>
+  </div>
+
+  <div class="about">
+    <p class="eyebrow">About the author</p>
+    <h2>Jason C. Dixon</h2>
+    <p>Senior Solutions Engineer working with modular, panelized, and prefab manufacturers across North America: operational assessment, quality systems, and software implementation. He has built quality systems from the inside as a QC manager and implemented operational technology from the outside, so the advice above comes from both sides of the rollout.</p>
+    <div class="contact">
+      <span class="site">jasoncdixon.com</span> &middot; +1 (910) 817-5022 &middot; jason.c.dixon@gmail.com<br>
+      linkedin.com/in/jasoncdixon<br>
+      North Carolina
+    </div>
+  </div>
+  <p class="copyright">&copy; 2026 Jason C. Dixon. Shared for the benefit of manufacturers evaluating or recovering an implementation.</p>
+
+  <div class="foot"><span>jasoncdixon.com &middot; +1 (910) 817-5022 &middot; jason.c.dixon@gmail.com</span><span>Why Manufacturing Software Implementations Fail &middot; 10 / 10</span></div>
+</section>
+
+</body>
+</html>

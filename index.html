@@ -107,9 +107,17 @@
 <script src="assets/js/site.js" defer></script>
 <style>
 .hero__figure--slides{position:relative}
-.hero__figure--slides .slide{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .9s ease}
-.hero__figure--slides .slide.is-on{opacity:1;position:relative}
+.hero__figure--slides .slides{position:relative;aspect-ratio:4/4.6;border-radius:var(--radius);overflow:hidden}
+.hero__figure--slides .slide{position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;border-radius:0;object-fit:cover;object-position:center;opacity:0;transition:opacity .9s ease}
+.hero__figure--slides .slide.is-on{opacity:1}
 @media (prefers-reduced-motion: reduce){.hero__figure--slides .slide{transition:none}}
+/* The tall crop cuts faces on these. Anchor each one so nobody loses a head. */
+.hero__figure--slides .slide--f01{object-position:15% center}
+.hero__figure--slides .slide--f02{object-position:30% center}
+.hero__figure--slides .slide--f03{object-position:15% center}
+.hero__figure--slides .slide--f04{object-position:0% center}
+.hero__figure--slides .slide--f05{object-position:0% center}
+.hero__figure--slides .slide--f06{object-position:15% center}
 .rg-veil{position:fixed;inset:0;background:rgba(20,20,18,.55);display:none;align-items:center;justify-content:center;padding:24px;z-index:60}
 .rg-veil.is-open{display:flex}
 .rg-card{background:#fff;max-width:460px;width:100%;padding:28px;border-radius:2px;box-shadow:0 24px 60px rgba(0,0,0,.25)}
@@ -152,13 +160,15 @@
         </div>
       </div>
       <figure class="hero__figure hero__figure--slides" id="heroSlides">
+        <div class="slides">
         <img class="slide is-on" src="assets/img/portrait.jpeg" alt="Jason C. Dixon" width="800" height="800">
-        <img class="slide" src="assets/img/floor-01-executive-walkthrough.jpeg" alt="Walking a production line with plant leadership" width="800" height="800" loading="lazy">
-        <img class="slide" src="assets/img/floor-06-crew-shop-floor.jpeg" alt="On the shop floor with a production crew" width="800" height="800" loading="lazy">
-        <img class="slide" src="assets/img/floor-03-operator-training.jpeg" alt="Training operators on the line" width="800" height="800" loading="lazy">
-        <img class="slide" src="assets/img/floor-04-tablets-on-the-line.jpeg" alt="Tablets in use at the workstation" width="800" height="800" loading="lazy">
-        <img class="slide" src="assets/img/floor-02-implementation-workshop.jpeg" alt="Running an implementation workshop" width="800" height="800" loading="lazy">
-        <img class="slide" src="assets/img/floor-05-project-kickoff.jpeg" alt="Project kickoff with the client team" width="800" height="800" loading="lazy">
+        <img class="slide slide--f01" src="assets/img/floor-01-executive-walkthrough.jpeg" alt="Walking a production line with plant leadership" width="800" height="800" loading="lazy">
+        <img class="slide slide--f06" src="assets/img/floor-06-crew-shop-floor.jpeg" alt="On the shop floor with a production crew" width="800" height="800" loading="lazy">
+        <img class="slide slide--f03" src="assets/img/floor-03-operator-training.jpeg" alt="Training operators on the line" width="800" height="800" loading="lazy">
+        <img class="slide slide--f04" src="assets/img/floor-04-tablets-on-the-line.jpeg" alt="Tablets in use at the workstation" width="800" height="800" loading="lazy">
+        <img class="slide slide--f02" src="assets/img/floor-02-implementation-workshop.jpeg" alt="Running an implementation workshop" width="800" height="800" loading="lazy">
+        <img class="slide slide--f05" src="assets/img/floor-05-project-kickoff.jpeg" alt="Project kickoff with the client team" width="800" height="800" loading="lazy">
+        </div>
         <figcaption>On the floor · North Carolina · 20+ years leading teams</figcaption>
       </figure>
     </div>
@@ -341,7 +351,7 @@
       <a href="uploads/Jason-C-Dixon-Resume.pdf">Resume (PDF) ↓</a>
     </div>
     <div class="footer__base">
-      <p>North Carolina · Available for travel across North America</p>
+      <p>North Carolina</p>
       <p>© 2026 Jason C. Dixon</p>
     </div>
   </div>
@@ -376,9 +386,9 @@
   if(f && !window.matchMedia('(prefers-reduced-motion: reduce)').matches){
     var s=f.querySelectorAll('.slide'), i=0;
     setInterval(function(){
-      s[i].classList.remove('is-on'); s[i].style.position='absolute';
+      s[i].classList.remove('is-on');
       i=(i+1)%s.length;
-      s[i].style.position='relative'; s[i].classList.add('is-on');
+      s[i].classList.add('is-on');
     },5000);
   }
   var PDF='uploads/Jason-C-Dixon-Resume.pdf', veil=document.getElementById('rgVeil');
